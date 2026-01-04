@@ -1,0 +1,246 @@
+﻿Sellfile Creator Release History
+DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
+
+## v0.9.14 — 2026-01-26
+English:
+- Auto-apply now flushes before you move or reorder configs, so edits stay with the config you just moved.
+- The Rule Tester header (and the Note dialog) now shows a keep/sell/keep-unique summary chip with totals; with filters active it shows filtered/total counts.
+- Rule Tester grouping controls are more granular: toggle set/slot/faction grouping for artifacts vs accessories, and optionally hide headers for a flat list.
+- Rule Tester matching is faster, especially with Keep Uniques enabled.
+- The Rule Tester grid now defaults to 4 columns.
+
+Deutsch:
+- Auto-Apply speichert Aenderungen jetzt vor dem Verschieben/Sortieren, damit die Edits beim verschobenen Config bleiben.
+- Im Rule Tester zeigt der Header (und der Notiz-Dialog) jetzt eine Keep/Sell/Keep-Uniques-Zusammenfassung mit Gesamtzahlen; bei Filtern stehen gefiltert/gesamt dabei.
+- Die Rule-Tester-Gruppierung ist feiner: Set/Slot/Fraktion lassen sich getrennt fuer Artefakte und Accessoires toggeln, plus optional "keine Header" fuer eine flache Liste.
+- Die Rule-Tester-Auswertung ist schneller, besonders mit Keep Uniques.
+- Das Rule-Tester-Grid startet jetzt standardmaessig mit 4 Spalten.
+
+## v0.9.13 — 2026-01-20
+English:
+- Rule Tester cards can now show an optional "Add Config" action that builds Keep/Sell configs from the selected item and jumps you to the new config.
+- Keep Unique coverage is more reliable: configs tagged `ignore_keep_unique` no longer count toward uniqueness checks, and tester labels stay in sync after renaming rules.
+- Live RSL Helper DB streaming is more dependable and faster for big databases, plus the push status now includes a received timestamp.
+- Push endpoints now require `ws://` or `wss://` URLs.
+- The config-name filter hint now calls out tag and regex matching.
+
+Deutsch:
+- Rule-Tester-Karten koennen jetzt optional eine Aktion "Konfig hinzufuegen" anzeigen, die aus dem Item Keep/Sell-Konfigs baut und direkt zur neuen Konfig springt.
+- Keep Unique ist verlaesslicher: mit `ignore_keep_unique` getaggte Konfigs zaehlen nicht mehr fuer die Unique-Abdeckung, und Tester-Labels bleiben nach Umbenennungen aktuell.
+- Live-Streaming der RSL-Helper-Datenbank ist robuster und schneller bei grossen Datenbanken; der Push-Status zeigt jetzt den Empfangszeitpunkt.
+- Push-Endpunkte akzeptieren jetzt nur noch `ws://`- oder `wss://`-URLs.
+- Der Filter-Hinweis beim Konfig-Namen nennt jetzt Tag- und Regex-Suche.
+
+## v0.9.12 — 2026-01-10
+English:
+- The Argonites faction is now available in builder faction menus, filters, and gear database imports.
+
+Deutsch:
+- Die Fraktion der Argoniten ist jetzt in Builder-Menues, Filtern und Gear-DB-Importen verfuegbar.
+
+## v0.9.11 — 2026-01-04
+English:
+- Notes can now host Config Options questions that apply tag-driven overrides at runtime—toggle tagged configs and adjust rank/rarity/level windows — without editing the stored configs.
+- Config tags are now first-class in the builder: tags live beside Export Mode and the name filter also matches tag tokens.
+- Rule Tester sorting adds grouping modes (set+faction, accessories-by-faction, split artifacts/accessories, or flat) with a global substat sort when grouping is custom, and mythic bonus highlights are clearer.
+
+Deutsch:
+- Notizen koennen jetzt Config-Options-Fragen enthalten, die Tags zur Laufzeit auswerten: getaggte Configs werden ein/aus geschaltet und Rank/Rarity/Level werden temporaer ueberschrieben, ohne die gespeicherten Configs zu aendern.
+- Config-Tags sind jetzt fest im Builder verankert: Tags sitzen neben dem Exportmodus, und der Namensfilter findet auch Tag-Tokens.
+- Die Rule-Tester-Sortierung hat neue Gruppierungen (Set+Fraktion, Accessoires nach Fraktion, Split Artefakte/Accessoires oder flach) mit globaler Substat-Sortierung bei Sondergruppen, und Mythisch-Boni sind deutlicher hervorgehoben.
+
+## v0.9.10 — 2025-12-15
+English:
+- The standalone Gear window is gone: use the header `Logic Hub` button and switch to the `Gear` tab to import your RSL Helper `.db`, add manual test items, and reset the Gear list without leaving the dialog.
+- Rule Tester sorting is much stronger: sort by Last Used and/or substat priorities, flip direction per key, and use Normalized mode (with weights) to compare mixed stats; the restore prompt can now bring back your saved sort setup.
+- Tester cards can show normalized “rating” overlays: enable overlay presets, reuse your sort weights, and toggle whether glyphs count so scores match what you expect.
+- Preview filters get new power tools: right-click a substat to mark “must NOT have”, use per-section Clear buttons to reset just one area, and save/load named filter presets; broken localStorage no longer crashes the filter panel.
+- New gear set coverage: the Mercurial set (1–9 pieces) is now recognized and also included in the **Lategame** sellfile.
+- Keep Uniques rules are easier to manage.
+
+Deutsch:
+- Das separate Ausrüstungsfenster ist weg: Nutze den Header-Button `Logic Hub` und den Tab `Ausrüstung`, um deine RSL-Helper-`.db` zu importieren, manuelle Test-Items anzulegen und die Ausrüstungsliste im Dialog zurückzusetzen.
+- Die Sortierung im Regel-Tester ist deutlich besser: Sortiere nach „Zuletzt benutzt“ und/oder Substat-Prioritäten, drehe die Richtung pro Schlüssel um und nutze den Normalized-Modus (mit Gewichten), um gemischte Stats fair zu vergleichen; im Restore-Dialog lässt sich die Sortierung jetzt mit wiederherstellen.
+- Tester-Karten können Normalized-„Ratings“ als Overlay anzeigen: Presets aktivieren, Sort-Gewichte wiederverwenden und umschalten, ob Glyphen zählen, damit die Scores zu deiner Erwartung passen.
+- Die Vorschau-Filter haben neue Werkzeuge: Rechtsklick auf einen Substat setzt „darf NICHT haben“, pro Abschnitt gibt es Clear-Buttons zum Teil-Reset, und du kannst Filter-Presets speichern/laden; kaputtes localStorage bringt das Filterpanel nicht mehr zum Absturz.
+- Neue Set-Abdeckung: Das Mercurial-Set (1–9 Teile) ist jetzt enthalten und natürlich auch im **Lategame** sellfile referenziert.
+- Keep-Uniques-Regeln sind leichter zu benutzen.
+
+## v0.9.9 — 2025-12-07
+English:
+- Load your full RSL Helper gear database straight into the new Rule Tester view, then watch every config decide Keep or Sell before you export the Sellfile.
+- The Rule Tester grid groups items by set and faction, shows champion portraits, offers keep/sell chips that jump back to the builder, and gains context menus plus search hotkeys so scanning huge inventories stays friendly.
+- Unique or at-risk items are spotlighted: the grid collapses to the truly unique groups, adds a clear All/Selection toggle, and paints a green Keep Uniques chip so you instantly know why a piece is protected.
+- Keep Unique protection now lives inside a dedicated Keep-Unique tab in the Logic Hub dialog, letting you define slot/set/rank/rarity/main/faction combos, see how many copies you own, highlight the matching tester cards, and merge the rules into exports with one switch.
+
+Deutsch:
+- Du kannst jetzt deine komplette RSL-Helper-Gear-Datenbank direkt im neuen Rule-Tester-View laden und sehen, welche Config jedes Item behalten oder verkaufen würde, bevor du das Sellfile exportierst.
+- Das Rule-Tester-Grid gruppiert Items nach Set und Fraktion, zeigt Champion-Porträts, bringt Keep/Sell-Chips zurück in den Builder und liefert Kontextmenüs plus Such-Hotkeys, damit große Inventare übersichtlich bleiben.
+- Einzigartige oder gefährdete Items werden hervorgehoben: Das Grid klappt auf die wirklich einzigartigen Gruppen ein, hat einen klaren All/Selection-Schalter und zeigt einen grünen „Keep Uniques“-Chip, damit du sofort weißt, warum ein Teil geschützt ist.
+- Keep-Unique-Schutz lebt jetzt in einem eigenen Tab im Final-Sell-Dialog – hier definierst du Slot/Set/Rang/Seltenheit/Main/Fraktion-Kombos, siehst sofort, wie viele Kopien du besitzt, markierst die entsprechenden Tester-Karten und übernimmst die Regeln per Schalter in jeden Export.
+
+## v0.9.8 — 2025-11-03
+English:
+- Multi-edit stays inline: select several configs to see mixed placeholders, total rule counts, and an `Apply to N configs` button; chip menus add Select All / Copy All options and the header counter shows how many configs are filtered or selected. Roll Target overrides now patch across every selected config, and the old Draft visibility is renamed to Export Mode → Separator so dividers are clearer.
+- Substat controls got their own right-click menu: lock badges toggle independently, the menu edits min/max rolls without leaving the builder, and the new Roll Targets grid lets you enter Base/+1…+5 totals with spinner controls, show override summaries on the chips, and clear back to the global targets; multi-edit keeps mixed cues visible while you sync overrides.
+- Undo/Redo describe the next change and expose a history timeline on right-click, so you can jump back to a named snapshot or clear the stack with confidence.
+- Builder feedback tightens up: the rule-count chip turns red when a config would export zero rules, every context menu has a close button, and the Sellfile preview flashes a scroll-range overlay after fast scrolls so you always know where you are in long tables.
+- Save and Export buttons display a dirty badge when the HSFC or sellfile has unsaved changes, preview/export layouts stay balanced when filters hide rows, and narrow screens auto-zoom to keep the builder and preview side by side. Rule builds are cached so large projects stay responsive, and flex exports keep every valid combination instead of dropping ring rows.
+- Updated the Auto + Late tutorial copy across German, Spanish, French, Portuguese, Russian, Turkish, Ukrainian, and other catalogs so every language matches the new lock/context menu flow.
+- Mythical gear with locked totals behaves correctly: Minimum Required Rolls count the Mythical pre-roll against your locked stats, so unlocked substats stay at baseline until they have to roll and the config still emits rules.
+- Export menu can skip disabled configs: right-click `Export RSL Helper Sellfile`, toggle `Omit disabled rules when exporting`, and `Use = false` rows stay out of downloads and push streams; the choice persists across sessions in every language.
+
+Deutsch:
+- Mehrfachbearbeitung bleibt im Builder: Wähle mehrere Konfigurationen, siehst Misch-Platzhalter, Gesamtregelanzahl und eine Schaltfläche „Auf N Konfigs anwenden“; Chip-Menüs bieten „Alle auswählen“/„Alle kopieren“ und der Zähler zeigt, wie viele Konfigs ausgewählt oder ausgeblendet sind. Roll-Richtwerte landen jetzt per Multi-Edit auf allen markierten Konfigs, und die alte Sichtbarkeit „Draft“ heißt nun Exportmodus → „Separator“, damit Trenner direkt auffallen.
+- Substat-Controls haben jetzt ein eigenes Rechtsklick-Menü: Sperr-Icons lassen sich separat schalten, das Menü ändert Min-/Max-Rolls direkt im Builder, und das neue Roll-Richtwerte-Raster nimmt Basis- sowie +1…+5-Werte mit Spinner-Steuerung auf, zeigt Übersichten auf den Chips und springt bei Bedarf zurück auf die globalen Vorgaben; Mehrfachbearbeitung hält gemischte Zustände sichtbar, während du Überschreibungen synchronisierst.
+- Undo/Redo beschreiben jetzt die nächste Änderung und ein Rechtsklick öffnet eine Verlaufsliste, in der du zu benannten Snapshots springen oder den Stapel gezielt leeren kannst.
+- Rückmeldungen im Builder wurden geschärft: Der Regelzähler färbt sich rot, sobald eine Konfiguration keine Regeln mehr erzeugt, jedes Kontextmenü bringt jetzt eine Schließen-Schaltfläche mit und die Sellfile-Vorschau blendet nach schnellen Scrolls kurz eine Bereichsanzeige ein, damit du dich in langen Tabellen orientieren kannst.
+- Die Schaltflächen zum Speichern und Exportieren zeigen einen Hinweis, wenn HSFC oder Sellfile ungesicherte Änderungen haben; Vorschau und Export bleiben trotz Filterung gleich hoch und auf schmalen Monitoren zoomt die App automatisch, um Builder und Vorschau nebeneinander zu halten. Die Regel-Erstellung wird zwischengespeichert, damit große Projekte reaktionsschnell bleiben, und Flex-Exporte behalten jede gültige Kombination statt Ring-Zeilen zu streichen.
+- Die Auto-+Spät-Anleitung wurde für Deutsch, Spanisch, Französisch, Portugiesisch, Russisch, Türkisch, Ukrainisch und weitere Kataloge aktualisiert, damit jede Sprache den neuen Lock-/Kontextmenü-Ablauf abdeckt.
+- Mythische Werte bei Locks bleiben stabil: Mindestwürfe zählen den Vorabwurf jetzt auf die gesperrten Stats, dadurch bleiben freie Substats unberührt, bis sie wirklich rollen müssen, und die Konfiguration erzeugt weiterhin Regeln.
+- Export-Menü kann deaktivierte Regeln auslassen: Rechtsklick auf `RSL-Helper-Sellfile exportieren`, `Deaktivierte Regeln beim Export auslassen` aktivieren – dann landen `Use = false`-Zeilen weder im Download noch beim Push, und die Auswahl bleibt sprachübergreifend gespeichert.
+
+## v0.9.7 — 2025-10-06
+## English
+- Config chips gained a Draft mode (produces no rules) so you can drop labeled separators; duplicates are flagged, chips can be limited to whatever the preview filter keeps, and the bundled sample HSFC/HSF were refreshed to use the new structure.
+- Notes can display config chips or metasets by adding `<!-- configs:... -->` / `<!-- configs-re:"..." -->`; the editor adds insert buttons so shared projects stay self-explanatory.
+- Builder clean-up: removed the `Any` buttons from Slots/Mainstats/Substats in favour of clear icons, matching how other pickers work; reset buttons now say `Reset Config`.
+- Logic Hub keeps the same controls but the wording and inline hints now explain what turning it on does and why all sets are listed explicitly; the preview badge highlights when the export hover suggests enabling it.
+- Visual pass: slot art now uses the RSL Helper icons, faction icons show up on chips, filters, and in the Rule Tester, and localisation strings were updated in every shipped language.
+- Rule Tester and filters: you can filter by config name, pull incoming gear in from the db watcher, see faction icons alongside set icons, and the optional export push endpoint can send the `.hsf` straight to a receiver when configured.
+
+## Deutsch
+- Config-Chips haben jetzt einen Draft-Modus (erzeugt keine Regeln), damit sich beschriftete Trenner anlegen lassen; Duplikate werden markiert, Chips können auf die Regeln aus der Vorschau gefiltert werden, und die beigelegten Beispiel-HSFC/HSF sind entsprechend aktualisiert.
+- Notizen können Config-Chips oder Metaset-Listen anzeigen (`<!-- configs:... -->` bzw. `<!-- configs-re:"..." -->`); der Editor bringt Einfüge-Schaltflächen mit, damit geteilte Projekte den Kontext gleich mitliefern.
+- Builder-Aufräumarbeiten: Die `Any`-Schaltflächen bei Slots/Mainstats/Substats sind zugunsten von Löschen-Icons verschwunden und entsprechen jetzt den anderen Auswahlfeldern; die Reset-Schaltfläche heißt nun `Reset Config`.
+- Final-Sell-Dialog: gleiche Steuerung, aber mit klareren Texten und Hinweisen darauf, warum alle Sets explizit gelistet werden; das Badge in der Vorschau hebt sich beim Export-Hover hervor, wenn Final Sell deaktiviert ist.
+- Optischer Durchgang: Slot-Grafiken stammen jetzt aus RSL Helper, Fraktions-Icons tauchen auf Chips, in Filtern und im Rule Tester auf, und alle Sprachen wurden textlich angepasst.
+- Rule Tester und Filter: Filter nach Config-Namen, Übernahme von Tester-Items aus dem Beispiel-Server, Fraktions- und Set-Icons nebeneinander sowie eine optionale Export-Push-Funktion, die die `.hsf` bei konfiguriertem Ziel direkt verschickt.
+
+## v0.9.6 — 2025-09-29
+English:
+- Auto Rarity now picks the first rarity that can spawn your required substat count. Flex only turns on when optional stats or roll targets need permutations, and Late keeps Rare paths visible even when the first roll lands on an optional stat. Exports keep every viable combo without duplicate rows.
+- Rule Tester opens with six curated sample items and stays fast thanks to virtualized rows. A Reset button and builder links on match chips make it easy to see which rule keeps or sells each scenario.
+- Builder guidance improved: the cheat sheet highlights Auto ≥ and Flex setups with badges, and the tutorial scrolls the preview to spotlight Late milestones. The Help dialog keeps the language picker in view and adds Italian plus Brazilian Portuguese translations.
+
+Deutsch:
+- Auto-Rarität wählt jetzt die erste Seltenheit, die deine geforderte Substat-Anzahl tragen kann. Flex springt nur an, wenn optionale Stats oder Rollziele Permutationen erzwingen, und Spät-Zweige bleiben sichtbar, selbst wenn ein seltener Drop seinen ersten Roll auf einen Optionalen setzt. Exportierte Regeln behalten dadurch jede gültige Kombination ohne Dubletten.
+- Der Rule Tester startet mit sechs kuratierten Beispiel-Gegenständen und bleibt dank virtualisierten Zeilen flott. Ein Zurücksetzen-Dialog und Builder-Links auf den Treffer-Chips zeigen dir schnell, welche Regel behält oder verkauft.
+- Bessere Hilfen im Builder: Das Cheat Sheet erklärt Auto ≥ und Flex mit Badges, und das Tutorial scrollt die Vorschau automatisch zu den Spät-Meilensteinen. Der Hilfe-Dialog zeigt den Sprachschalter prominent an und liefert neue Übersetzungen für Italienisch sowie brasilianisches Portugiesisch mit.
+
+## v0.9.4 — 2025-09-22
+English:
+- Builder defaults to Auto rarity: it picks the lowest rarity that can start with your required substats or reach the roll totals, Auto ≥ keeps higher floors when you need them, and the new Locked toggle lets min-roll sums consider only the stats you locked.
+- Config chips grew up: multi-select lets you duplicate, move, or delete several configs at once, duplicate chips get flagged, auto-reset after insert is optional, and badges now show slot icons with hollow roll rings.
+- Sellfile Preview adds filters for sets, rank, rarity, and faction alongside color-blind palettes and smoother hover/scroll so big tables stay readable.
+- Rule Tester dialog debuts under Preview → Rule Tester, letting you paste items, adjust rolls per level, and see which rule keeps or sells them; scenarios autosave between visits.
+- A guided tutorial with breadcrumbs walks through basic and advanced configs, resets the sandbox when it ends, and lives behind the Help button.
+- Configs now save as `.hsfc`, and copy/paste carries the metasets a single config needs so sharing snippets just works.
+
+Deutsch:
+- Der Builder nutzt jetzt standardmäßig Seltenheit Auto: Die App wählt die niedrigste Seltenheit, die deine Pflicht-Substats oder Roll-Summen tragen kann; per Auto ≥ hältst du Rare/Epic-Böden fest, und ein neuer Locked-Schalter lässt Mindestwürfe nur für gesperrte Stats zählen.
+- Config-Kacheln sind flexibler: Multiselect dupliziert, verschiebt oder löscht mehrere Einträge auf einmal, Dubletten werden markiert, Auto-Reset nach dem Einfügen ist optional, und Badges zeigen Slot-Icons plus hohle Roll-Ringe.
+- Die Sellfile-Vorschau bietet jetzt Filter für Sets, Rang, Seltenheit und Fraktion sowie farbenblinde Paletten und glatteres Scrollen, damit große Tabellen lesbar bleiben.
+- Der neue Rule Tester unter Vorschau → Rule Tester erlaubt, Items einzutragen, Roll-Stände je Stufe anzupassen und sofort zu sehen, welche Regel sie behält oder verkauft; Szenarien bleiben per Autosave erhalten.
+- Ein geführtes Tutorial mit Breadcrumbs führt Schritt für Schritt durch einfache und komplexe Konfigurationen und setzt die App danach wieder zurück; starte es über Hilfe.
+- Configs werden als `.hsfc` gespeichert, und Copy/Paste bringt die dazugehörigen Metasets gleich mit – so lassen sich Einzel-Konfigs leichter teilen.
+
+## v0.9.2 — 2025-09-08
+English:
+- Final Sell now writes Sell rules that list every known set and offers clearer gear/level toggles, so new RSL sets never slip through.
+- Builder adds a `Min Required Rolls` aggregate control and deterministic Mythical handling, keeping Potential rows and roll math consistent no matter the click order.
+- Set pickers gain search plus icon, Game, or A–Z views that persist across the builder and metaset dialog, helping you find sets faster.
+- Metaset management supports replace-on-delete and reset flows, auto-names new groups, and keeps builder/config references in sync to avoid orphaned metasets.
+- Config saves (`.hsfr`) can now include a Markdown Note that reloads automatically; drag & drop works anywhere with a global overlay and copy/paste preserves the note.
+
+Deutsch:
+- Final Sell schreibt jetzt Sell-Regeln mit allen bekannten Sets und bietet klarere Gear-/Level-Optionen, damit neue Raid-Sets nicht versehentlich durchrutschen.
+- Der Builder hat den Schalter `Min Required Rolls` (Auto/1–5) und behandelt Mythical deterministisch, sodass Potential-Zeilen und Roll-Mathematik unabhängig von der Klick-Reihenfolge stimmen.
+- Die Set-Auswahl bietet Suche sowie Icon-, Game- und A–Z-Ansichten, merkt sich deine Wahl und der Metaset-Dialog nutzt denselben Blick, damit du Sets schneller findest.
+- Metaset-Verwaltung erlaubt Löschen mit Ersetzen-Optionen oder Reset auf Default, vergibt neue Namen automatisch und aktualisiert Builder/Configs sauber.
+- HSFR-Saves können jetzt eine Markdown-Notiz enthalten, die beim Laden sofort erscheint; Drag & Drop funktioniert überall mit Overlay und Copy/Paste übernimmt die Notiz.
+
+## v0.8.5 — 2025-08-29
+English:
+- Roll badges now split Min and Max: click sets 1–5 required rolls (green) and Shift+click caps 0–5 allowed rolls (red); Max = 0 forbids that substat and generated rules respect both limits.
+- Rarity "Any" no longer assumes a Mythical pre-roll by default—the builder only adds the fifth roll when your thresholds demand it and hides combinations that can never reach the mins.
+- Substat selectors stay put and preview their badge on hover, so locks and roll states are visible before you click.
+
+Deutsch:
+- Roll-Badges trennen jetzt Minimum und Maximum: Klick setzt 1–5 Pflichtwürfe (grün) und Shift+Klick begrenzt 0–5 zulässige Würfe (rot); Max = 0 sperrt den Substat und die Regeln beachten beide Grenzen.
+- Seltenheit "Beliebig" geht nicht mehr automatisch von einem mythischen Vorab-Wurf aus – der Builder ergänzt den fünften Wurf nur, wenn deine Schwellen ihn brauchen, und blendet unerreichbare Kombinationen aus.
+- Die Substat-Auswahl bleibt stabil und zeigt das Badge beim Hover vorab, sodass du Locks und Roll-Zustände vor dem Klick siehst.
+
+## v0.8.0 — 2025-08-27
+English:
+- Config chips now have right-click controls: duplicate, move to the top/bottom, copy a single config, or use the chip area menu to copy the entire HSFR or paste into an empty list. Manual copy/paste dialogs appear automatically when the browser blocks clipboard access.
+- Copy All and Save now include version, metasets, minima, and the All (Explicit) toggle, and loading normalizes older exports while keeping wildcard roll targets and roll limits inside 0–5 so HSFRs round-trip safely.
+- Default substat chip colors were retuned to a brighter, higher-contrast palette that lines up with Raid’s stat colors and stays readable in the dark theme.
+
+Deutsch:
+- Konfig-Chips bieten jetzt per Rechtsklick Duplizieren, ganz nach oben/unten verschieben und Einzelkopie; der Chipbereich hat ein Menü für „Alles kopieren (.hsfr)“ oder Einfügen, auch wenn noch keine Regeln existieren. Fallback-Dialoge springen ein, sobald der Browser den Clipboard-Zugriff sperrt.
+- „Alles kopieren“ und Speichern schreiben Version, Metasets, Minima sowie den All-(Explicit)-Schalter mit, und beim Laden werden alte Exporte normalisiert, behalten aber Wildcard-Rollziele und Roll-Grenzen zwischen 0 und 5, sodass HSFR-Dateien zuverlässig zurückkehren.
+- Die Standardfarben der Substat-Chips wurden auf eine hellere, kontrastreichere Palette umgestellt, die zu den Raid-Statfarben passt und im Dark-Theme besser lesbar ist.
+
+## v0.7.5 — 2025-08-27
+English:
+- Roll Strategy now includes an Auto mode (and is the default) that switches between Strict and Potential as soon as you add numeric roll badges, so you no longer have to retoggle once items get circled.
+- The builder cleans up config chips and summaries: the help icon lives next to Roll Strategy, and list entries hide "Any" rank/rarity and the old Required/Potential flags so you only see the filters you set.
+- Mythical gear counts its level-0 pre-roll in both Strict and Potential math, letting SPD(5) and similar badges evaluate correctly and matching the Count Rolls switch (From vs All).
+- Potential preview rows stay deduplicated after a target becomes feasible, so each strict row appears once even when progress rows remain.
+- Added the default metaset "Accessoires - Special" to quickly target the unique accessory set IDs without hand-picking each one.
+
+Deutsch:
+- Die Roll-Strategie hat jetzt einen Auto-Modus (Standard), der zwischen Streng und Potenzial wechselt, sobald du numerische Roll-Badges setzt – manuelles Umstellen entfällt.
+- Der Builder räumt die Konfig-Kacheln auf: Das Hilfe-Icon sitzt direkt am Roll-Strategie-Label, und in der Liste verschwinden "Beliebig"-Rank/Rarity sowie die alten Required/Potential-Kürzel.
+- Mythische Ausrüstung zählt den Vorab-Roll auf Stufe 0 nun korrekt in Streng- und Potenzial-Berechnungen, sodass SPD(5) und Co. passend zum Count-Rolls-Schalter geprüft werden.
+- Potenzial-Vorschauen enthalten keine doppelten Zeilen mehr, wenn ein Ziel erreicht ist – die strenge Zeile erscheint nur einmal neben den Fortschrittsreihen.
+- Neu dabei ist das Standard-Metaset "Accessoires - Special", damit du die speziellen Zubehör-Sets ohne Einzelwahl aktivieren kannst.
+
+## v0.7.1 — 2025-08-26
+English:
+- Builder now loads curated metaset presets for speed, nuker, so you can slot popular set bundles without building them from scratch.
+
+Deutsch:
+- Der Builder bringt jetzt kuratierte Metaset-Vorlagen für Speed-, Nuker-, Support- und Tank-Setups mit, damit du beliebte Set-Bündel ohne Eigenbau nutzen kannst.
+
+## v0.7.0 — 2025-08-26
+English:
+- `Evaluate From` adds an `Any` option (automatically sets Roll Strategy to Off) so you can demand substats at every level; level headings now show 0–3, 4–7, etc., and exports drop the level gate when you pick Any.
+- Potential strategy keeps the strict row plus any catch-up rows once badge targets are feasible and lets leftover rolls land on untargeted substats, so promising items stay eligible until they can finish at 16.
+- Roll badges now respond to right-click by stepping backward through ★/0–5, making it faster to undo overshoots while adjusting minimum rolls.
+- A new info popover beside Roll Strategy walks through Count Rolls, Evaluate From, Strategy, and Required with an example so you can see how the controls interact at a glance.
+- Merged Preview uses wider columns, larger fonts, and synchronized heights on ultra-wide layouts, making large exports easier to scan.
+
+Deutsch:
+- `Evaluate From` bietet jetzt die Auswahl „Any“ (stellt Roll Strategy automatisch auf Off), damit du Substats auf jedem Level verlangen kannst; Levelanzeigen zeigen 0–3, 4–7 usw., und der Export verzichtet dabei auf eine Level-Grenze.
+- Die Strategie „Potential“ behält nach erreichbarer Badge-Zielsetzung die strikte Zeile plus alle nachholbaren Fortschrittszeilen bei und lässt Restwürfe auf ungezielte Substats fallen, sodass aussichtsreiche Items bis Level 16 erhalten bleiben.
+- Roll-Badges lassen sich per Rechtsklick rückwärts durch ★/0–5 schalten, wodurch sich Fehleingaben beim Einstellen der Mindestwürfe schneller korrigieren lassen.
+- Ein neues Info-Popup neben Roll Strategy erklärt Count Rolls, Evaluate From, Strategy und Required samt Beispiel, damit du das Zusammenspiel der Regler sofort siehst.
+- Die Merged Preview nutzt breitere Spalten, größere Schrift und gleicht auf sehr breiten Monitoren die Höhe mit dem Builder ab, sodass große Exporte besser lesbar sind.
+
+## v0.6.1 — 2025-08-25
+English:
+- Builder progress now autosaves: configs, metasets, minima, and the “All (Explicit)” toggle are stored locally with an integrity check, the app offers to restore them on launch, and your color or column tweaks stick between visits.
+- Substat roll badges picked up a star wildcard and sturdier minimum logic, so Strict/Potential enforce “at least N rolls” as soon as that level is feasible and single-stat keeps like SPD≥1 behave the way you expect.
+- The merged preview table gained a Manage Colors dialog, persistent column menu (auto-fit widths, wrap toggle), and virtualization with a “Showing X–Y of Z” readout so giant sell files stay readable and fast.
+- On wide monitors the builder and preview panes sit side-by-side with matched heights, and each section keeps its helper copy inline, trimming wasted space.
+
+Deutsch:
+- Der Builder speichert deine Sitzung jetzt automatisch lokal (Konfigs, Metasets, Minima und der Schalter „All (Explicit)“) und bietet beim Start eine Wiederherstellung an; Farb- und Tabelleneinstellungen bleiben ebenfalls erhalten.
+- Substat-Badges haben ein Stern-Wildcard und eine robustere Mindestlogik bekommen, sodass Streng/Potenzial „mindestens N Würfe“ ab dem ersten möglichen Level durchsetzen und Einzel-Checks wie SPD≥1 verlässlich greifen.
+- Die Merged Preview erhielt einen „Manage Colors…“-Dialog, ein dauerhaftes Spaltenmenü (Auto-Fit, Zeilenumbruch) und Virtualisierung samt „X–Y von Z“-Anzeige, wodurch auch große Sellfiles lesbar und schnell bleiben.
+- Auf breiten Monitoren stehen Builder und Vorschau jetzt nebeneinander mit abgestimmter Höhe, und die Abschnittstitel führen ihre Hilfetexte inline, sodass weniger Platz verloren geht.
+
+## v0.5.0 — 2025-08-25
+English:
+- Create Keep/Sell configs with auto rarity math, milestone windows, slot/faction/set filters, multi-main picks, and per-substat roll controls (locks, min/upper limits, wildcard targets) so the export mirrors Raid's upgrade rules.
+- Reuse named metasets for gear sets — search, icons, context menus, conflict resolution, and default groups keep builder picks and saved configs in sync.
+- Preview everything before export: merged Sellfile table with color-coded chips, duplicate warnings, filters, and a Rule Tester; Final Sell remainder modes cover the items your Keep configs skip.
+- Quality-of-life everywhere: drag & drop HSF/HSFC and localization files, autosave + restore, config notes, copy/paste sharing, tutorial & help overlays, customizable substat colors, and one-click deduped exports.
+
+Deutsch:
+- Erstelle Keep/Sell-Konfigs mit automatischer Seltenheitsberechnung, Meilenstein-Fenstern, Slot-/Fraktions-/Set-Filtern, Multi-Hauptattributen und Substat-Rollkontrollen (Sperren, Mindest-/Obergrenzen, Wildcards), damit der Export die Aufwertungsregeln von Raid exakt widerspiegelt.
+- Gruppiere Sets als benannte Metasets – Suche, Icons, Kontextmenüs, Konfliktauflösungen und Standardgruppen halten Builder-Auswahl und gespeicherte Konfigs synchron.
+- Vorschau vor dem Export: Zusammengeführte Sellfile-Tabelle mit farbcodierten Chips, Duplikat-Warnungen, Filtern und Rule Tester; Final-Sell-Restmodi fangen alles ab, was deine Keep-Konfigs offenlassen.
+- Komfortfunktionen überall: Drag & Drop für HSF/HSFC und Lokalisierungen, Autosave + Wiederherstellung, Config-Notizen, Copy/Paste-Sharing, Tutorial- und Hilfe-Overlays, anpassbare Substat-Farben und ein Klick für deduplizierte Exporte.
