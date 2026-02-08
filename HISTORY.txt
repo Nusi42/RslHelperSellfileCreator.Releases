@@ -1,6 +1,23 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.15 — 2026-02-09
+English:
+- Logic Hub adds a `Dungeon Drops` simulator: pick dungeon, stage, and mode (Snapshot vs Level-up) to estimate how many drops your current Sellfile keeps, with event dungeon support, boosted set weights, and a +16 summary view.
+- Dungeon Drops tooltips go deeper: hover for slot/main breakdowns and generic substat odds (1-4 specific substats), and the simulator now reuses results so only the dungeons you change rerun while others keep running.
+- Keep Uniques matching is more flexible: Any/All/Per Substat matching with weights (Any/All), selections are filtered by slot/main, and Anticipate mode now covers empty scope groups so gaps still get protected.
+- Keep Uniques QoL: accessory `No Gear-Set` is handled consistently (Spider icon, only when accessories are in scope), rule order is stable in UI/exports, and the tab adds rule action menus plus readable clipboard copy/paste.
+- Gear DB update history is clearer: toasts/history now show compact diff previews with add/remove/update counts and timestamps, and you can hide the update toast from the history menu.
+- Builder guardrails improved: impossible substats are pruned by slot/main and configs with no valid substats emit no rules; gear DB imports now aggregate substat totals correctly.
+
+Deutsch:
+- Logic Hub hat jetzt einen `Dungeon Drops`-Simulator: Dungeon, Stufe und Modus (Snapshot vs Aufwertung) waehlen, um zu sehen, wie viele Drops dein aktuelles Sellfile behaelt, inkl. Event-Dungeon, Boosted-Set-Gewichte und +16-Zusammenfassung.
+- Dungeon-Drops-Tooltips gehen tiefer: Hover zeigt Slot/Main-Breakdown und generische Substat-Chancen (1-4 konkrete Substats), und der Simulator nutzt Ergebnisse wieder, sodass nur geaenderte Dungeons neu laufen waehrend die anderen weiterlaufen.
+- Keep Uniques Matching ist flexibler: Beliebig/Alle/Pro Substat mit Gewichten (Beliebig/Alle), Auswahl wird nach Slot/Main gefiltert, und der Anticipate-Modus deckt jetzt auch leere Scope-Gruppen ab, damit Luecken geschuetzt bleiben.
+- Keep Uniques QoL: Zubehoer `No Gear-Set` wird konsistent behandelt (Spider-Icon, nur wenn Zubehoer im Scope ist), Regel-Reihenfolge ist in UI/Export stabil, plus Aktionsmenue und lesbares Clipboard Copy/Paste.
+- Gear-DB-Update-Historie ist klarer: Toasts/History zeigen kompakte Diff-Previews mit Add/Remove/Update-Zahlen und Zeitstempel, und das Update-Toast laesst sich im History-Menue ausblenden.
+- Builder-Guardrails verbessert: Unmoegliche Substats werden nach Slot/Main entfernt und Configs ohne gueltige Substats erzeugen keine Regeln; Gear-DB-Importe fassen Substat-Totale jetzt korrekt zusammen.
+
 ## v0.9.14 — 2026-01-26
 English:
 - Auto-apply now flushes before you move or reorder configs, so edits stay with the config you just moved.
