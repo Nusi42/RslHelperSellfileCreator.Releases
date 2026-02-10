@@ -1,6 +1,21 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.16 — 2026-02-10
+English:
+- Dungeon Drops adds a refresh button so you can rerun every dungeon without changing inputs.
+- Collapsed Dungeon Drops rows can rotate the summary level (+0/+4/+8/+12/+16) forward or backward.
+- Dungeon Drops percentages now use dynamic precision based on the run count, and the generic substat-odds tooltip is wider so tiny percentages stay readable.
+- Min Required Rolls = 0 now truly means "no roll requirements": Auto with no roll mins resolves to Any, and manual zero suppresses roll-based thresholds so rules stay at base values.
+- Champion portraits were updated, including new icons.
+
+Deutsch:
+- Dungeon Drops hat jetzt einen Refresh-Button, damit du alle Dungeons neu simulierst ohne die Eingaben zu aendern.
+- Eingeklappte Dungeon-Drops-Zeilen lassen sich zwischen +0/+4/+8/+12/+16 vorwaerts oder rueckwaerts durchschalten.
+- Dungeon-Drops-Prozente nutzen jetzt dynamische Dezimalstellen basierend auf der Run-Anzahl, und das generische Substat-Odds-Tooltip ist breiter damit winzige Prozentwerte lesbar bleiben.
+- Min Required Rolls = 0 bedeutet jetzt wirklich "keine Roll-Anforderungen": Auto ohne Roll-Mins bleibt bei Any, und manuelles 0 unterdrueckt rollbasierte Schwellwerte damit Regeln auf Basiswerten bleiben.
+- Champion-Portraets wurden aktualisiert, inklusive neuer Icons.
+
 ## v0.9.15 — 2026-02-09
 English:
 - Logic Hub adds a `Dungeon Drops` simulator: pick dungeon, stage, and mode (Snapshot vs Level-up) to estimate how many drops your current Sellfile keeps, with event dungeon support, boosted set weights, and a +16 summary view.
