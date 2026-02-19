@@ -1,6 +1,17 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.17 — 2026-02-20
+English:
+- *Rule Tester now shows a safeguard improvement-chance overlay with tooltip details*, and you can sort by Improvement Chance to surface gear with the best upgrade outlook first.
+- The app now consistently uses `Recipes` and `Safeguards` in the UI, docs, and shipped examples, and recipe files are now `.sfr` by default.
+- Safeguards got major control upgrades: new ignore toggles let you skip already-protected items or equipped items (collection/vault).
+
+Deutsch:
+- Die App nutzt jetzt durchgaengig `Rezepte` und `Schutzmassnahmen` in UI, Doku und Beispielen, und Rezept-Dateien sind standardmaessig `.sfr`.
+- *Im Rule Tester gibt es jetzt ein Overlay fuer die Verbesserungschance mit Tooltip-Details*, und du kannst nach Verbesserungschance sortieren, um Gear mit der besten Upgrade-Perspektive zuerst zu sehen.
+- Schutzmassnahmen haben neue Steuerungen: Mit Ignore-Toggles kannst du bereits geschuetzte oder ausgeruestete Items (Sammlung/Hoehle) ausklammern.
+
 ## v0.9.16 — 2026-02-10
 English:
 - Dungeon Drops adds a refresh button so you can rerun every dungeon without changing inputs.
@@ -135,7 +146,7 @@ Deutsch:
 ## v0.9.7 — 2025-10-06
 ## English
 - Config chips gained a Draft mode (produces no rules) so you can drop labeled separators; duplicates are flagged, chips can be limited to whatever the preview filter keeps, and the bundled sample HSFC/HSF were refreshed to use the new structure.
-- Notes can display config chips or metasets by adding `<!-- configs:... -->` / `<!-- configs-re:"..." -->`; the editor adds insert buttons so shared projects stay self-explanatory.
+- Notes can display config chips or metasets by adding `<!-- recipes:... -->` / `<!-- recipes-re:"..." -->`; the editor adds insert buttons so shared projects stay self-explanatory.
 - Builder clean-up: removed the `Any` buttons from Slots/Mainstats/Substats in favour of clear icons, matching how other pickers work; reset buttons now say `Reset Config`.
 - Logic Hub keeps the same controls but the wording and inline hints now explain what turning it on does and why all sets are listed explicitly; the preview badge highlights when the export hover suggests enabling it.
 - Visual pass: slot art now uses the RSL Helper icons, faction icons show up on chips, filters, and in the Rule Tester, and localisation strings were updated in every shipped language.
@@ -143,7 +154,7 @@ Deutsch:
 
 ## Deutsch
 - Config-Chips haben jetzt einen Draft-Modus (erzeugt keine Regeln), damit sich beschriftete Trenner anlegen lassen; Duplikate werden markiert, Chips können auf die Regeln aus der Vorschau gefiltert werden, und die beigelegten Beispiel-HSFC/HSF sind entsprechend aktualisiert.
-- Notizen können Config-Chips oder Metaset-Listen anzeigen (`<!-- configs:... -->` bzw. `<!-- configs-re:"..." -->`); der Editor bringt Einfüge-Schaltflächen mit, damit geteilte Projekte den Kontext gleich mitliefern.
+- Notizen können Config-Chips oder Metaset-Listen anzeigen (`<!-- recipes:... -->` bzw. `<!-- recipes-re:"..." -->`); der Editor bringt Einfüge-Schaltflächen mit, damit geteilte Projekte den Kontext gleich mitliefern.
 - Builder-Aufräumarbeiten: Die `Any`-Schaltflächen bei Slots/Mainstats/Substats sind zugunsten von Löschen-Icons verschwunden und entsprechen jetzt den anderen Auswahlfeldern; die Reset-Schaltfläche heißt nun `Reset Config`.
 - Final-Sell-Dialog: gleiche Steuerung, aber mit klareren Texten und Hinweisen darauf, warum alle Sets explizit gelistet werden; das Badge in der Vorschau hebt sich beim Export-Hover hervor, wenn Final Sell deaktiviert ist.
 - Optischer Durchgang: Slot-Grafiken stammen jetzt aus RSL Helper, Fraktions-Icons tauchen auf Chips, in Filtern und im Rule Tester auf, und alle Sprachen wurden textlich angepasst.
