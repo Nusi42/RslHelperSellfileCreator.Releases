@@ -1,6 +1,15 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.18 — 2026-02-20
+English:
+- Updated for updated Swift Parry and Deflection.
+- Bundled sample sellfiles were refreshed so Swift Parry and Deflection are now handled out of the box in the Lategame and Endgame presets.
+
+Deutsch:
+- Für das aktualisierte Swift Parry and Deflection aktualisiert.
+- Die mitgelieferten Beispiel-Sellfiles wurden aktualisiert: Swift Parry und Deflection sind jetzt in den Lategame- und Endgame-Presets direkt abgedeckt.
+
 ## v0.9.17 — 2026-02-20
 English:
 - *Rule Tester now shows a safeguard improvement-chance overlay with tooltip details*, and you can sort by Improvement Chance to surface gear with the best upgrade outlook first.
