@@ -8,6 +8,7 @@ Build, preview, and export sell rules for RSL Helper with a simple UI.
 - Build rules and save them: create recipes and keep a library you can reuse.
 - Sellfile Preview toggle: flip between the Rules table and the Rule Tester table right from the header. Counts/outcome chips adapt (Keep/Sell for rules, Matched/No Match for tester) and the filters follow whichever table you pick.
 - Drag & drop or Load button: drop `.sfr`, `.hsf`, or `.db` anywhere (overlay confirms) or click “Load RSL Helper Sellfile”. Both options behave the same — `.sfr` replaces your builder, `.hsf` layers on the optional base sellfile, and `.db` dumps go straight into the Rule Tester queue without touching the builder.
+- Hold `Shift` while opening/loading an `.sfr` (file picker or drag/drop) to open an additional import dialog where you can choose Recipes, Note, Metasets, and Safeguards.
 - Metasets: name groups of gear sets (e.g., Speed + Perception) and reuse them across rules.
 - One-click Export: export an HSF file (the RSL Helper Sellfile) ready for RSL Helper.
 - Logic Hub button (`Logic Hub`): open the dialog from the preview header to reach `Final Sell`, `Safeguards`, `Dungeon Drops`, and the Gear dialog (Logic Hub → Gear tab) from the same place. Load example gear, paste drops, or drag `%APPDATA%\\RslHelper\\Config`, then close the dialog and leave the preview toggle on whichever table you need — the tester queue stays visible without reopening.

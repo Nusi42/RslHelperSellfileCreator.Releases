@@ -1,6 +1,19 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.19 — 2026-02-22
+English:
+- Rule Tester and Safeguards got major polish: better card layout in compact grids, clearer mythic highlighting, keep/sell outcome background emphasis, unified summary chips, and safeguards-specific visibility defaults.
+- Tester ordering allow to sort by `Newest`.
+- Updated Recipes and Sellfiles to allow more control over gear to be ored.
+- Updated Recipes files with extended Safeguards for your account: We want to ensure that your likely best 16 or 32 items per artifact slot are not sold.
+
+Deutsch:
+- Rule Tester und Schutzmassnahmen wurden stark aufpoliert: besseres Kartenlayout in kompakten Grids, klarere Mythisch-Hervorhebung, Keep/Sell-Hintergrundmarkierung, vereinheitlichte Summary-Chips und safeguards-spezifische Sichtbarkeits-Defaults.
+- Im Tester ist kann man jetzt nache `Neuste` sortieren.
+- Rezepte and Sellfiles aktualisiert: Mehr Kontrolle über Gear das man erzen möchte.
+- Die Rezepte-Datei wurde um besondere Schutzmaßnahmen für euren Account erweitert: Wir versuchen sicher zu stellen, dass eure besten 16 oder 32 Artefakte pro Slot nicht verkauft werden.
+
 ## v0.9.18 — 2026-02-20
 English:
 - Updated for updated Swift Parry and Deflection.
