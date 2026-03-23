@@ -1,6 +1,108 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.20 — 2026-03-23
+English:
+- The "Rule Tester" is now called **Gear Inspector** throughout the app, all menus, tooltips, and every language; the "Logic Hub" button is now called **Tools**.
+- Safeguards now have their own full-featured builder mode in the builder column: toggle between Recipe Builder and Safeguard Builder, edit rules with the same collapsible-section UI (rank, rarity, faction, main stats, substats, slots, sets), and drag-and-drop chips to reorder them.
+- New **Beat Equipped ≥ N%** option on safeguard rules: a piece only qualifies if its weighted score beats at least 50 %, 75 %, or 100 % of your collection-equipped gear in the same slot, matched by the full rule filter (set, rank, rarity, main stat, faction) — no more easy floors from unrelated gear.
+- **Scaffold from Recipe**: one click in the Safeguards panel bootstraps a new safeguard rule from any existing recipe, pre-filling slot, sets, rank, rarity, faction, and main stat.
+- Builder sections (rank, rarity, faction, main stats, substats, slots, sets, level window, min rolls, min substats, milestones) are now individually collapsible; Ctrl+click or right-click the toggle to collapse or expand all at once.
+- The Min Level / Max Level toggles are replaced by a **level range slider** that snaps directly to the +0 / +4 / +8 / +12 / +16 milestones.
+- **Double-click any slot button** to select or deselect the entire Artefact group (6 slots) or Accessory group (3 slots) at once — works in the recipe builder, safeguard builder, and the Gear Inspector filter panel.
+- The note editor now **syntax-highlights** the recipe-overrides and config-options DSL with colored tokens for keywords, strings, operators, and stat names. The DSL also gains three new assignment fields — `slots=`, `substats=`, `mainstats=` — to replace an entire list in one line.
+- **Substat Targets** moved from a separate button into the Tools dialog as its own tab.
+- A new **Recipes on/off toggle** in the builder header lets you globally disable all recipes without deleting them, and gate the preview pipeline accordingly.
+- Safeguard chip summaries now show slot icons, colored stat names, set icons, Per Slot / Per Set / Per Faction / Per Main Stat prefix labels, and the required count inside the mode badge.
+- Filter button labels renamed: "Preview Recipes" → **Narrow**, "Recipe Filter" → **Selection** (sellfile view) or **By Match** (Gear Inspector view).
+- When viewing an imported HSF file, any recipe-index references that belong to a different SFR (not currently loaded) are shown in italics and are non-clickable, making it clear they cannot be edited here.
+- The guided tutorial was fully overhauled — new Safeguard and Early/Late comparison steps, redesigned Flex and Metasets sections — and localized into all 9 non-English languages.
+- The autosave/restore dialog now includes builder section collapse state in the View, Filter & Sort option; Gear Inspector sort preferences are no longer shown as a separate row.
+- Rule building is faster: only the recipe you just edited is rebuilt; unchanged recipes are reused.
+- Right-clicking **Reset** in the Safeguard Builder now offers **Save Local Settings as User Defaults** and **Reset to Factory Defaults**, matching the Recipe Builder's right-click menu.
+- Fixed: loading a new SFR file now immediately syncs the Safeguard Builder panel instead of showing stale content from the previous session.
+- Fixed: undo/redo no longer leaves the sellfile preview out of sync with the chip list after a selection change.
+- Fixed: custom gear added manually in the Gear Inspector now correctly matches its generated safeguard rules.
+- Fixed: duplicate recipes sharing identical settings now get the correct RecipeID in the rule cache instead of all appearing as Recipe #1.
+- Fixed: Dungeon Drops run estimates no longer drift upward during simulation progress.
+- Fixed: incompatible sets in the set selector are now shown disabled (greyed out) rather than hidden, matching recipe builder behavior.
+- **Companion context mode** in the Gear Inspector result filter: the four buttons (Keep / Sell / Scope / Unmatched) now work as independent toggles. Activating **Scope** (formerly "Matched") dims items that share the same set+slot with any sold piece so you can compare candidates in context; **Unmatched** (formerly "No Match") shows gear that no rule touches at all.
+- **Draggable splitter** between the builder and preview panels in side-by-side mode: grab the handle to resize both panes; double-click resets to 50/50; your preferred width is saved.
+- **Safeguard multi-edit**: select multiple safeguard rules to edit their shared fields at once; mixed values show a hatched visual overlay; keyboard shortcuts (Ctrl+A, copy/paste) work across both recipe and safeguard chip lists.
+- The **Action/Mode row** in both builders (Keep/Sell/mode in recipes; activation, count, and ignore chips in safeguards) is now a collapsible section; undo/redo buttons remain pinned in the header regardless.
+- Clicking a **safeguard chip** in the sell-file preview now scrolls the table to the matching safeguard block; the **Selection** filter in the preview also works for safeguard rules.
+- Add **`<!-- dungeon-simulator -->`** to your Note to display a live keep-chance table for Fire Knight, Dragon, and Ice Golem across three difficulty stages (N20/N25/H10) and two boost modes, showing keep-rates at +0/+4/+8/+12/+16.
+- A new **Midgame** sell-file preset is now bundled alongside Lategame and Endgame.
+- Shoutout to **Red Tuxedo** and **Red VII** who provided invaluable information to create the Midgame sellfile!
+- The note DSL gains two more override fields: **`gearsets=`** swaps or mutates the gear-set list, and **`metasets=`** swaps or mutates a metaset reference — both support `+`/`-` prefixes to add or remove entries without replacing the whole list.
+- The `wholeline` keyword in note cards is replaced by **`[columns=N]`** (e.g., `[columns=2]` makes a card twice as wide). Notes that used `wholeline` need to be updated to `columns=N`.
+- A bare **`<br>`** tag between recipe-override comment blocks in a Note forces the next card onto a new row without rendering any visible element.
+- Undo/Redo revisits are now **instant**: the app caches the last 10 computed pipeline states in memory, so stepping back to a state you already visited skips all recalculation.
+- Gear Inspector cards and summary chips now **animate** on data changes: newly appeared cards slide in, keep/sell outcome flips pulse with a color flash, and summary chips pulse when their group first appears — filter-switch navigation no longer triggers spurious animations.
+- The Gear DB update history now shows **change counts (added / removed / updated) as the primary headline** after the first import, with the running total as secondary, making it easier to spot what changed on each push.
+- When a **push endpoint** is configured, right-clicking the Push button shows an "Export to file" option that always downloads the sell-file locally, bypassing the configured endpoint.
+- **Safeguard improvement-chance** is now computed in the background worker instead of on the main thread — results appear faster and challengers are projected to +16 before ranking, giving a more realistic probability.
+- The live-streaming watcher (RSL Helper integration) has been updated and requires a current version of RSL Helper; the legacy connection protocol is no longer supported.
+- Fixed: safeguard **anticipate mode** now generates correct rank and rarity placeholder rules.
+- Fixed: **pasting a multi-recipe clipboard** that contained no safeguard data no longer silently clears your existing safeguard rules.
+- Fixed: changing the slot selection now **auto-removes any mainstat or substat** that is no longer valid for that slot, instead of leaving them stuck as selected-but-unclickable.
+- Fixed: the preview header now correctly shows the filtered rule count (X of Y) when the **Selection** filter is the only active filter.
+- Fixed: safeguard chip summaries no longer show "Per Faction" when the rule's slot selection contains no accessory slots.
+- The sort-weight popover in the Safeguard Builder now includes a **Candidate Rank List**: a scrollable ranked list of all gear candidates for the active rule, showing slot, set, faction, substat names with roll counts, a weighted score, and a kept/sold badge. The list is windowed around the quota cutoff so borderline pieces are immediately visible. Hover any row to preview the item card; click to jump straight to that artifact in the Gear Inspector. Mythical substats are highlighted with a red glow matching the Gear Inspector card style.
+- Gear Inspector cards gain a **Safeguard Rank chip** (center overlay): the item's rank among all candidates for the selected safeguard rule — green for kept, red for sold. Enable it with "Show Safeguard Rank" in the Gear Inspector grid context menu. A new **Sort by Safeguard Rank** option is also available so the most-at-risk pieces surface first.
+- Fixed: the **By Match: First** filter in the Gear Inspector now correctly identifies which safeguard rule first claims each item rather than checking the quota bucket, which can differ when an earlier rule already keeps the piece.
+- Fixed: clicking the **upgrade-chance overlay chip** on a Gear Inspector card now correctly navigates to the matching safeguard rule in the Safeguard Builder.
+
+Deutsch:
+- Der „Rule Tester" heißt jetzt überall **Gear Inspector** (alle Menüs, Tooltips und Sprachen); aus „Logic Hub" wird der **Tools**-Button.
+- Schutzmassnahmen haben jetzt einen eigenen vollwertigen Builder-Modus in der Builder-Spalte: zwischen Rezept-Builder und Schutz-Builder umschalten, Regeln mit derselben klappbaren Benutzeroberfläche bearbeiten (Rang, Seltenheit, Fraktion, Main-Stats, Substats, Slots, Sets) und Chips per Drag-and-drop neu anordnen.
+- Neue Option **Beat Equipped ≥ N%** für Schutzregeln: Ein Artefakt zählt nur dann als Kandidat, wenn sein gewichteter Substat-Score mindestens 50 %, 75 % oder 100 % der ausgerüsteten Sammlung im selben Slot schlägt – gefiltert nach dem vollständigen Regelfilter (Set, Rang, Seltenheit, Main-Stat, Fraktion).
+- **Scaffold from Recipe**: Ein Klick im Schutz-Panel baut aus einem vorhandenen Rezept sofort eine neue Schutzregel vor (Slot, Sets, Rang, Seltenheit, Fraktion und Main-Stat werden übernommen).
+- Builder-Sektionen (Rang, Seltenheit, Fraktion, Main-Stats, Substats, Slots, Sets, Levelbereich, Min. Rolls, Min. Substats, Meilensteine) lassen sich jetzt einzeln ein- und ausklappen; Strg+Klick oder Rechtsklick auf das Pfeil-Icon klappt alle auf einmal.
+- Die Min-Level-/Max-Level-Schalter sind durch einen **Levelbereich-Slider** ersetzt, der direkt auf die Meilensteine +0 / +4 / +8 / +12 / +16 einrastet.
+- **Doppelklick auf einen Slot-Button** wählt oder deaktiviert die gesamte Artefakt-Gruppe (6 Slots) oder Accessoire-Gruppe (3 Slots) auf einmal – funktioniert im Rezept-Builder, Schutz-Builder und im Gear-Inspector-Filter.
+- Der Notizeneditor **hebt die Syntax des recipe-overrides- und config-options-DSL farbig hervor** (Schlüsselwörter, Strings, Operatoren, Stat-Namen). Das DSL erhält außerdem drei neue Zuweisungsfelder — `slots=`, `substats=`, `mainstats=` — um eine ganze Liste in einer Zeile zu ersetzen.
+- **Substat-Ziele** ist jetzt ein eigener Tab im Tools-Dialog statt einem separaten Button.
+- Ein neuer **Rezepte an/aus-Schalter** im Builder-Header deaktiviert global alle Rezepte (ohne sie zu löschen) und unterbricht die Vorschau-Pipeline entsprechend.
+- Schutz-Chip-Zusammenfassungen zeigen jetzt Slot-Icons, farbige Stat-Namen, Set-Icons, Präfix-Label „Pro Slot / Pro Set / Pro Fraktion / Pro Main-Stat" sowie die Mindestanzahl im Modusbadge.
+- Filter-Schaltflächen umbenannt: „Preview Recipes" → **Narrow**, „Recipe Filter" → **Selection** (Sellfile-Ansicht) oder **By Match** (Gear Inspector).
+- Beim Betrachten einer importierten HSF-Datei werden Rezept-Index-Referenzen aus einer anderen SFR (die nicht geladen ist) kursiv und nicht anklickbar dargestellt.
+- Das Tutorial wurde komplett überarbeitet – neue Schutz- und Early/Late-Vergleichsschritte, überarbeitete Flex- und Metaset-Sektionen – und in alle 9 nicht-englischen Sprachen übersetzt.
+- Der Autosave/Wiederherstellen-Dialog enthält jetzt den Builder-Sektions-Klappstatus in der Option „Ansicht, Filter & Sort"; Gear-Inspector-Sortierung wird nicht mehr als eigene Zeile angeboten.
+- Regelaufbau ist schneller: Nur das gerade bearbeitete Rezept wird neu berechnet; unveränderte Rezepte werden wiederverwendet.
+- Behoben: Das Laden einer neuen SFR-Datei synchronisiert jetzt sofort den Schutz-Builder, statt veraltete Inhalte der letzten Sitzung anzuzeigen.
+- Behoben: Undo/Redo lässt die Sellfile-Vorschau nicht mehr aus dem Takt geraten, nachdem sich die Auswahl geändert hat.
+- Behoben: Manuell im Gear Inspector hinzugefügtes Custom-Gear trifft jetzt korrekt auf seine generierten Schutzregeln zu.
+- Behoben: Doppelte Rezepte mit identischen Einstellungen erhalten jetzt die korrekte RecipeID im Regel-Cache, statt alle als Rezept #1 zu erscheinen.
+- Behoben: Dungeon-Drops-Laufschätzungen driften während der Simulation nicht mehr nach oben.
+- Behoben: Inkompatible Sets im Set-Selektor werden jetzt ausgegraut dargestellt statt versteckt.
+- **Begleit-Kontext-Modus** im Gear-Inspector-Ergebnisfilter: Die vier Schaltflächen (Keep / Sell / Bereich / Unmatched) funktionieren jetzt als unabhängige Schalter. **Bereich** (früher „Treffer") blendet Items aus demselben Set+Slot wie ein Verkaufs-Item gedimmt ein, damit du Kandidaten direkt vergleichen kannst; **Unmatched** (früher „Kein Treffer") zeigt Gear, das von keiner Regel erfasst wird.
+- **Ziehbarer Teiler** zwischen Builder- und Vorschau-Spalte im Side-by-Side-Modus: Teiler ziehen, um beide Bereiche zu skalieren; Doppelklick stellt 50/50 wieder her; die gewählte Breite wird gespeichert.
+- **Mehrfachbearbeitung für Schutzregeln**: Mehrere Schutzregeln auswählen und gemeinsame Felder auf einmal bearbeiten; gemischte Werte werden mit einem Schraffur-Overlay angezeigt; Tastaturkürzel (Strg+A, Kopieren/Einfügen) gelten für Rezept- und Schutzregel-Chips gleichermaßen.
+- Die **Aktions-/Modus-Zeile** in beiden Buildern (Keep/Sell/Modus im Rezept-Builder; Aktivierung, Anzahl und Ignorieren-Chips im Schutz-Builder) ist jetzt eine klappbare Sektion; Undo/Redo-Schaltflächen bleiben im Header sichtbar.
+- Ein Klick auf einen **Schutzregel-Chip** in der Vorschau scrollt die Sellfile-Tabelle zum passenden Schutzregel-Block; der **Selection**-Filter in der Vorschau wirkt jetzt auch für Schutzregeln.
+- **`<!-- dungeon-simulator -->`** in deiner Notiz zeigt eine Live-Keep-Chance-Tabelle für Feuerritter, Drachen und Eisgolem auf drei Schwierigkeitsstufen (N20/N25/H10) und zwei Boost-Modi, mit Keep-Raten bei +0/+4/+8/+12/+16.
+- Ein neues **Midgame**-Sellfile-Preset ist jetzt neben Lategame und Endgame enthalten.
+- Ein herzliches Danke an **Red Tuxedo** und **Red VII** die mir unersätzliche Information zum Erstellen des Midgame Sellfiles gegeben haben!
+- Das Notiz-DSL erhält zwei weitere Override-Felder: **`gearsets=`** tauscht oder mutiert die Gear-Set-Liste, **`metasets=`** tauscht oder mutiert einen Metaset-Verweis – beide unterstützen `+`/`-`-Präfixe zum Hinzufügen oder Entfernen ohne die ganze Liste zu ersetzen.
+- Das Schlüsselwort `wholeline` in Notizkarten ist durch **`[columns=N]`** ersetzt (z. B. `[columns=2]` macht eine Karte doppelt so breit). Notizen, die `wholeline` verwenden, müssen auf `columns=N` aktualisiert werden.
+- Ein einfaches **`<br>`**-Tag zwischen Rezept-Override-Kommentarblöcken in einer Notiz zwingt die nächste Karte auf eine neue Zeile, ohne ein sichtbares Element zu rendern.
+- Undo/Redo-Revisiten sind jetzt **sofort**: Die App speichert die letzten 10 berechneten Pipeline-Zustände im Speicher – ein Schritt zurück zu einem bereits besuchten Zustand überspringt alle Berechnungen.
+- Gear-Inspector-Karten und Zusammenfassungs-Chips **animieren** jetzt bei Datenänderungen: Neue Karten gleiten ein, Keep/Sell-Ergebniswechsel blitzen mit einem Farb-Pulse auf, Chips pulsen beim ersten Erscheinen ihrer Gruppe – Filterwechsel lösen keine Animations-Flut mehr aus.
+- Die Gear-DB-Update-Historie zeigt nach dem Erstimport **Änderungszahlen (hinzugefügt / entfernt / aktualisiert) als Hauptüberschrift**, die Gesamtzahl rückt in die zweite Zeile.
+- Wenn ein **Push-Endpunkt** konfiguriert ist, bietet das Rechtsklick-Menü am Push-Button eine „Als Datei exportieren"-Option, die das Sellfile lokal herunterlädt statt es zum Endpunkt zu senden.
+- Die **Schutzregel-Verbesserungschance** wird jetzt im Hintergrund-Worker berechnet statt im Haupt-Thread – Ergebnisse erscheinen schneller und Konkurrenten werden vor dem Ranking auf +16 hochgerechnet, was eine realistischere Wahrscheinlichkeit ergibt.
+- Der Live-Streaming-Watcher (RSL-Helper-Integration) wurde aktualisiert und benötigt eine aktuelle Version von RSL Helper; das ältere Verbindungsprotokoll wird nicht mehr unterstützt.
+- Behoben: Der **Antizipationsmodus** von Schutzregeln erzeugt jetzt korrekte Rang- und Seltenheits-Platzhalterregeln.
+- Behoben: **Einfügen eines Mehrfach-Rezept-Clipboards** ohne Schutzdaten löscht deine bestehenden Schutzregeln nicht mehr stillschweigend.
+- Behoben: Ein Slot-Wechsel **entfernt jetzt automatisch** alle Mainstats oder Substats, die für den neuen Slot ungültig sind, statt sie als ausgewählt-aber-nicht-anklickbar hängen zu lassen.
+- Behoben: Die Vorschau-Kopfzeile zeigt jetzt korrekt die gefilterte Regelanzahl (X von Y) an, wenn der **Selection**-Filter als einziger aktiv ist.
+- Behoben: Schutzregel-Chip-Zusammenfassungen zeigen nicht mehr „Pro Fraktion" an, wenn die Slot-Auswahl der Regel keine Accessoire-Slots enthält.
+- Das Gewichtungs-Popover im Schutz-Builder enthält jetzt eine **Kandidaten-Rangliste**: eine scrollbare sortierte Liste aller Gear-Kandidaten für die aktive Schutzregel, mit Slot, Set, Fraktion, Substat-Namen und Roll-Anzahl, einem gewichteten Score und einem Kept/Sold-Badge. Die Liste ist rund um den Quota-Cutoff fensteriert, damit Grenzfälle sofort sichtbar sind. Hover über eine Zeile zeigt eine Vorschaukarte; ein Klick springt direkt zu diesem Item im Gear Inspector. Mythische Substats sind mit einem roten Leuchten hervorgehoben.
+- Gear-Inspector-Karten erhalten einen **Schutzregel-Rang-Chip** (mittleres Overlay): zeigt den Rang des Items unter den Kandidaten der ausgewählten Schutzregel — grün für behalten, rot für verkauft. Aktivieren über „Schutzregel-Rang anzeigen" im Gear-Inspector-Kontextmenü. Außerdem lässt sich jetzt nach **Schutzregel-Rang sortieren**, damit gefährdete Items zuerst erscheinen.
+- Behoben: Der **By Match: First**-Filter im Gear Inspector ermittelt jetzt korrekt, welche Schutzregel ein Item zuerst beansprucht, statt den Schutz-Bucket zu prüfen (der sich unterscheiden kann, wenn eine frühere Regel das Item bereits behält).
+- Behoben: Ein Klick auf den **Verbesserungschance-Overlay-Chip** auf einer Gear-Inspector-Karte springt jetzt korrekt zur passenden Schutzregel im Schutz-Builder.
+
 ## v0.9.19 — 2026-02-22
 English:
 - Rule Tester and Safeguards got major polish: better card layout in compact grids, clearer mythic highlighting, keep/sell outcome background emphasis, unified summary chips, and safeguards-specific visibility defaults.

@@ -6,13 +6,13 @@ Build, preview, and export sell rules for RSL Helper with a simple UI.
 
 ## Features
 - Build rules and save them: create recipes and keep a library you can reuse.
-- Sellfile Preview toggle: flip between the Rules table and the Rule Tester table right from the header. Counts/outcome chips adapt (Keep/Sell for rules, Matched/No Match for tester) and the filters follow whichever table you pick.
-- Drag & drop or Load button: drop `.sfr`, `.hsf`, or `.db` anywhere (overlay confirms) or click “Load RSL Helper Sellfile”. Both options behave the same — `.sfr` replaces your builder, `.hsf` layers on the optional base sellfile, and `.db` dumps go straight into the Rule Tester queue without touching the builder.
+- Sellfile Preview toggle: flip between the Rules table and the Gear Inspector table right from the header. Counts/outcome chips adapt (Keep/Sell for rules, Keep / Sell / Scope / Unmatched for Gear Inspector) and the filters follow whichever table you pick.
+- Drag & drop or Load button: drop `.sfr`, `.hsf`, or `.db` anywhere (overlay confirms) or click “Load RSL Helper Sellfile”. Both options behave the same — `.sfr` replaces your builder, `.hsf` layers on the optional base sellfile, and `.db` dumps go straight into the Gear Inspector queue without touching the builder.
 - Hold `Shift` while opening/loading an `.sfr` (file picker or drag/drop) to open an additional import dialog where you can choose Recipes, Note, Metasets, and Safeguards.
 - Metasets: name groups of gear sets (e.g., Speed + Perception) and reuse them across rules.
 - One-click Export: export an HSF file (the RSL Helper Sellfile) ready for RSL Helper.
-- Logic Hub button (`Logic Hub`): open the dialog from the preview header to reach `Final Sell`, `Safeguards`, `Dungeon Drops`, and the Gear dialog (Logic Hub → Gear tab) from the same place. Load example gear, paste drops, or drag `%APPDATA%\\RslHelper\\Config`, then close the dialog and leave the preview toggle on whichever table you need — the tester queue stays visible without reopening.
-- Safeguards tab: define combinations you never want to lose, and the scanner injects keep rules automatically whenever your recipes plus your current active Sell rules would sell every piece in that combination.
+- `Tools` button: open the dialog from the preview header to reach `Final Sell`, `Substat Targets`, `Dungeon Drops`, and the Gear Inspector from the same place. Load example gear, paste drops, or drag `%APPDATA%\\RslHelper\\Config`, then close the dialog and leave the preview toggle on whichever table you need — the Gear Inspector queue stays visible without reopening.
+- Safeguards builder mode: define combinations you never want to lose, and the scanner injects keep rules automatically whenever your recipes plus your current active Sell rules would sell every piece in that combination.
 
 ## How To Use
 
@@ -26,8 +26,8 @@ Build, preview, and export sell rules for RSL Helper with a simple UI.
 - Click “Add as new recipe” to save it; then click the saved entry in the list below the builder to select it for editing and update it.
 - Load/Save: Use “Load Recipes” and “Save Recipes” to reuse your custom rules. These actions save everything needed to rebuild what you see in the preview into a recipe file.
 - Reset/Insert/Apply menus: Right-click Reset, Insert as recipe, or Apply as recipe to open the shared options menu. Save your current builder state as the default template, jump back to the factory defaults, enable Auto reset after Insert (clear the builder immediately after inserting a recipe), or enable Auto apply to selected recipe (push edits into the highlighted recipe automatically after ~400 ms of inactivity). Auto reset and Auto apply cannot be on at the same time—turning one on turns the other off—and both preferences persist between sessions.
-- Note: Click “Add Note…” (or “Edit Note…”) to attach a note to your recipe file. The note is shown automatically after loading a recipe file that contains one. Use `<!-- recipes:1,0 -->` to drop chips for specific recipes (0 continues to the next one). Use `<!-- recipes-re:"speed" -->` to show every recipe whose name matches the case-insensitive pattern.
-- Autosave restore: On launch, the dialog lists every autosaved section with its own checkbox. Restore only what you need — recipes (including the selected chip), metasets, Substat Target Values, Final Sell remainder, the pinned note, the filter panel (open state, chips, collapsed sections), and any Rule Tester imports. Leave a box unchecked to keep your current work untouched. Autosave also remembers which Final Sell toggles (Artifacts, Accessories, and level ranges) were enabled, so reopening Logic Hub mirrors exactly what you exported last time.
+- Note: Click “Add Note…” (or “Edit Note…”) to attach a note to your recipe file. The note is shown automatically after loading a recipe file that contains one. Use `<!-- recipes:1,0 -->` to drop chips for specific recipes (0 continues to the next one). Use `<!-- recipes-re:”speed” -->` to show every recipe whose name matches the case-insensitive pattern. Add `<!-- dungeon-simulator -->` to display a live keep-chance table for Fire Knight, Dragon, and Ice Golem across three difficulty stages (N20/N25/H10) and two boost modes, showing keep-rates at +0/+4/+8/+12/+16.
+- Autosave restore: On launch, the dialog lists every autosaved section with its own checkbox. Restore only what you need — recipes (including the selected chip), metasets, Substat Target Values, Final Sell remainder, the pinned note, the filter panel (open state, chips, collapsed sections), and any Gear Inspector imports. Leave a box unchecked to keep your current work untouched. Autosave also remembers which Final Sell toggles (Artifacts, Accessories, and level ranges) were enabled, so reopening the Tools dialog mirrors exactly what you exported last time.
 
 ### Builder layout (top → bottom)
 - Action & Enable: Tell the Sellfile what should happen when an item matches the recipe.
@@ -81,7 +81,7 @@ Build, preview, and export sell rules for RSL Helper with a simple UI.
 - Mythical (5 rolls): Mythical can reach 5 rolls in a substat by +16 (vs 4 otherwise). When your Rarity selection includes Mythical, the generator accounts for its pre‑roll. With Rarity = Any, setting Min Required Rolls to 5 (or per‑stat mins summing to 5) is treated as Mythical‑capable and also accounts for a pre‑roll at +0.
 
 ### Substat Target Values
-- Open via the “Substat Targets…” button in the top‑right of the builder — it launches the Substat Target Values dialog.
+- Open via the “Substat Targets…” button in the top‑right of the builder — it opens the **Substat Targets** tab in the Tools dialog.
 - Global: These values apply to every recipe, not just the one currently selected.
 - The builder uses them to compute thresholds at each level range (0–3, 4–7, 8–11, 12–15, 16) and as the fallback in the Roll Targets grid.
 - Use “Reset to defaults” inside the dialog to restore the recommended values.
@@ -97,12 +97,12 @@ Build, preview, and export sell rules for RSL Helper with a simple UI.
 
 ### Final Sell
 - Use the `Final Sell` toggle in the preview header to add catch-all Sell rules for items not matched by your Keep rules. The label never changes; an amber fill means it is active, and the neutral outline means it is off.
-- Click the `Logic Hub` button next to the toggle to open the `Final Sell` tab and choose whether it covers Artifacts, Accessories, and which level ranges (0–3, 4–7, 8–11, 12–15, 16). The defaults cover 0–15 so fully leveled gear stays safe unless you turn `+16` on.
+- Click the `Tools` button next to the toggle to open the `Final Sell` tab and choose whether it covers Artifacts, Accessories, and which level ranges (0–3, 4–7, 8–11, 12–15, 16). The defaults cover 0–15 so fully leveled gear stays safe unless you turn `+16` on.
 - Without Final Sell, items that do not match any rule are automatically kept by RSL Helper. Selling only happens when a Sell rule matches.
 - When `Final Sell` is active, the generated Sell rules explicitly include all currently known sets. In the preview, the Sets column shows “All Currently Known” for these rules to reduce clutter; the exported file still lists every set explicitly.
 
 ### Safeguards
-- Click `Logic Hub` in the preview header and switch to the `Safeguards` tab to mark the gear combinations you never want to lose. Turn on `Enable Safeguards` to let the scanner add keep rows (edits will also enable it automatically).
+- Switch the builder to **Safeguards** mode using the toggle above the builder panel to mark the gear combinations you never want to lose. Turn on `Enable Safeguards` to let the scanner add keep rows (edits will also enable it automatically).
 - Safeguard rules don’t ‘consume’ items—each rule evaluates the same candidate pool. If a piece matches multiple rules, it counts for all of them.
 - Each keep rule lets you pick the slot, sets or metasets, ranks, rarities, main stats, and (for accessories) factions you care about. Leaving a picker empty means “any”.
 - `Mode` decides how the rule is emitted: `Off` disables it, `Protect existing` injects keep rows for sold matches until the quota is met, and `Anticipate gaps` also emits placeholder keep rules for missing combinations so new drops stay protected until the DB refreshes.
@@ -111,6 +111,7 @@ Build, preview, and export sell rules for RSL Helper with a simple UI.
 - `≥ Required Count` is the promise you want the app to keep. Scope chips directly under each picker (everything except `Rank` and `Rarity`) decide how that quota is split: `Per slot`, `Per set`, `Per faction`, and `Per main stat` can be combined freely. Turning every chip off automatically falls back to the shared `Per rule` pool.
 - The info tooltip behind `Required Count` shows the active scope split (`X per slot × per set × ...`) and a simple deficit line (`({missing} missing)`).
 - The scanner only adds keep rows for matching items that would otherwise be sold, and only when the quota is not met. In `Anticipate gaps`, placeholder keep rules cover missing combinations.
+- `Beat equipped ≥ N%` (optional quality floor): a candidate only qualifies if its weighted substat score beats at least **N%** of collection-equipped gear that also matches the rule's slot, main stat, set, rank, rarity, and faction. Set **50** to beat the median (good default), **75** for the top quartile, or **100** to beat every matching equipped piece. Collection-equipped pieces always pass — they form the reference pool. Gear below level 12 is exempt. If no collection gear matches the rule's filters, the floor is 0 and all candidates pass.
 
 #### Quota scopes at a glance
 Stacking the scope chips changes who gets their own quota. Leave `Per rule` on to share one pool, then layer `Per slot`, `Per set`, `Per faction`, and `Per main stat` to enforce Slot × Set × Faction × Main stat mixes independently.
@@ -135,10 +136,10 @@ Stacking the scope chips changes who gets their own quota. Leave `Per rule` on t
 | Fastest SPD accessories | Slot = Ring/Amulet/Banner, Substats = SPD | `5` | `Per rule` | Keeps the top five SPD substat rolls across your accessories (ties included). |
 | ACC banners that still roll SPD | Slot = Banner, Main Stat = ACC, Substats = SPD + ACC, Weights favor SPD | `3` | `Per faction` | Each faction keeps the best ACC banners where SPD rolls matter most. |
 
-Tip: Import your `.db` or paste gear into the Gear dialog before opening Safeguards so the scanner sees real items. Click a safeguard rule to highlight matching gear; switch `Filter` to `Selection` to view only those matches.
+Tip: Import your `.db` or paste gear into the Gear dialog before switching to Safeguards mode so the scanner sees real items. Click a safeguard rule to highlight matching gear; switch `Filter` to `Selection` to view only those matches.
 
 ### Dungeon Drops (Simulator)
-Open Logic Hub and switch to **Dungeon Drops**. It simulates dungeon farming using your current Sellfile rules so you can see how much gear you would keep per set and upgrade level.
+Open `Tools` and switch to **Dungeon Drops**. It simulates dungeon farming using your current Sellfile rules so you can see how much gear you would keep per set and upgrade level.
 
 - Choose a dungeon and stage.
 - Simulation mode:
@@ -158,18 +159,19 @@ Notes:
 - Click linking: Clicking a row in the Sellfile Preview selects its saved recipe (and loads it into the builder). Rows originating from the base `.hsf` do not change the current selection.
 - Right‑click menus: On a saved recipe (Duplicate/Move/Copy/Delete) and on the saved recipes area (Copy All, Paste).
 - Clipboard fallback: If clipboard access is blocked, a dialog opens with the content pre‑selected — press Ctrl/Cmd+C to copy, or paste into the Paste dialog.
+- Recipes on/off toggle: The toggle in the builder header globally disables all recipes without deleting them, pausing the preview pipeline — useful to quickly check a safeguards-only export or confirm what Final Sell alone produces.
 
-### Sellfile Preview (Rules & Rule Tester)
-- The preview header keeps the `Rules`/`Rule Tester` toggle, the “Logic Hub” button, and the “Load RSL Helper Sellfile” button together so you always know where to switch tables or open the Gear dialog (Logic Hub → Gear tab).
+### Sellfile Preview (Rules & Gear Inspector)
+- The preview header keeps the `Rules`/`Gear Inspector` toggle, the `Tools` button, and the “Load RSL Helper Sellfile” button together so you always know where to switch tables or open the Gear dialog.
 - `Rules` view (default): shows every rule that will be exported, including any optional base `.hsf` rows. The header counts stay on Keep vs Sell, the filter row keeps the Any/Only chips for Slot/Rank/Rarity/Level, and both Recipe buttons remain: Preview Recipes controls chip visibility, while the Recipe Filter button is a simple On/Off toggle that hides Sellfile rows outside your selected recipe chips (and keeps that filter staged for when you switch modes).
-- `Rule Tester` view: flips the table to the imported gear list so you can scan imported or hand-built items without reopening Logic Hub. Counts/outcome chips switch to Matched vs No Match (and Keep vs Sell) based on first-match results, and the filter row keeps both Recipe buttons side by side: Preview Recipes still controls chip visibility, and the Recipe Filter button expands to a tri-state selector (`Off` → `First-Match` → `Any-Match`) so you can decide how those items respond while continuing to gate Sellfile rows when you jump back. Importing a `.db` automatically switches to this view, but you can jump back to Rules whenever you want.
-- The “Load RSL Helper Sellfile” button behaves exactly like drag & drop: `.sfr` replaces the builder state, `.hsf` layers on the optional base Sellfile, and `.db` queue items into the Rule Tester preview (without touching recipes). The “Clear” button detaches the optional base `.hsf`.
+- `Gear Inspector` view: flips the table to the imported gear list so you can scan imported or hand-built items without reopening the Tools dialog. Counts/outcome chips switch to Keep / Sell / Scope / Unmatched based on first-match results, and the filter row keeps both Recipe buttons side by side: Preview Recipes still controls chip visibility, and the Recipe Filter button expands to a tri-state selector (`Off` → `First-Match` → `Any-Match`) so you can decide how those items respond while continuing to gate Sellfile rows when you jump back. Importing a `.db` automatically switches to this view, but you can jump back to Rules whenever you want.
+- The “Load RSL Helper Sellfile” button behaves exactly like drag & drop: `.sfr` replaces the builder state, `.hsf` layers on the optional base Sellfile, and `.db` queue items into the Gear Inspector (without touching recipes). The “Clear” button detaches the optional base `.hsf`.
 - Use the palette icon to open Manage Colors for substat labels.
-- In Rules view the table columns still include “Idx” and “Cfg” (empty for base file rows). In Rule Tester view the same space lists slot/set, item stats, and the first matching recipe badge so you can see what would happen to each artifact directly inside the preview.
+- In Rules view the table columns still include “Idx” and “Recipe” (empty for base file rows). In Gear Inspector view the same space lists slot/set, item stats, and the first matching recipe badge so you can see what would happen to each artifact directly inside the preview.
 
 ### Sellfile Preview Controls
 - Manage Colors: Click the palette icon above the table to customize text/background colors for substat labels. Use “Reset to defaults” in the dialog to restore recommended colors.
-- Filters: Press `Ctrl+F` (`Cmd+F` on macOS) to open the panel and focus the Recipe search instantly. Right-click any section header (or `Ctrl`/`Cmd`+click its chevron) to collapse or expand every section at once. Preview Recipes hides saved-recipe chips that do not match the active filter so the preview stays readable. Recipe Filter controls which recipes are allowed in the table: it’s a simple On/Off toggle in Rules mode, and it cycles through `Off` → `First-Match` → `Any-Match` when the Rule Tester preview is active.
+- Filters: Press `Ctrl+F` (`Cmd+F` on macOS) to open the panel and focus the Recipe search instantly. Right-click any section header (or `Ctrl`/`Cmd`+click its chevron) to collapse or expand every section at once. Preview Recipes hides saved-recipe chips that do not match the active filter so the preview stays readable. Recipe Filter controls which recipes are allowed in the table: it’s a simple On/Off toggle in Rules mode, and it cycles through `Off` → `First-Match` → `Any-Match` when the Gear Inspector is active.
 - Column menu: Right-click the table header to open controls:
   - Reset columns: Restore default columns and widths.
   - Auto-fit widths: Fit columns to the viewport.
@@ -179,12 +181,12 @@ Notes:
 - Resize columns: Drag the right edge of a header.
 - Click behavior: Clicking a table row selects the related saved recipe (no auto-scroll). Clicking a saved recipe scrolls the table to the first matching row.
 
-### Rule Tester preview
-- Click “Logic Hub” in the Sellfile Preview header to open the Gear dialog (Logic Hub → Gear tab). Create example gear or paste items (JSON/text). Items sync to the preview immediately, so closing the dialog does not clear your tester grid.
-- Import your RSL Helper gear database by dropping `.db` files onto the app or by using the “Load RSL Helper Sellfile” button (same behavior). Those imports queue thousands of artifacts plus inbox items, switch the preview to the tester table, and keep the builder/export state untouched.
-- Each tester item shows slot, set, level, main stat, substats (with glyphs and rolls), the source (inventory vs inbox), and chips for Keep/Sell + the first matching recipe/rule. Disabled rules never match, so “No match” entries represent gear the Sellfile would leave alone.
-- The header counts update to show Matched vs No Match totals plus Keep/Sell breakdowns. Combine these totals with the tester filters (Keep/Sell outcome + Matched/No Match + Recipe `First-Match`/`Any-Match`) to focus on edge cases before exporting.
-- Use the preview toggle to move between Rules and Rule Tester tables without reopening Logic Hub — great for comparing the generated rule rows against the gear that triggered them.
+### Gear Inspector
+- Click `Tools` in the Sellfile Preview header to open the Gear dialog. Create example gear. Items sync to the preview immediately, so closing the dialog does not clear your Gear Inspector grid.
+- Import your RSL Helper gear database by dropping `.db` files onto the app or by using the “Load RSL Helper Sellfile” button (same behavior). Those imports queue thousands of artifacts plus inbox items, switch the preview to the Gear Inspector, and keep the builder/export state untouched.
+- Each item in the Gear Inspector shows slot, set, level, main stat, substats (with glyphs and rolls), the source (inventory vs inbox), and chips for Keep/Sell + the first matching recipe/rule. Disabled rules never match, so “No match” entries represent gear the Sellfile would leave alone.
+- The header counts show Keep / Sell / matched / unmatched totals. The four result-filter buttons — **Keep**, **Sell**, **Scope**, and **Unmatched** — work as independent toggles: activate any combination to narrow the list. **Scope** dims (but keeps visible) items that share the same set+slot as a piece your rules would sell, so you can compare a candidate against its competition in one view rather than hunting across two filter passes. **Unmatched** shows gear no rule touches at all — useful for spotting gaps in your recipes. Combine these with the Recipe `First-Match`/`Any-Match` toggle to focus on edge cases before exporting.
+- Use the preview toggle to move between Rules and Gear Inspector without reopening the Tools dialog — great for comparing the generated rule rows against the gear that triggered them.
 
 ### Export
 - Click “Export merged RSL Helper Sellfile” (or “Export RSL Helper Sellfile” when no base file is loaded).
