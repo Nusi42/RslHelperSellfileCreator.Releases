@@ -1,6 +1,19 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.21 — 2026-03-24
+English:
+- Fixed: importing an SFR file while a gear database (HSF) was already loaded no longer leaves stale gear rules visible in the sellfile — the previous database is cleared automatically on import.
+- The Recipe Overrides DSL in Notes gains a `not` / `!` unary operator for exclusion logic in selectors: `not tag=ore`, `!rank=5`, or `rank>=4 && not tag=chaosore` all work without needing parentheses. Precedence follows natural reading order: `not` binds tightest, then `and`, then `or`.
+- New `@lockedminrolls=N` selector term (also `>=` and `<=`): target recipes in your Note overrides based on the Locked Min Rolls floor specifically, separate from the overall Min Rolls setting.
+- Used above changes to fix sellfiles - Midgame is now more forgiving on substat requirements, and Chaos Ore recipes remain untouched
+
+Deutsch:
+- Behoben: Das Importieren einer SFR-Datei, während bereits eine Gear-Datenbank (HSF) geladen war, lässt keine alten Gear-Regeln mehr in der Sellfile-Vorschau stehen — die vorherige Datenbank wird beim Import automatisch geleert.
+- Das Recipe-Overrides-DSL in Notizen erhält einen unären `not`/`!`-Operator für Ausschlusslogik in Selektoren: `not tag=ore`, `!rank=5` oder `rank>=4 && not tag=chaosore` funktionieren ohne Klammern. Priorität: `not` bindet am stärksten, dann `and`, dann `or`.
+- Neuer Selector-Term `@lockedminrolls=N` (auch `>=` und `<=`): Rezepte in deinen Notiz-Overrides gezielt nach dem Locked-Min-Rolls-Boden ansprechen, unabhängig vom allgemeinen Min-Rolls-Wert.
+- Die oben genannten Änderungen wurden verwendet, um die Sellfiles zu verbessern. - Midgame ist nun weniger streng mit den Nebenattributanforderungen, und die Rezepte für Chaos-Erz bleiben unverändert.
+
 ## v0.9.20 — 2026-03-23
 English:
 - The "Rule Tester" is now called **Gear Inspector** throughout the app, all menus, tooltips, and every language; the "Logic Hub" button is now called **Tools**.
