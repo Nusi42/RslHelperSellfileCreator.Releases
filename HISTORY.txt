@@ -1,6 +1,21 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.22 — 2026-03-25
+English:
+- Fixed: clicking the **upgrade-chance (%) chip** on a Gear Inspector card now correctly navigates to the matching safeguard rule — a serialization mismatch had prevented this while the rank chip already worked.
+- Fixed: the **mythic substat red glow** was clipped and invisible in 4-column (compact) Gear Inspector mode; it now renders correctly in both compact and full-width layouts.
+- Fixed: right-clicking the safeguard chip area when it is **empty** now opens a context menu (paste, select all, delete all), matching the behavior already present in the recipe builder.
+- Fixed: **≤ Epic / ≤ Rare / ≤ Uncommon** (LTE) rarity settings now generate correct sell rules — they were silently using the wrong substat-presence schedule, causing those rules to produce no rows at all for any upgrade level.
+- Fixed: Flex-mode recipes no longer include empty or under-qualified rows for LTE rarities at low upgrade stages (e.g. Common at +0/+4) where not enough substats are present yet.
+
+Deutsch:
+- Behoben: Ein Klick auf den **Verbesserungschance-(%)-Chip** einer Gear-Inspector-Karte navigiert jetzt korrekt zur passenden Schutzregel — ein Serialisierungsfehler hatte dies verhindert, während der Rang-Chip bereits funktionierte.
+- Behoben: Der **mythische Substat-Rotrand** wurde im 4-Spalten-(Kompakt-)Modus des Gear Inspectors abgeschnitten und war unsichtbar; er wird jetzt in beiden Layouts korrekt dargestellt.
+- Behoben: Rechtsklick auf die Schutzmassnahmen-Chip-Fläche, wenn diese **leer** ist, öffnet jetzt ein Kontextmenü (Einfügen, Alle auswählen, Alle löschen) — wie es im Rezept-Builder bereits der Fall war.
+- Behoben: **≤ Epic / ≤ Rare / ≤ Uncommon** (LTE)-Seltenheitseinstellungen erzeugen jetzt korrekte Sell-Regeln — sie verwendeten stillschweigend den falschen Substat-Präsenz-Plan, was dazu führte, dass diese Regeln für jede Aufstufe keine Zeilen produzierten.
+- Behoben: Flex-Modus-Rezepte enthalten für LTE-Seltenheiten bei niedrigen Aufstufen (z. B. Common bei +0/+4) keine leeren oder unzureichend qualifizierten Zeilen mehr.
+
 ## v0.9.21 — 2026-03-24
 English:
 - Fixed: importing an SFR file while a gear database (HSF) was already loaded no longer leaves stale gear rules visible in the sellfile — the previous database is cleared automatically on import.
