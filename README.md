@@ -1,18 +1,32 @@
-﻿# RSL Helper Sellfile Creator
+﻿# Sellfile Creator for RSL Helper
 
-Build, preview, and export sell rules for RSL Helper with a simple UI.
+Sellfile Creator eases building sell files for RSL Helper — define gear filters by set, slot, main stat, substats, and more, preview matching results live, and export ready-to-use sell files in seconds.
 
 > This is an independent, fan‑made tool. Not affiliated with Plarium, Raid: Shadow Legends, or RSL Helper. Trademarks belong to their owners.
 
 ## Features
-- Build rules and save them: create recipes and keep a library you can reuse.
-- Sellfile Preview toggle: flip between the Rules table and the Gear Inspector table right from the header. Counts/outcome chips adapt (Keep/Sell for rules, Keep / Sell / Scope / Unmatched for Gear Inspector) and the filters follow whichever table you pick.
-- Drag & drop or Load button: drop `.sfr`, `.hsf`, or `.db` anywhere (overlay confirms) or click “Load RSL Helper Sellfile”. Both options behave the same — `.sfr` replaces your builder, `.hsf` layers on the optional base sellfile, and `.db` dumps go straight into the Gear Inspector queue without touching the builder.
-- Hold `Shift` while opening/loading an `.sfr` (file picker or drag/drop) to open an additional import dialog where you can choose Recipes, Note, Metasets, and Safeguards.
-- Metasets: name groups of gear sets (e.g., Speed + Perception) and reuse them across rules.
-- One-click Export: export an HSF file (the RSL Helper Sellfile) ready for RSL Helper.
-- `Tools` button: open the dialog from the preview header to reach `Final Sell`, `Substat Targets`, `Dungeon Drops`, and the Gear Inspector from the same place. Load example gear, paste drops, or drag `%APPDATA%\\RslHelper\\Config`, then close the dialog and leave the preview toggle on whichever table you need — the Gear Inspector queue stays visible without reopening.
-- Safeguards builder mode: define combinations you never want to lose, and the scanner injects keep rules automatically whenever your recipes plus your current active Sell rules would sell every piece in that combination.
+
+- **Recipe builder** — create named keep/sell recipes with filters for slot, set, rank,
+  rarity, main stat, substats (with roll minimums and targets), faction, and level
+  milestones. Build a reusable library and export it as an RSL Helper sell file (`.hsf`)
+  in one click.
+- **Sellfile preview** — preview the generated RSL Helper sell file in the Preview tab
+  before exporting.
+- **Metasets** — group gear sets (e.g. Speed + Perception) into named collections and
+  reuse them across recipes and safeguards.
+- **Gear Inspector** — load your gear database (`.db` dump or drag-and-drop) to preview
+  which items each recipe matches and how many would be kept or sold.
+- **Dungeon Simulator** — see keep-chance percentages for Fire Knight, Dragon, and Ice
+  Golem across difficulty stages and upgrade levels to confirm the effect of your sellfile
+  when farming or leveling gear.
+- **Safeguards** — define slot/set/stat combinations you never want to lose; the scanner
+  automatically injects keep rules into the sellfile whenever your setup would deplete a
+  protected combination below its quota.
+- **Gear Analytics** — analytics dashboard with KPI cards, crossfilter charts (slot, rank,
+  rarity, source, level), a sets treemap, main stat bars, and a substat radar. Click any
+  chart to filter all others; push the active filter straight into the Gear Inspector.
+- **Final Sell** — one toggle adds catch-all sell rules for unmatched gear across
+  configurable level ranges, so nothing slips through by accident.
 
 ## How To Use
 
@@ -160,6 +174,33 @@ Notes:
 - Right‑click menus: On a saved recipe (Duplicate/Move/Copy/Delete) and on the saved recipes area (Copy All, Paste).
 - Clipboard fallback: If clipboard access is blocked, a dialog opens with the content pre‑selected — press Ctrl/Cmd+C to copy, or paste into the Paste dialog.
 - Recipes on/off toggle: The toggle in the builder header globally disables all recipes without deleting them, pausing the preview pipeline — useful to quickly check a safeguards-only export or confirm what Final Sell alone produces.
+
+### Gear Lens
+Open `Tools` and switch to the **Gear Lens** tab for an analytics overview of your imported gear.
+
+**KPI cards (top row):** Eight percentage cards — **6★ Rate**, **Legendary+**, **Maxed (+16)**, **Equipped**, **Vault-Locked**, **Chaos'd**, **Glyphed**, **Ascended** — each with a tooltip.
+
+**Crossfilter donuts:** Six charts — **Slots**, **Rank**, **Rarity**, **Result**, **Source**, **Level** — update each other as you click.
+- Click a slice to add it as a filter for that dimension; every other chart instantly narrows to show only the matching gear. Each chart excludes its own dimension so it always shows its full range.
+- Double-click a slice on the **Slots** donut to select an entire group at once: any armor piece (Weapon, Helmet, Shield, Gauntlets, Chestplate, Boots) selects all six armor slots; any accessory (Ring, Amulet, Banner) selects all three.
+- **Slots** and **Source** donuts show category icons. The **Level** donut labels each arc with its level text.
+
+
+**Sets treemap:** Displayed below the donuts. Each tile represents one gear set; tile area is proportional to item count. The tile background is split left-to-right into outcome color bands (Sell / Safeguarded / Keep / No Match). Click a tile to add that set as a crossfilter.
+
+**Filter chips:** Active selections for each dimension appear as chips below the donuts; click the delete icon on a chip to remove just that filter. Main Stat selections also appear as chips. The **Clear filters** button resets all dimensions at once.
+
+**Main Stats bar:** Shows how often each main stat appears across the filtered gear. Click a bar to drill down — the Substat Frequency chart updates to show only substats from gear with that main stat selected. Click the bar again to deselect.
+
+**Substat Frequency radar:** Shows how often each substat appears across the filtered (and optionally main-stat-drilled) gear as a spider chart. Click an axis mark to select it as a co-occurrence pivot — the radar then narrows to gear containing all selected substats at once (up to 4 pivots). Active pivots appear as chips below the chart; click × to deselect one, or **Clear** to remove all.
+
+**Slot × Main Stat heatmap:** Item count per slot (columns) × main stat (rows). Click a column header or any cell to filter by that slot.
+
+**Champion Stats tab:** Substat totals summed across equipped pieces per champion. Filter by location (**All** / **Collection** / **Vault**), toggle **Fully Equipped** only, and include or exclude glyphs. Displays Min/Avg/Median/Max series.
+
+**Buttons:**
+- **Copy Snapshot:** Renders the full analytics view as a PNG and copies it to the clipboard.
+- **Apply to Gear Inspector:** Pushes the active crossfilter into the Gear Inspector list filter (only visible when a filter is active).
 
 ### Sellfile Preview (Rules & Gear Inspector)
 - The preview header keeps the `Rules`/`Gear Inspector` toggle, the `Tools` button, and the “Load RSL Helper Sellfile” button together so you always know where to switch tables or open the Gear dialog.

@@ -1,6 +1,15 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v0.9.23 — 2026-03-29
+English:
+- New **Gear Analytics** tab in the **Tools** dialog: load your gear database and explore your full inventory through seven interactive charts — Slot, Rank, Rarity, Sets (treemap), Result, Source, and Level. Click any segment to instantly cross-filter all other charts; double-click a slot arc to select the whole Artefact or Accessory group at once. Eight KPI cards highlight key totals (6★, Legendary+, Maxed, Equipped, Vault-locked, Chaos'd, Glyphed, Ascended). "Insights you never knew you don't need." — N.
+- Performance: rule evaluation is noticeably faster, especially in **Firefox** — large gear databases now evaluate in seconds rather than minutes.
+
+Deutsch:
+- Neuer **Ausrüstungsanalyse**-Tab im **Tools**-Dialog: Lade deine Gear-Datenbank und erkunde dein gesamtes Inventar über sieben interaktive Diagramme — Slot, Rang, Seltenheit, Sets (Treemap), Ergebnis, Quelle und Level. Ein Klick auf ein Segment filtert alle anderen Diagramme sofort; Doppelklick auf ein Slot-Segment wählt die gesamte Artefakt- oder Accessoire-Gruppe auf einmal. Acht KPI-Karten zeigen wichtige Kennzahlen (6★, Legendary+, Maximal aufgestuft, Ausgerüstet, Tresor-gesperrt, Zu Chaos-Erz, Glyphe angelegt, Aufgestiegen). "Insights you never knew you don't need." — N.
+- Performance: Die Regelauswertung ist spürbar schneller, besonders in **Firefox** — große Gear-Datenbanken werden jetzt in Sekunden statt Minuten ausgewertet.
+
 ## v0.9.22 — 2026-03-25
 English:
 - Fixed: clicking the **upgrade-chance (%) chip** on a Gear Inspector card now correctly navigates to the matching safeguard rule — a serialization mismatch had prevented this while the rank chip already worked.
