@@ -31,9 +31,9 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
 ## How To Use
 
 ### Recipe File
-- SFR (`.sfr`): your project file for this app. Think of it like a save file you can load/share. RSL Helper does not read SFR directly.
+- SFC (`.sfc`): your project file for this app. Think of it like a save file you can load/share. RSL Helper does not read SFC directly.
 - HSF (`.hsf`): the RSL Helper Sellfile. Export from this app, then load it in RSL Helper.
-- Saved filename defaults to `SellfileCreatorRecipes_YYYYMMDD_HHMM.sfr`.
+- Saved filename defaults to `SellfileCreatorRecipes_YYYYMMDD_HHMM.sfc`.
 
 ### Recipe Builder
 - Fill in the Recipe Builder and give your recipe a clear name.
@@ -121,11 +121,38 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
 - Each keep rule lets you pick the slot, sets or metasets, ranks, rarities, main stats, and (for accessories) factions you care about. Leaving a picker empty means “any”.
 - `Mode` decides how the rule is emitted: `Off` disables it, `Protect existing` injects keep rows for sold matches until the quota is met, and `Anticipate gaps` also emits placeholder keep rules for missing combinations so new drops stay protected until the DB refreshes.
 - Substats are optional: pick one or more to only count items that actually have those substats. The match chip (`Any Substat` / `All Substats` / `Per Substat`) decides whether at least one, all, or each selected substat gets its own quota. Leave it empty to allow any substat.
-- Selected substats are always ranked by the normalized substat formula (glyphs ignored); weight controls appear for `Any Substat` and `All Substats`, while `Per Substat` keeps equal weighting (ties at the cutoff stay protected).
+- Selected substats are ranked by their **current** substat value; weight controls appear for `Any Substat` and `All Substats`, while `Per Substat` keeps equal weighting (ties at the cutoff stay protected).
 - `≥ Required Count` is the promise you want the app to keep. Scope chips directly under each picker (everything except `Rank` and `Rarity`) decide how that quota is split: `Per slot`, `Per set`, `Per faction`, and `Per main stat` can be combined freely. Turning every chip off automatically falls back to the shared `Per rule` pool.
 - The info tooltip behind `Required Count` shows the active scope split (`X per slot × per set × ...`) and a simple deficit line (`({missing} missing)`).
 - The scanner only adds keep rows for matching items that would otherwise be sold, and only when the quota is not met. In `Anticipate gaps`, placeholder keep rules cover missing combinations.
-- `Beat equipped ≥ N%` (optional quality floor): a candidate only qualifies if its weighted substat score beats at least **N%** of collection-equipped gear that also matches the rule's slot, main stat, set, rank, rarity, and faction. Set **50** to beat the median (good default), **75** for the top quartile, or **100** to beat every matching equipped piece. Collection-equipped pieces always pass — they form the reference pool. Gear below level 12 is exempt. If no collection gear matches the rule's filters, the floor is 0 and all candidates pass.
+- **`Improvement chance ≥ N%`** (optional talent scout): widens the safety net beyond the standard top-N. The scanner always keeps the top-N pieces by their **current** substat value first — those are never at risk. It then also protects any piece *outside* that top-N whose improvement chance meets the threshold. Think of it as: "hold on to the raw drops that have a good shot at being competitive once they're leveled."
+
+  **What is improvement chance?** The app simulates all possible ways a piece could roll during upgrades to +16 — some rolls hit the substat you care about, some don't — and counts how often the piece ends up in your top N across all those futures. A piece with 68% improvement chance lands in the top N in roughly two out of three simulated upgrade paths.
+
+  **Key rule: the threshold can only add to protection, never remove.** Your current top-N is always kept, regardless of their improvement chance score. A fully upgraded piece (+16) counts its locked current value directly — it cannot fall out of protection because it "ran out of upgrade potential."
+
+  **Example — SPD banners, Required Count = 2, Per faction (rank-6 legendary):**
+
+  | Banner | SPD | Level | Improvement chance | Standard | Threshold ≥ 50% | Threshold ≥ 25% |
+  | --- | --- | --- | --- | --- | --- | --- |
+  | A | 12 | +16 | 100% | ✔ top-2 | ✔ top-2 | ✔ top-2 |
+  | B | 6 | +16 | 0% | ✔ top-2 | ✔ top-2 | ✔ top-2 |
+  | C | 5 | +0 | 26% | ✗ sold | ✗ sold | ✔ threshold adds |
+
+  Rank-6 banners roll SPD in increments of **5 or 6** per event, so the only realistic fresh values are **5** (minimum) or **6** (maximum). Banner A's SPD=12 means it received exactly one bonus SPD roll during upgrades (6 initial + 1 roll of 6). Banner B was fully leveled with no bonus SPD rolls — its score is locked at 6.
+
+  Banner B scores 0% improvement chance: its fixed SPD=6 is expected to lose to any unleveled competitor whose future rolls could exceed it. Despite that, it stays protected because it is in the standard top-2 by **current** value. Improvement chance can never remove items from the top-N — only the threshold expansion logic uses it.
+
+  Banner C (SPD=5, fresh) sits just outside the top-2 by current value. Its 26% improvement chance means it would end up in the top-2 in roughly 1 in 4 simulated upgrade paths. Setting threshold ≥ **25%** pulls it into protection; at threshold ≥ 50% it remains sold.
+
+  If Banner C had started at **SPD=6** instead, its improvement chance rises to **68%** — a much stronger candidate. Threshold ≥ **65%** would protect it.
+
+  **Rank-6 epic banners** only receive **3 SPD roll events** (versus 4 for legendary, because the +4 upgrade adds a brand-new substat rather than rolling an existing one). The resulting chances are nearly identical: SPD=6 fresh → **70%**, SPD=5 fresh → **26%**.
+
+  **Suggested thresholds (rank-6 gear):**
+  - **65%** — protects fresh max-roll drops (SPD=6, ~68–70% chance). Good default if you want promising drops to survive while leveling up.
+  - **25%** — also protects min-roll drops (SPD=5, ~26% chance). Wider net; use this if inventory space is not a concern.
+  - Avoid **100%**: it only ever matches fully-leveled pieces already held by the standard top-N, so it adds nothing beyond standard mode.
 
 #### Quota scopes at a glance
 Stacking the scope chips changes who gets their own quota. Leave `Per rule` on to share one pool, then layer `Per slot`, `Per set`, `Per faction`, and `Per main stat` to enforce Slot × Set × Faction × Main stat mixes independently.
@@ -206,7 +233,7 @@ Open `Tools` and switch to the **Gear Lens** tab for an analytics overview of yo
 - The preview header keeps the `Rules`/`Gear Inspector` toggle, the `Tools` button, and the “Load RSL Helper Sellfile” button together so you always know where to switch tables or open the Gear dialog.
 - `Rules` view (default): shows every rule that will be exported, including any optional base `.hsf` rows. The header counts stay on Keep vs Sell, the filter row keeps the Any/Only chips for Slot/Rank/Rarity/Level, and both Recipe buttons remain: Preview Recipes controls chip visibility, while the Recipe Filter button is a simple On/Off toggle that hides Sellfile rows outside your selected recipe chips (and keeps that filter staged for when you switch modes).
 - `Gear Inspector` view: flips the table to the imported gear list so you can scan imported or hand-built items without reopening the Tools dialog. Counts/outcome chips switch to Keep / Sell / Scope / Unmatched based on first-match results, and the filter row keeps both Recipe buttons side by side: Preview Recipes still controls chip visibility, and the Recipe Filter button expands to a tri-state selector (`Off` → `First-Match` → `Any-Match`) so you can decide how those items respond while continuing to gate Sellfile rows when you jump back. Importing a `.db` automatically switches to this view, but you can jump back to Rules whenever you want.
-- The “Load RSL Helper Sellfile” button behaves exactly like drag & drop: `.sfr` replaces the builder state, `.hsf` layers on the optional base Sellfile, and `.db` queue items into the Gear Inspector (without touching recipes). The “Clear” button detaches the optional base `.hsf`.
+- The “Load RSL Helper Sellfile” button behaves exactly like drag & drop: `.sfc` replaces the builder state, `.hsf` layers on the optional base Sellfile, and `.db` queue items into the Gear Inspector (without touching recipes). The “Clear” button detaches the optional base `.hsf`.
 - Use the palette icon to open Manage Colors for substat labels.
 - In Rules view the table columns still include “Idx” and “Recipe” (empty for base file rows). In Gear Inspector view the same space lists slot/set, item stats, and the first matching recipe badge so you can see what would happen to each artifact directly inside the preview.
 
@@ -226,7 +253,7 @@ Open `Tools` and switch to the **Gear Lens** tab for an analytics overview of yo
 - Click `Tools` in the Sellfile Preview header to open the Gear dialog. Create example gear. Items sync to the preview immediately, so closing the dialog does not clear your Gear Inspector grid.
 - Import your RSL Helper gear database by dropping `.db` files onto the app or by using the “Load RSL Helper Sellfile” button (same behavior). Those imports queue thousands of artifacts plus inbox items, switch the preview to the Gear Inspector, and keep the builder/export state untouched.
 - Each item in the Gear Inspector shows slot, set, level, main stat, substats (with glyphs and rolls), the source (inventory vs inbox), and chips for Keep/Sell + the first matching recipe/rule. Disabled rules never match, so “No match” entries represent gear the Sellfile would leave alone.
-- The header counts show Keep / Sell / matched / unmatched totals. The four result-filter buttons — **Keep**, **Sell**, **Scope**, and **Unmatched** — work as independent toggles: activate any combination to narrow the list. **Scope** dims (but keeps visible) items that share the same set+slot as a piece your rules would sell, so you can compare a candidate against its competition in one view rather than hunting across two filter passes. **Unmatched** shows gear no rule touches at all — useful for spotting gaps in your recipes. Combine these with the Recipe `First-Match`/`Any-Match` toggle to focus on edge cases before exporting.
+- The header counts show Keep / Sell / matched / unmatched totals. The four result-filter buttons — **Keep**, **Sell**, **Scope**, and **Unmatched** — work as independent toggles: activate any combination to narrow the list. **Scope** dims (but keeps visible) items that share the same set+slot as a piece your rules would sell, so you can compare a candidate against its competition in one view rather than hunting across two filter passes. When one or more **Sources** are also selected, those sources act as the reference set — only sell-tagged items from the selected sources become primaries, while companions are drawn from *all* sources, letting you see every copy of that gear piece regardless of where it sits. **Unmatched** shows gear no rule touches at all — useful for spotting gaps in your recipes. Combine these with the Recipe `First-Match`/`Any-Match` toggle to focus on edge cases before exporting.
 - Use the preview toggle to move between Rules and Gear Inspector without reopening the Tools dialog — great for comparing the generated rule rows against the gear that triggered them.
 
 ### Export
