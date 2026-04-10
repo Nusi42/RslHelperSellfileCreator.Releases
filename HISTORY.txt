@@ -1,6 +1,21 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.1 — 2026-04-10
+English:
+- **Fixed: rule engine produced incorrect sell rules for Early-mode recipes with Potential strategy** — intermediate rules were too lenient, allowing gear to fall behind its required roll pace at upgrade milestones. Early mode now correctly requires proportional progress at each stage (+0/+4/+8/+12), so pieces that don't qualify are no longer kept by mistake. - Thanks to Krissam for reporting it!
+- **Fixed: Late-mode wildcard substats could make required roll targets jointly infeasible** — when extra wildcard rolls absorbed the upgrade budget in late mode, some required stats became unreachable. A post-generation filter now rejects those distributions.
+- **Fixed: Safeguard multi-edit "Apply" button stayed disabled when changing gear sets or metasets** — selecting multiple safeguard rules and editing their gear-set or metaset fields no longer keeps the Apply button stuck. The button label also now correctly reads "Apply to N Safeguards" (not "Apply to N Recipes").
+- **Right-click the "Connect to RSL Helper" button to change the port** — if your RSL Helper listens on a port other than the default (8080), right-click the connect button and enter your port number. The setting is saved across sessions. A one-time hint overlay guides first-time users to the feature.
+- **New champion portraits** — seven new champion icons added.
+
+Deutsch:
+- **Behoben: Regel-Engine erzeugte falsche Sell-Regeln für Early-Modus-Rezepte mit Potential-Strategie** — Zwischenregeln waren zu großzügig und erlaubten Gear, das beim Aufwerten unter dem erforderlichen Roll-Tempo lag. Early-Modus verlangt jetzt korrekt proportionalen Fortschritt bei jeder Stufe (+0/+4/+8/+12), sodass nicht qualifizierte Teile nicht mehr fälschlicherweise behalten werden. - Danke an Krissam für den Fehlerbericht!
+- **Behoben: Late-Modus-Wildcard-Substats konnten erforderliche Roll-Ziele gemeinsam unerreichbar machen** — wenn Extra-Wildcards das Upgrade-Budget absorbierten, wurden manche Pflicht-Stats unerreichbar. Ein nachgelagerter Filter verwirft jetzt solche Verteilungen.
+- **Behoben: Schutzregel-Mehrfachbearbeitung — „Anwenden"-Button blieb bei Set-/Metaset-Änderungen deaktiviert** — wenn mehrere Schutzregeln ausgewählt und ihr Gear-Set oder Metaset geändert wurde, blieb der Anwenden-Button gesperrt. Er funktioniert jetzt korrekt und zeigt auch die richtige Beschriftung „Auf N Schutzmaßnahmen anwenden" statt „Auf N Rezepte anwenden".
+- **Rechtsklick auf „Mit RSL Helper verbinden" zum Ändern des Ports** — wenn dein RSL Helper auf einem anderen Port als dem Standard (8080) läuft, öffne per Rechtsklick auf den Connect-Button ein Eingabefeld und trage deinen Port ein. Die Einstellung wird sitzungsübergreifend gespeichert. Ein einmaliger Hinweis-Overlay führt neue Nutzer zu der Funktion.
+- **Neue Champion-Porträts** — sieben neue Champion-Icons hinzugefügt.
+
 ## v1.0.0 — 2026-04-07
 English:
 - **Recipe files are now `.sfc`** (renamed from `.sfr`); existing `.sfr` files still load without any changes needed.
