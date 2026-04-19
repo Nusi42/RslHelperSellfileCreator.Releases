@@ -1,6 +1,13 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.4 — 2026-04-19
+English:
+- **Fixed: override controls in your Note no longer show stale results** — sliders, radio buttons, and checkboxes from `<!-- safeguard-overrides -->` and `<!-- recipe-overrides -->` blocks now immediately refresh the sellfile preview when you adjust them. Previously the controls appeared to respond but the preview kept showing the rules from before the change; an unrelated edit was needed to force a rebuild.
+
+Deutsch:
+- **Behoben: Override-Steuerelemente in der Notiz zeigen keine veralteten Ergebnisse mehr** — Schieberegler, Radio-Buttons und Checkboxen aus `<!-- safeguard-overrides -->`- und `<!-- recipe-overrides -->`-Blöcken aktualisieren die Sellfile-Vorschau jetzt sofort, wenn du sie veränderst. Zuvor reagierten die Steuerelemente scheinbar, aber die Vorschau zeigte weiterhin die Regeln von vor der Änderung — erst eine unzusammenhängende Bearbeitung erzwang eine Neuberechnung.
+
 ## v1.0.3 — 2026-04-19
 English:
 - **New: Safeguard Overrides in your Note** — add `<!-- safeguard-overrides ... -->` blocks to your Note to create interactive sliders, radio buttons, and checkboxes that tune safeguard rules on the fly, without touching the stored rules themselves. Tag your safeguard rules (just like recipe tags) and target them by tag; slider values feed directly into keep-count arithmetic (`count=$value/8` and similar). Session-only: changes revert when you reload — or use "Apply and Disable" to bake them in permanently.
