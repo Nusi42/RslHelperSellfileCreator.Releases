@@ -1,6 +1,17 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.5 — 2026-04-19
+English:
+- **Fixed: safeguard-overrides sliders using division arithmetic now update the sellfile correctly** — expressions like `count=$value/8` or `count=$value/16` in `<!-- safeguard-overrides -->` blocks were silently broken: the slider moved but the keep-count in the sellfile never changed, because the `/` character was not recognized as a separator in the override formula parser. Now division arithmetic in count expressions works as intended.
+- **Fixed: tag-based selectors in safeguard-overrides now actually apply to the sell pipeline** — when you used `@tag=someName` to target specific safeguard rules by their tags, the chips in the panel looked correct but the background worker received rules with empty tag lists, so the selector never matched anything and the actual sell decisions were unchanged. Tags now flow through the full pipeline so `@tag=` selectors reliably reach the rules that matter.
+- **Fixed: division expressions in the Note editor are no longer highlighted incorrectly** — text like `$value/16` in a safeguard-overrides block was visually miscolored in the note editor (the slash was mistaken for the start of a special pattern). The highlight is now correct; no functional change to sellfile output.
+
+Deutsch:
+- **Behoben: Schutzregel-Override-Schieberegler mit Divisionsarithmetik aktualisieren jetzt das Sellfile korrekt** — Ausdrücke wie `count=$value/8` oder `count=$value/16` in `<!-- safeguard-overrides -->`-Blöcken funktionierten bisher nicht: Der Schieberegler bewegte sich, aber die Behalten-Anzahl im Sellfile änderte sich nie, weil das `/`-Zeichen im Override-Formel-Parser nicht als Trennzeichen erkannt wurde. Divisionsarithmetik in Anzahl-Ausdrücken funktioniert jetzt wie vorgesehen.
+- **Behoben: Tag-basierte Selektoren in safeguard-overrides werden jetzt tatsächlich auf die Sell-Pipeline angewendet** — wenn du `@tag=Name` verwendest, um bestimmte Schutzregeln über ihre Tags anzusprechen, sahen die Chips im Panel korrekt aus, aber der Hintergrund-Worker erhielt Regeln ohne Tags — der Selektor traf daher niemals etwas, und die eigentlichen Verkaufsentscheidungen blieben unverändert. Tags werden nun vollständig durch die Pipeline weitergegeben, sodass `@tag=`-Selektoren zuverlässig die richtigen Regeln treffen.
+- **Behoben: Divisionsausdrücke im Notizeneditor werden nicht mehr falsch hervorgehoben** — Text wie `$value/16` in einem safeguard-overrides-Block wurde im Notizeneditor falsch eingefärbt (der Schrägstrich wurde als Beginn eines Sondermusters interpretiert). Die Hervorhebung ist jetzt korrekt; am Sellfile-Output ändert sich nichts.
+
 ## v1.0.4 — 2026-04-19
 English:
 - **Fixed: override controls in your Note no longer show stale results** — sliders, radio buttons, and checkboxes from `<!-- safeguard-overrides -->` and `<!-- recipe-overrides -->` blocks now immediately refresh the sellfile preview when you adjust them. Previously the controls appeared to respond but the preview kept showing the rules from before the change; an unrelated edit was needed to force a rebuild.
