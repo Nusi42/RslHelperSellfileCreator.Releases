@@ -1,6 +1,17 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.7 — 2026-05-09
+English:
+- **New: "Must NOT have" substat constraint (¬)** — you can now tell a recipe that an item must be completely free of a specific substat (e.g. "no Speed"). Cycle the substat badge with left- or right-click until it shows the red ¬ symbol. Added a disabled reference recipe into the sample SFC file.
+- **New: "Connect to RSL Helper" button is now a persistent toggle with auto-connect** — the button remembers your preference and automatically reconnects when you reload or reopen the app.
+- **Fixed: Gear Inspector now correctly previews which items safeguard keep-rules protect** — some items were shown as "Sell" in the Inspector even though RSL Helper would keep them, because the app's preview was matching only the exact piece a safeguard keep-rule was generated for rather than all pieces that meet its conditions.
+
+Deutsch:
+- **Neu: Substat-Bedingung „Muss NICHT vorhanden sein" (¬)** — du kannst in einem Rezept jetzt festlegen, dass ein bestimmter Substat auf dem Item fehlen muss (z. B. „kein Speed"). Klicke das Substat-Badge so oft, bis das rote ¬-Symbol erscheint. Ein ausgeschaltetes Referenz-Rezept wurde der Beispiel SFC-Datei hinzugefügt.
+- **Neu: „Mit RSL Helper verbinden"-Button ist jetzt ein dauerhafter Schalter mit Auto-Connect** — der Button merkt sich deine Wahl und verbindet sich beim nächsten App-Start automatisch.
+- **Behoben: Gear Inspector zeigt jetzt korrekt, welche Items durch Schutzregel-Keep-Regeln behalten werden** — manche Items wurden als „Verkaufen" angezeigt, obwohl RSL Helper sie behalten hätte, weil die App-Vorschau zu eng nur das exakte Piece traf, für das eine Schutzregel-Keep-Regel generiert wurde, statt alle Pieces mit passenden Bedingungen.
+
 ## v1.0.6 — 2026-04-25
 English:
 - **Bundled recipe sample: broader accessory protection** — new safeguard rules cover Crit Damage amulets (both ACC/RES support-hybrid and HP/ATK/DEF pure-damage variants), HP/DEF Survivability amulets, a Debuffer amulet for HP/DEF mains with ACC, dedicated ATK and DEF banner builds, and per-main-stat ring matching (HP rings compete for HP%, ATK rings for ATK%, DEF rings for DEF%).
