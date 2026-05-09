@@ -1,6 +1,15 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.8 — 2026-05-09
+English:
+- **New: Right-click "Load SFC File" to instantly load the bundled sample configuration** — right-clicking the Load SFC File button now opens a quick menu with two options: "Load from file…" to pick your own `.sfc`, or "Load Sample SFC File" to load the bundled sample SFC file.
+- **Note for new players after the tutorial** — When the tutorial (or the welcome dialog on first launch) is closed, the "Load SFC file" button briefly lights up to indicate the sample SFC file to new players.
+
+Deutsch:
+- **Neu: Mit einem Rechtsklick auf "SFC-Datei laden" können Sie sofort die mitgelieferte Beispielkonfiguration laden.** — Ein Rechtsklick auf die Schaltfläche "SFC-Datei laden" öffnet nun ein Schnellmenü mit zwei Optionen: "Aus Datei laden…", um Ihre eigene `.sfc`-Datei auszuwählen, oder "Beispiel-SFC-Datei laden", um die mitgelieferte Beispiel-SFC-Datei zu laden.
+- **Hinweis für neue Spieler nach dem Tutorial** — Wenn das Tutorial (oder den Begrüßungsdialog beim ersten Start) geschlossen wird, leuchtet die Schaltfläche "SFC-Datei laden" kurz auf und weist neue Spieler auf die Beispiel-SFC-Datei hin.
+
 ## v1.0.7 — 2026-05-09
 English:
 - **New: "Must NOT have" substat constraint (¬)** — you can now tell a recipe that an item must be completely free of a specific substat (e.g. "no Speed"). Cycle the substat badge with left- or right-click until it shows the red ¬ symbol. Added a disabled reference recipe into the sample SFC file.
