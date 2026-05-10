@@ -1,6 +1,47 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.9 — 2026-05-11
+English:
+- **New: Two sample SFC presets in the “Load SFC File” right-click menu** — the menu now offers “Load Beginner Sample SFC” and “Load Mid-to-End Game Sample SFC”. Right-clicking the button still opens the menu; left-clicking opens your file picker as before.
+- **Mid-to-Endgame sample SFC: dedicated Mercurial gear safeguards** — added Safeguards that specifically protect the best of your Mercurial pieces even when they are not yet stat-perfect, so promising Mercurial gear is not sold while you are still farming toward better rolls.
+- **New: Two built-in filter presets “Scoped Sell – Artifacts” and “Scoped Sell – Accessories”** — selecting either preset filters results to sell-tagged items from both inventory and vault, scoped to the respective slot group.
+- **New: Improvement Chance filter in the Gear Inspector** — a 0–100% range slider filters items by how likely they are to improve their safeguard standing after upgrading. A hide/show chip controls whether items with no safeguard coverage appear. Adjusting the range away from 0–100% automatically hides those uncovered items so the filter is immediately useful.
+- **New: Gear Inspector shows a lock icon on items locked in RSL Helper** — any item you have locked inside RSL Helper now displays a padlock symbol in the Inspector, making it easy to see which pieces are protected there.
+- **New: Label colors for filter and sort presets** — when saving a preset you can now pick a color for its label using a full gradient and hue slider; recently chosen colors are remembered between sessions.
+- **New: Built-in filter and sort presets can be individually hidden** — an eye-icon toggle on each built-in preset lets you suppress ones you never use; the menu hides them unless you enable “show hidden”.
+- **New: Safeguard multi-edit tag additions are reflected immediately** — adding tags via the multi-edit panel now updates the tag chip list right away, without waiting for Apply.
+- **New: Dungeon Simulator starts automatically when you open the tab** — the simulation begins as soon as the Dungeon Simulator tab is opened and stops when you close it; no manual start required.
+- **New: Scope and Unmatched filter buttons in the Gear Inspector now show a tooltip** explaining how both buttons interact, so the combined filtering behavior is easier to understand.
+- **Fixed: +16 gear no longer shows a “100% improvement chance” badge** — fully-upgraded gear has no further upgrade to project, so this result was misleading and is now hidden. The 0% badge (gear currently losing a contested safeguard slot) is still shown.
+- **Fixed: Improvement Chance sorting now places fully-upgraded (+16) gear at the bottom** — previously maxed gear sorted to the top of the results, making it harder to find items where the improvement chance is actually meaningful.
+- **Fixed: Improvement Chance is now calculated independently per safeguard rule** — previously the best chance across all safeguard rules was combined into one global score; now each rule evaluates its own top-N threshold separately, giving more accurate guidance on which items are worth upgrading.
+- **Fixed: tag-only changes in safeguard multi-edit now save correctly** — editing only tags through the multi-edit panel without changing other rule fields was silently discarded; those changes now persist as expected.
+- **Fixed: items hidden by a filter or demoted in context mode after an RSL Helper data push are now properly deselected** — previously those items remained selected even though they were no longer visible.
+- **Fixed: 0-star ascension filter had no effect** — setting the ascension filter to 0 stars now correctly includes 0-star items.
+- **Fixed: RSL Helper data pushes with no new data are now processed much faster** — when RSL Helper sends identical data it already sent, the app skips redundant processing steps, reducing the delay by 200–500 ms per occurrence.
+- **Fixed: “Connect to RSL Helper” in the Help dialog is now the same live toggle button as in the toolbar** — it previously used a stale link that reloaded the page, which had not worked since persistent-connection mode was introduced.
+
+Deutsch:
+- **Neu: Zwei Beispiel-SFC-Presets im Rechtsklick-Menü von „SFC-Datei laden”** — das Menü bietet jetzt „Anfänger-Beispiel-SFC laden” und „Mid-to-Endgame-Beispiel-SFC laden”. Rechtsklick öffnet weiterhin das Menü; Linksklick öffnet wie bisher den Dateiauswähler.
+- **Mid-to-Endgame-Beispiel-SFC: spezielle Schutzregeln für Unstet (Mercurial)-Ausrüstung** — neue Schutzregeln schützen gezielt die besten deiner Unstet (Mercurial)-Teile, auch wenn sie noch nicht stat-perfekt sind, sodass vielversprechende Unstet (Mercurial)-Ausrüstung nicht verkauft wird, während du noch auf bessere Rolls farmst.
+- **Neu: Zwei integrierte Filter-Presets „Scoped Sell – Artefakte” und „Scoped Sell – Accessoires”** — wähle eines dieser Presets, um Ergebnisse auf verkaufsmarkierte Items aus Inventar und Tresor einzugrenzen, gefiltert nach der jeweiligen Slot-Gruppe.
+- **Neu: Verbesserungschance-Filter im Gear Inspector** — ein 0–100%-Schieberegler filtert Items danach, wie wahrscheinlich es ist, dass sie nach dem Aufrüsten ihren Schutzregel-Platz verbessern. Ein Ein-/Ausblend-Chip steuert, ob Items ohne Schutzregel-Daten angezeigt werden. Wenn du den Bereich von 0–100% veränderst, werden Items ohne Daten automatisch ausgeblendet.
+- **Neu: Gear Inspector zeigt ein Schloss-Symbol bei in RSL Helper gesperrten Items** — Items, die du in RSL Helper als gesperrt markiert hast, werden im Inspector jetzt mit einem Vorhängeschloss-Symbol angezeigt.
+- **Neu: Farb-Labels für Filter- und Sortier-Presets** — beim Speichern eines Presets kannst du jetzt mit einem Farbverlauf- und Farbton-Regler eine Farbe für den Label wählen; zuletzt verwendete Farben werden sitzungsübergreifend gespeichert.
+- **Neu: Integrierte Filter- und Sortier-Presets können einzeln ausgeblendet werden** — ein Auge-Symbol-Schalter an jedem integrierten Preset lässt dich selten genutzte ausblenden; das Menü blendet sie aus, bis du „Ausgeblendete anzeigen” aktivierst.
+- **Neu: Tag-Änderungen im Schutzregel-Mehrfach-Edit sind sofort sichtbar** — das Hinzufügen von Tags über das Mehrfach-Edit-Panel aktualisiert die Tag-Chip-Liste sofort, ohne vorher auf „Anwenden” klicken zu müssen.
+- **Neu: Dungeon-Simulator startet automatisch beim Öffnen des Tabs** — die Simulation beginnt sofort, wenn der Dungeon-Simulator-Tab geöffnet wird, und stoppt beim Schließen; kein manueller Start erforderlich.
+- **Neu: Scope- und Unmatched-Filterschaltflächen im Gear Inspector zeigen jetzt einen Tooltip**, der erklärt, wie beide Schaltflächen zusammenwirken – so ist das kombinierte Filterverhalten leichter zu verstehen.
+- **Behoben: +16-Ausrüstung zeigt nicht mehr den irreführenden „100% Verbesserungschance”-Badge** — vollständig aufgerüstetes Gear hat keine weitere Aufwertung zum Projizieren, daher wird dieses Ergebnis jetzt ausgeblendet. Der 0%-Badge (wenn das Item gerade einen umkämpften Schutzregel-Slot verliert) bleibt sichtbar.
+- **Behoben: Verbesserungschance-Sortierung platziert vollständig aufgerüstetes (+16) Gear jetzt ganz unten** — bisher sortierte maximal aufgerüstetes Gear an den Anfang der Ergebnisse, was es schwerer machte, Items mit wirklich relevanter Verbesserungschance zu finden.
+- **Behoben: Verbesserungschance wird jetzt pro Schutzregel separat berechnet** — bisher wurde die beste Chance über alle Schutzregeln global zusammengefasst; jetzt wertet jede Regel ihren eigenen Top-N-Schwellwert unabhängig aus, was genauere Hinweise liefert, welche Items sich zu upgraden lohnen.
+- **Behoben: Nur-Tag-Änderungen im Schutzregel-Mehrfach-Edit werden jetzt korrekt gespeichert** — Tag-Änderungen, die ohne weitere Regeländerungen über das Mehrfach-Edit-Panel vorgenommen wurden, wurden zuvor stillschweigend verworfen; sie werden jetzt zuverlässig gespeichert.
+- **Behoben: Items, die nach einem RSL-Helper-Daten-Push durch einen Filter ausgeblendet oder im Kontext-Modus zurückgestuft werden, werden jetzt korrekt abgewählt** — bisher blieben diese Items ausgewählt, obwohl sie nicht mehr sichtbar waren.
+- **Behoben: 0-Sterne-Aufstiegs-Filter hatte keine Wirkung** — der Filter auf 0 Sterne schließt jetzt korrekt 0-Sterne-Items ein.
+- **Behoben: RSL-Helper-Daten-Pushes ohne neue Daten werden jetzt deutlich schneller verarbeitet** — wenn RSL Helper identische Daten erneut sendet, überspringt die App redundante Verarbeitungsschritte und reduziert die Verzögerung um 200–500 ms pro Vorgang.
+- **Behoben: „Mit RSL Helper verbinden” im Hilfe-Dialog ist jetzt derselbe Live-Schalter wie in der Toolbar** — bisher verwendete er einen veralteten Link, der die Seite neu lud und seit Einführung des persistenten Verbindungsmodus nicht mehr funktionierte.
+
 ## v1.0.8 — 2026-05-09
 English:
 - **New: Right-click "Load SFC File" to instantly load the bundled sample configuration** — right-clicking the Load SFC File button now opens a quick menu with two options: "Load from file…" to pick your own `.sfc`, or "Load Sample SFC File" to load the bundled sample SFC file.
