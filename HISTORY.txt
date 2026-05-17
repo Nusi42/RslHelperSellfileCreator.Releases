@@ -1,6 +1,33 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.10 — 2026-05-18
+English:
+- **Gear Analytics: "Champion Equipment" section** — the former "Not Fully Equipped" section is renamed and expanded: a "Simulate sold" toggle highlights in red any equipped piece your active rules would sell; a "Show fully equipped" toggle includes champions with every slot already filled; sorting now defaults to in-game roster order (Empowerment › Blessing › Affinity › Star › Level); selecting an item in this list also highlights it in the Gear Inspector.
+- **New: Simple Mode** — a streamlined view for RSL Helper integration, opened via the `?simple` URL parameter. It offers a preset toggle (Beginner / Endgame), a centered Auto-Push control with a connection status indicator, and a "Go Expert" button to switch to the full editor. Fully localized in all supported languages.
+- **New: Color picker for rule and safeguard names** — names can now include a display color chosen through a proper color picker, replacing the old `[#RRGGBB]` text-embedded syntax.
+- **Fixed: safeguard rules could evaluate gear incorrectly when substat totals were involved** — an internal type mismatch caused artifact substat total values to be missing from the evaluation input, which could cause keep/sell decisions to be wrong for rules that compare total substat values.
+- **Fixed: rules with a faction set were incorrectly matching armor slots** — Helmet, Chest, and Leg pieces were being evaluated by rules that should only apply to accessories (Ring, Amulet, Banner). Keep/sell decisions for those pieces are now correct.
+- **Fixed: safeguard rules with no substat filter now protect all matching items** — previously the app arbitrarily capped protection to a fixed count; now every item that qualifies is protected.
+- **Fixed: safeguard weights live-rescoring popover now works correctly** — the live preview was producing wrong scores due to an initialization issue in the dedicated scoring worker; results now match actual rule evaluation.
+- **Fixed: armor-slot and faction options are now mutually exclusive in the rule editor** — selecting a faction disables armor slot buttons, and vice versa, preventing invalid rule configurations.
+- **Fixed: safeguard rule colors were missing from Gear Inspector labels, safeguard rank previews, and rule name tooltips** — color indicators now appear wherever a safeguard rule name is displayed.
+- **Fixed: the cutoff divider in the safeguard weight adjustment popover would jump to the wrong row when the list was scrolled** — it now stays anchored to the position you set.
+- **Fixed: safeguard keep-overrides were ignored when a sell rule had first-match priority** — items meeting safeguard conditions are now correctly kept even when a matching sell recipe is ordered first.
+
+Deutsch:
+- **Gear Analytics: Bereich „Champion Equipment"** — der frühere Bereich „Nicht vollständig ausgerüstet" wurde umbenannt und erweitert: ein „Verkauf simulieren"-Schalter markiert in Rot jedes ausgerüstete Teil, das deine aktiven Regeln verkaufen würden; ein „Vollständig ausgerüstete anzeigen"-Schalter schließt Champions mit allen besetzten Slots ein; die Sortierung folgt jetzt standardmäßig der In-Game-Reihenfolge (Empowerment › Blessing › Affinität › Sterne › Level); wählst du ein Item in dieser Liste aus, wird es auch im Gear Inspector hervorgehoben.
+- **Neu: Simple Mode** — eine vereinfachte Ansicht für die RSL-Helper-Integration, die über den URL-Parameter `?simple` aufgerufen wird. Sie bietet einen Preset-Schalter (Anfänger / Endgame), ein zentrales Auto-Push-Element mit Verbindungsanzeige und einen „Experten-Modus"-Button zum Wechsel in die vollständige Bearbeitungsansicht. In allen unterstützten Sprachen verfügbar.
+- **Neu: Farbauswahl für Regel- und Schutznamen** — Namen können jetzt eine Anzeigefarbe über einen Farbauswähler erhalten, anstatt die alte `[#RRGGBB]`-Schreibweise im Namen zu verwenden.
+- **Behoben: Schutzregeln konnten Ausrüstung falsch bewerten, wenn Substat-Gesamtwerte relevant waren** — eine interne Typdiskrepanz ließ Artefakt-Substat-Gesamtwerte aus der Auswertungseingabe fehlen, was bei Regeln, die Gesamtwerte vergleichen, zu falschen Behalten/Verkaufen-Entscheidungen führen konnte.
+- **Behoben: Regeln mit gesetzter Fraktion bewerteten fälschlicherweise Rüstungsslots** — Helm-, Brust- und Bein-Teile wurden von Regeln ausgewertet, die nur für Accessoires gelten sollten (Ring, Amulett, Banner). Behalten/Verkaufen-Entscheidungen für diese Teile sind jetzt korrekt.
+- **Behoben: Schutzregeln ohne Substat-Filter schützen jetzt alle passenden Items** — bisher hat die App den Schutz willkürlich auf eine feste Anzahl begrenzt; jetzt wird jedes qualifizierende Item geschützt.
+- **Behoben: Live-Neuberechnung im Schutzregel-Gewichte-Popover funktioniert jetzt korrekt** — die Live-Vorschau lieferte falsche Ergebnisse wegen eines Initialisierungsproblems im dedizierten Scoring-Worker; die Ergebnisse stimmen jetzt mit der tatsächlichen Regelauswertung überein.
+- **Behoben: Rüstungsslot- und Fraktions-Optionen schließen sich im Regeleditor gegenseitig aus** — bei Auswahl einer Fraktion werden Rüstungsslot-Buttons deaktiviert und umgekehrt, um ungültige Regelkonfigurationen zu verhindern.
+- **Behoben: Farbmarkierungen von Schutzregel-Namen fehlten im Gear Inspector, in Schutzregel-Rangvorschauen und in Regel-Tooltips** — Farbindikatoren werden jetzt überall angezeigt, wo ein Schutzregel-Name erscheint.
+- **Behoben: Die Cutoff-Trennlinie im Schutzregel-Gewichte-Popover sprang beim Scrollen der Liste an die falsche Zeile** — sie bleibt jetzt an der gesetzten Position verankert.
+- **Behoben: Schutzregel-Keep-Overrides wurden ignoriert, wenn eine Verkaufsregel im First-Match Vorrang hatte** — Items, die Schutzbedingungen erfüllen, werden jetzt korrekt behalten, auch wenn eine passende Verkaufsregel zuerst geordnet ist.
+
 ## v1.0.9 — 2026-05-11
 English:
 - **New: Two sample SFC presets in the “Load SFC File” right-click menu** — the menu now offers “Load Beginner Sample SFC” and “Load Mid-to-End Game Sample SFC”. Right-clicking the button still opens the menu; left-clicking opens your file picker as before.

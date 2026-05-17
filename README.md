@@ -203,8 +203,8 @@ Notes:
 - Clipboard fallback: If clipboard access is blocked, a dialog opens with the content pre‑selected — press Ctrl/Cmd+C to copy, or paste into the Paste dialog.
 - Recipes on/off toggle: The toggle in the builder header globally disables all recipes without deleting them, pausing the preview pipeline — useful to quickly check a safeguards-only export or confirm what Final Sell alone produces.
 
-### Gear Lens
-Open `Tools` and switch to the **Gear Lens** tab for an analytics overview of your imported gear.
+### Gear Analytics
+Open `Tools` and switch to the **Gear Analytics** tab for an analytics overview of your imported gear.
 
 **KPI cards (top row):** Eight percentage cards — **6★ Rate**, **Legendary+**, **Maxed (+16)**, **Equipped**, **Vault-Locked**, **Chaos'd**, **Glyphed**, **Ascended** — each with a tooltip.
 
@@ -226,8 +226,10 @@ Open `Tools` and switch to the **Gear Lens** tab for an analytics overview of yo
 
 **Champion Stats tab:** Substat totals summed across equipped pieces per champion. Filter by location (**All** / **Collection** / **Vault**), toggle **Fully Equipped** only, and include or exclude glyphs. Displays Min/Avg/Median/Max series.
 
+**Champion Equipment:** Per-champion gear-slot coverage in two compact tables (**Collection** / **Vault**). Each row shows a 3×3 slot grid (filled = equipped, outline = empty, dashed = locked until ascension). Click a filled slot to select that piece — selection is shared with the Gear Inspector. Toggle **Simulate sold** to paint slots that would be sold red and count them as missing, or **Show fully equipped** to also list champions with every slot filled.
+
 **Buttons:**
-- **Copy Snapshot:** Renders the full analytics view as a PNG and copies it to the clipboard.
+- **Copy Snapshot:** Renders the full analytics view as a PNG and copies it to the clipboard. Note: the Champion Equipment chart is not included in the snapshot.
 - **Apply to Gear Inspector:** Pushes the active crossfilter into the Gear Inspector list filter (only visible when a filter is active).
 
 ### Sellfile Preview (Rules & Gear Inspector)
