@@ -1,6 +1,23 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.13 — 2026-05-23
+English:
+- **New: Recipe overrides can now set absolute Roll Target thresholds per substat** — use `rolltarget.<stat>` in a `recipe-overrides` note block to replace the factory thresholds with your own values. Empty slots automatically fall back to the higher of the factory default and the last value you specified. A warning badge appears on the Roll Targets heading whenever a custom threshold is active.
+- **New: Clearing tags that are in use by active dynamic overrides now asks for confirmation** — you can choose to apply the current override values before the tags are removed, so no adjustments are lost silently.
+- **New: Gear Inspector bottom bar now has a single/multi-select mode toggle** — the toggle sits to the right of the Unselect All button, and your chosen mode is remembered between sessions.
+- **New: Double-clicking a tag chip in the rule or safeguard builder copies its text to the clipboard.**
+- **Sample SFC: accessory recipes/safeguards now use a dynamic override to make Roll Targets stricter** — accessory slots can require desired stat rolls to appear early (by level 8) and apply higher minimum flat-stat thresholds. Alternatively, you can rely mostly on safeguards to protect your best accessories.
+- **Fixed: Tutorial step 10 now highlights the correct button in the Manage Metasets dialog** — export-step text formatting is also corrected in all supported languages.
+
+Deutsch:
+- **Neu: Recipe-Overrides können jetzt absolute Roll-Target-Schwellenwerte pro Substat setzen** — verwende `rolltarget.<stat>` in einem `recipe-overrides`-Notizblock, um die Standard-Schwellenwerte durch eigene Werte zu ersetzen. Leere Stellen fallen automatisch auf den höheren Wert aus Standard-Schwellenwert und zuletzt angegebenem Wert zurück. Ein Warnsymbol am Roll-Targets-Bereich zeigt an, wenn ein benutzerdefinierter Schwellenwert aktiv ist.
+- **Neu: Das Löschen von Tags, die in aktiven dynamischen Overrides verwendet werden, fragt jetzt nach Bestätigung** — du kannst die Override-Werte übernehmen, bevor die Tags entfernt werden, sodass keine Anpassungen still verloren gehen.
+- **Neu: Die untere Leiste des Gear Inspectors hat jetzt einen Einzel-/Mehrfachauswahl-Schalter** — der Schalter befindet sich rechts neben der Schaltfläche „Auswahl aufheben", und der gewählte Modus wird zwischen Sitzungen gespeichert.
+- **Neu: Ein Doppelklick auf einen Tag-Chip im Regel- oder Schutzregel-Builder kopiert dessen Text in die Zwischenablage.**
+- **Beispiel-SFC: Schmuckstück-Rezepte/Schutzregeln verwenden jetzt einen dynamischen Override, der die Roll Targets strenger macht** — für Schmuckstück-Slots können gewünschte Substat-Würfe bereits früh (bis Level 8) gefordert und höhere Mindest-Flatstat-Schwellen angewendet werden. Alternativ kannst du dich hauptsächlich auf Schutzregeln verlassen, um deine besten Schmuckstücke zu schützen.
+- **Behoben: Schritt 10 des Tutorials hebt jetzt die richtige Schaltfläche im Metasets-Dialog hervor** — die Textformatierung des Export-Schritts ist zudem in allen unterstützten Sprachen korrigiert.
+
 ## v1.0.12 — 2026-05-22
 English:
 - **Fixed: deleting an empty, unused Metaset no longer causes it to reappear after closing the Manage Metasets dialog**
