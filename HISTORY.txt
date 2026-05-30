@@ -1,6 +1,51 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.14 — 2026-05-31
+English:
+- **New: Light mode** — a sun/moon toggle on the Help screen switches between dark and light themes instantly. A theme customization flyout lets you adjust accent color, selection color, background, border radius, and more; all choices are saved between sessions.
+- **New: Note panel in side-by-side layout is now a floating, draggable panel** — drag it to snap to either screen edge and resize its width independently. Position and width are remembered between sessions.
+- **New: Override DSL error diagnostics in the note editor** — unknown fields, bad selectors, and unterminated strings now appear as wavy red underlines in the note text, with a summary panel below the editor listing all issues and folding repeated messages.
+- **New: Keyboard navigation for recipe and safeguard chip lists** — arrow keys move one item at a time; Page Up/Down jump by visible screen height; Home/End jump to the first or last item.
+- **Metasets dialog redesigned** — recipe and safeguard usage split into separate fixed-width columns with persistent headers. Safeguard chips are now clickable to jump to the matching rule, matching how recipe chips already worked.
+- **Gear Analytics: main stat bar is now a cross-filter** — clicking a main-stat slice filters all pie charts, KPIs, and the chip strip simultaneously, consistent with the other Analytics dimensions.
+- **Sample SFC: dedicated "good substats per accessory" override** — a new question lets you tune accessory strictness (Rings, Amulets, Banners) independently from artifacts, with Very Relaxed / Relaxed / Strict / Very Strict choices.
+- **Sample SFC: Chaos Ore options now offer a "Gauntlets, Chestplate, and Boots are ignored" checkbox** — limits weak-piece protection to slots that benefit most from Speed rolls (Weapon, Helmet, Shield, Ring, Amulet, Banner). On by default in Midgame/Lategame for all three Chaos Ore questions, and in Endgame for 6★ and All-Sets.
+- **Sample SFC: Lategame preset now caps 5★ Chaos Ore protection to already-rolled gear at level 12–16** — previously Lategame kept any 5★ that *could* still hit 3× on a substat; it now only keeps pieces that have already done so.
+- **Sample SFC: Endgame preset is stricter on accessories** — accessories now need one more good substat compared to the previous Endgame setting, and the "accessories must roll desired stats early" toggle is on by default.
+- **Sample SFC: new Banner reference recipe for Midgame preset** — a 6★ HP/DEF banner template requiring three in SPD / HP% / DEF% is included as a starting point.
+- **Sample SFC: Mercurial safeguards now run before the generic "catch unique sets" safeguards** — Mercurial pieces are evaluated by their dedicated rule first, so the catch-all no longer claims them before Mercurial-specific protection applies.
+- **Sample SFC: removed two stale recipes** — an untagged duplicate "triple SPD banner" recipe (which bypassed the dynamic overrides) and the "Mythical-substat CDMG amulet" recipe (since players with mythical access can use 6★ instead, which is easier to obtain and has higher stat value).
+- **Fixed: Gear Inspector scroll position now restores after RSL Helper reconnects** — the list no longer jumps to the top when the connection refreshes.
+- **Fixed: Gear Inspector outcome counts in "Matched Active" context mode** — the scoped panel now counts only primary matches, excluding companion items.
+- **Fixed: Dungeon Simulator tooltip no longer gets stuck on "Calculating..."** — restarting after the worker went idle now loads results correctly.
+- **Fixed: Gear Inspector context menu relabeled to "Show Match Index"** (was "Show Recipe Index") — it now also correctly shows the safeguard rule ordinal for safeguard-only matched items.
+- **Fixed: Meta-set selection in the safeguard builder is now disabled only when all member sets are outside the allowed pool** — previously it locked incorrectly when any single member was disallowed.
+- **Fixed: Gear Sets Select quick-filter now includes no-set accessories** when no slot filter is active.
+- **Fixed: Gear Analytics equipped rate was incorrectly pinned at 100%** — a comparison bug missed unequipped pieces.
+
+Deutsch:
+- **Neu: Hell-Modus** — Ein Sonne/Mond-Schalter auf dem Hilfe-Bildschirm wechselt sofort zwischen dunklem und hellem Design. Ein Design-Anpassungs-Flyout ermöglicht das Einstellen von Akzentfarbe, Auswahlfarbe, Hintergrund, Eckenradius und mehr; alle Einstellungen werden zwischen Sitzungen gespeichert.
+- **Neu: Notizbereich im Side-by-Side-Layout ist jetzt ein schwebendes, verschiebbares Panel** — Ziehe es zum Einrasten an einen Bildschirmrand und passe die Breite unabhängig an. Position und Breite werden zwischen Sitzungen gespeichert.
+- **Neu: Fehlerdiagnose für Override-DSL im Notiz-Editor** — Unbekannte Felder, fehlerhafte Selektoren und nicht geschlossene Zeichenketten erscheinen als wellenförmige rote Unterstreichungen im Notiztext, mit einer Zusammenfassung aller Probleme darunter, in der wiederholte Meldungen zusammengefasst werden.
+- **Neu: Tastaturnavigation für Rezept- und Schutzregel-Chip-Listen** — Pfeiltasten bewegen sich um ein Element; Bild-auf/Bild-ab springt um eine Bildschirmhöhe; Pos1/Ende springt zum ersten oder letzten Element.
+- **Metasets-Dialog neu gestaltet** — Rezept- und Schutzregel-Nutzung auf separate Spalten mit fester Breite und dauerhaften Überschriften aufgeteilt. Schutzregel-Chips sind jetzt anklickbar, um zur entsprechenden Regel zu springen – entsprechend dem Verhalten der Rezept-Chips.
+- **Gear Analytics: Hauptstat-Balken ist jetzt ein Kreuzfilter** — ein Klick auf ein Hauptstat-Segment filtert alle Tortendiagramme, KPIs und den Chip-Streifen gleichzeitig, konsistent mit den anderen Analytics-Dimensionen.
+- **Beispiel-SFC: dedizierter Override „Gute Substats pro Accessoire"** — eine neue Frage erlaubt es, die Strenge für Accessoires (Ringe, Amulette, Banner) unabhängig von Artefakten einzustellen, mit Auswahl „Sehr entspannt" / „Entspannt" / „Streng" / „Sehr streng".
+- **Beispiel-SFC: Chaos-Erz-Optionen bieten jetzt eine Checkbox „Handschuhe, Brustplatte und Stiefel ignorieren"** — beschränkt den Schutz schwacher Teile auf die Slots, die am meisten von Speed-Rolls profitieren (Waffe, Helm, Schild, Ring, Amulett, Banner). Standardmäßig aktiv in Midgame/Lategame für alle drei Chaos-Erz-Fragen sowie in Endgame für 6★ und Alle-Sets.
+- **Beispiel-SFC: Lategame-Preset begrenzt den 5★-Chaos-Erz-Schutz jetzt auf bereits gerollte Teile auf Level 12–16** — zuvor behielt Lategame jedes 5★, das auf einem Substat noch 3× erreichen *könnte*; jetzt werden nur Teile behalten, die das bereits geschafft haben.
+- **Beispiel-SFC: Endgame-Preset ist strenger bei Accessoires** — Accessoires brauchen jetzt einen guten Substat mehr als bei der vorherigen Endgame-Einstellung, und der Schalter „Accessoires müssen erwünschte Stats früh rollen" ist standardmäßig aktiv.
+- **Beispiel-SFC: neues Banner-Referenzrezept für das Midgame-Preset** — eine 6★-HP/DEF-Banner-Vorlage, die drei der Substats SPD / HP% / DEF% verlangt, ist als Ausgangspunkt enthalten.
+- **Beispiel-SFC: Mercurial-Schutzregeln laufen jetzt vor den generischen „Unique-Sets einfangen"-Schutzregeln** — Mercurial-Teile werden zuerst von ihrer dedizierten Regel ausgewertet, sodass die Catch-All-Regel sie nicht mehr beansprucht, bevor der Mercurial-spezifische Schutz greift.
+- **Beispiel-SFC: zwei veraltete Rezepte entfernt** — ein ungetaggtes Duplikat-Rezept für „Tripel-SPD-Banner" (das die dynamischen Overrides umging) sowie das Rezept für „Mythisch-Substat-CDMG-Amulette" (da Spieler mit Mythical-Zugang stattdessen 6★ verwenden können, was leichter zu erhalten ist und höhere Stat-Werte bietet).
+- **Behoben: Scrollposition im Gear Inspector wird nach Wiederherstellen der RSL-Helper-Verbindung wiederhergestellt** — die Liste springt nicht mehr nach oben, wenn die Verbindung neu aufgebaut wird.
+- **Behoben: Gear-Inspector-Ergebniszählung im „Matched Active"-Kontext-Modus** — die Scoped-Seite zählt jetzt nur noch primäre Treffer, ohne Begleiter-Items.
+- **Behoben: Dungeon-Simulator-Tooltip bleibt nicht mehr bei „Berechne..." stecken** — ein Neustart nach dem Inaktiv-Werden des Workers lädt Ergebnisse jetzt korrekt.
+- **Behoben: Gear-Inspector-Kontextmenü in „Show Match Index" umbenannt** (vorher „Show Recipe Index") — zeigt jetzt auch korrekt den Schutzregel-Index für nur durch Schutzregeln gematchte Items.
+- **Behoben: Metaset-Auswahl im Schutzregel-Builder wird jetzt nur gesperrt, wenn alle Mitglieds-Sets außerhalb des erlaubten Pools sind** — zuvor wurde es fälschlicherweise gesperrt, wenn ein einzelnes Mitglied nicht erlaubt war.
+- **Behoben: Gear-Sets-Select-Schnellfilter zeigt jetzt No-Set-Accessoires an**, wenn kein Slot-Filter aktiv ist.
+- **Behoben: Gear Analytics zeigte fälschlicherweise 100 % für die Ausrüstungsrate** — ein Vergleichsfehler übersah nicht ausgerüstete Teile.
+
 ## v1.0.13 — 2026-05-23
 English:
 - **New: Recipe overrides can now set absolute Roll Target thresholds per substat** — use `rolltarget.<stat>` in a `recipe-overrides` note block to replace the factory thresholds with your own values. Empty slots automatically fall back to the higher of the factory default and the last value you specified. A warning badge appears on the Roll Targets heading whenever a custom threshold is active.

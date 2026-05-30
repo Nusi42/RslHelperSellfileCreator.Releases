@@ -27,6 +27,8 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
   chart to filter all others; push the active filter straight into the Gear Inspector.
 - **Final Sell** — one toggle adds catch-all sell rules for unmatched gear across
   configurable level ranges, so nothing slips through by accident.
+- **Themes** — toggle between dark and light mode, customize colors and border radius
+  with the built-in theme editor, or enable a color-blind-friendly palette.
 
 ## How To Use
 
