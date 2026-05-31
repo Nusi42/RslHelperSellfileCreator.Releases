@@ -1,6 +1,19 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.15 — 2026-05-31
+English:
+- **Sample SFC: dedicated Mercurial accessory safeguards** — new rules protect the best Mercurial amulets (Debuffer HP/DEF with ACC; CDMG with ACC/RES; CDMG with full substat pool; HP/DEF Survivability), Mercurial rings by main stat, and Mercurial SPD-substat banners by faction and slot, so promising Mercurial accessories are no longer lost before they finish rolling.
+- **Sample SFC: Merciless coverage extended to accessories** — added dedicated safeguards for the best Merciless CDMG amulets and Merciless SPD-substat banners by faction and slot, matching the protection already given to Merciless armor pieces.
+- **Sample SFC: Endgame preset relaxed on accessories** — accessories now need only "Strict" (3) good substats instead of "Very Strict" (4), and the "accessories must roll desired stats early" toggle is off by default again. The v1.0.14 Endgame defaults turned out too aggressive in practice.
+- **Fixed: Sample SFC Improvement Chance questions now have a default selected again** — both "protect artifacts by improvement chance" and "protect accessories by improvement chance" default to "Yes ~25%"; v1.0.14 had inadvertently cleared the default selection.
+
+Deutsch:
+- **Beispiel-SFC: dedizierte Schutzregeln für Mercurial-Accessoires** — neue Regeln schützen die besten Mercurial-Amulette (Debuffer HP/DEF mit ACC; CDMG mit ACC/RES; CDMG mit vollständigem Substat-Pool; HP/DEF Survivability), Mercurial-Ringe nach Hauptstat sowie Mercurial-Banner mit SPD-Substat pro Fraktion und Slot, sodass vielversprechende Mercurial-Accessoires nicht mehr verloren gehen, bevor sie fertig gerollt sind.
+- **Beispiel-SFC: Merciless-Abdeckung auf Accessoires ausgeweitet** — neue dedizierte Schutzregeln für die besten Merciless-CDMG-Amulette und Merciless-Banner mit SPD-Substat pro Fraktion und Slot, analog zum Schutz, der bereits für Merciless-Rüstungsteile existiert.
+- **Beispiel-SFC: Endgame-Preset bei Accessoires gelockert** — Accessoires brauchen wieder nur „Streng" (3) gute Substats statt „Sehr streng" (4), und der Schalter „Accessoires müssen erwünschte Stats früh rollen" ist standardmäßig wieder aus. Die strengeren Endgame-Defaults aus v1.0.14 erwiesen sich in der Praxis als zu aggressiv.
+- **Behoben: Verbesserungschance-Fragen im Beispiel-SFC haben wieder eine Voreinstellung** — sowohl „Artefakte nach Verbesserungschance schützen" als auch „Accessoires nach Verbesserungschance schützen" sind wieder auf „Ja ~25%" voreingestellt; v1.0.14 hatte diese Voreinstellung versehentlich entfernt.
+
 ## v1.0.14 — 2026-05-31
 English:
 - **New: Light mode** — a sun/moon toggle on the Help screen switches between dark and light themes instantly. A theme customization flyout lets you adjust accent color, selection color, background, border radius, and more; all choices are saved between sessions.
@@ -10,7 +23,7 @@ English:
 - **Metasets dialog redesigned** — recipe and safeguard usage split into separate fixed-width columns with persistent headers. Safeguard chips are now clickable to jump to the matching rule, matching how recipe chips already worked.
 - **Gear Analytics: main stat bar is now a cross-filter** — clicking a main-stat slice filters all pie charts, KPIs, and the chip strip simultaneously, consistent with the other Analytics dimensions.
 - **Sample SFC: dedicated "good substats per accessory" override** — a new question lets you tune accessory strictness (Rings, Amulets, Banners) independently from artifacts, with Very Relaxed / Relaxed / Strict / Very Strict choices.
-- **Sample SFC: Chaos Ore options now offer a "Gauntlets, Chestplate, and Boots are ignored" checkbox** — limits weak-piece protection to slots that benefit most from Speed rolls (Weapon, Helmet, Shield, Ring, Amulet, Banner). On by default in Midgame/Lategame for all three Chaos Ore questions, and in Endgame for 6★ and All-Sets.
+- **Sample SFC: Chaos Ore options now offer a "Gauntlets, Chestplate, and Boots are ignored" checkbox** — limits weak-piece protection to slots that benefit most from safe mainstats (Weapon, Helmet, Shield, Ring, Amulet, Banner). On by default in Midgame/Lategame for all three Chaos Ore questions, and in Endgame for 6★ and All-Sets.
 - **Sample SFC: Lategame preset now caps 5★ Chaos Ore protection to already-rolled gear at level 12–16** — previously Lategame kept any 5★ that *could* still hit 3× on a substat; it now only keeps pieces that have already done so.
 - **Sample SFC: Endgame preset is stricter on accessories** — accessories now need one more good substat compared to the previous Endgame setting, and the "accessories must roll desired stats early" toggle is on by default.
 - **Sample SFC: new Banner reference recipe for Midgame preset** — a 6★ HP/DEF banner template requiring three in SPD / HP% / DEF% is included as a starting point.
@@ -32,7 +45,7 @@ Deutsch:
 - **Metasets-Dialog neu gestaltet** — Rezept- und Schutzregel-Nutzung auf separate Spalten mit fester Breite und dauerhaften Überschriften aufgeteilt. Schutzregel-Chips sind jetzt anklickbar, um zur entsprechenden Regel zu springen – entsprechend dem Verhalten der Rezept-Chips.
 - **Gear Analytics: Hauptstat-Balken ist jetzt ein Kreuzfilter** — ein Klick auf ein Hauptstat-Segment filtert alle Tortendiagramme, KPIs und den Chip-Streifen gleichzeitig, konsistent mit den anderen Analytics-Dimensionen.
 - **Beispiel-SFC: dedizierter Override „Gute Substats pro Accessoire"** — eine neue Frage erlaubt es, die Strenge für Accessoires (Ringe, Amulette, Banner) unabhängig von Artefakten einzustellen, mit Auswahl „Sehr entspannt" / „Entspannt" / „Streng" / „Sehr streng".
-- **Beispiel-SFC: Chaos-Erz-Optionen bieten jetzt eine Checkbox „Handschuhe, Brustplatte und Stiefel ignorieren"** — beschränkt den Schutz schwacher Teile auf die Slots, die am meisten von Speed-Rolls profitieren (Waffe, Helm, Schild, Ring, Amulett, Banner). Standardmäßig aktiv in Midgame/Lategame für alle drei Chaos-Erz-Fragen sowie in Endgame für 6★ und Alle-Sets.
+- **Beispiel-SFC: Chaos-Erz-Optionen bieten jetzt eine Checkbox „Handschuhe, Brustplatte und Stiefel ignorieren"** — beschränkt den Schutz schwacher Teile auf die Slots, die sichere mainstats haben (Waffe, Helm, Schild, Ring, Amulett, Banner). Standardmäßig aktiv in Midgame/Lategame für alle drei Chaos-Erz-Fragen sowie in Endgame für 6★ und Alle-Sets.
 - **Beispiel-SFC: Lategame-Preset begrenzt den 5★-Chaos-Erz-Schutz jetzt auf bereits gerollte Teile auf Level 12–16** — zuvor behielt Lategame jedes 5★, das auf einem Substat noch 3× erreichen *könnte*; jetzt werden nur Teile behalten, die das bereits geschafft haben.
 - **Beispiel-SFC: Endgame-Preset ist strenger bei Accessoires** — Accessoires brauchen jetzt einen guten Substat mehr als bei der vorherigen Endgame-Einstellung, und der Schalter „Accessoires müssen erwünschte Stats früh rollen" ist standardmäßig aktiv.
 - **Beispiel-SFC: neues Banner-Referenzrezept für das Midgame-Preset** — eine 6★-HP/DEF-Banner-Vorlage, die drei der Substats SPD / HP% / DEF% verlangt, ist als Ausgangspunkt enthalten.
