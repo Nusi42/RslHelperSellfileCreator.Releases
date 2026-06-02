@@ -1,6 +1,33 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.16 — 2026-06-02
+English:
+- **New: Dungeon Simulator 5× boost for Fire Knight, Dragon, and Ice Golem** — the boost selector now includes a 5× drop-rate multiplier alongside 2× and 3×. Spider's Den and event dungeons are unaffected.
+- **New: Safeguard override answers saved between sessions** — slider positions and selection choices in safeguard override questions now survive a page reload, matching the existing behavior for recipe overrides.
+- **New: Gear Inspector group headers now stick and tuck cleanly while scrolling** — pinned section and subgroup labels stack in order as you scroll into nested groups, tuck behind their parent when a subgroup ends, and no longer lock up scrolling when a collapsed group's header was pinned.
+- **Fixed: Renaming a metaset now updates all recipes and safeguard rules that reference it** — rules kept the old name after a rename and stopped matching correctly; they now follow the new name automatically.
+- **Fixed: Clicking a chip in the Gear Inspector no longer accidentally selects the card** — match chips, other-match chips, the "+N" overflow chip, and the Final Sell label all correctly block the click from toggling card multi-selection.
+- **Fixed: Safeguard builder no longer injects a fallback set when a metaset covers the slot** — rules that use a metaset but no individual sets no longer get Life or Swift Parry silently added to the sets list when you click a slot.
+- **Fixed: Gear Analytics outcome chart now renders correctly in all themes** — a color format mismatch caused the outcome distribution donut to crash; it now uses the correct color values in all theme configurations.
+- **Fixed: Gear piece lock state and last-used timestamps no longer reset on RSL Helper reconnect** — when RSL Helper sends a fresh gear snapshot, pieces that were locked or had a known last-used timestamp no longer lose that information.
+- **Lategame preset: Mercurial accessories with a strong SPD substat now have dedicated protection** — a new safeguard rule keeps scarce Mercurial accessories with a top SPD roll from being sold prematurely; Mercurial safeguards are now organized as a metaset for easier maintenance.
+- **Lategame preset: dedicated safeguards for high-Accuracy limited-debuffer gear** — new rules protect pieces worn by limited debuffers that require high Accuracy alongside controlled Speed.
+- **Preset load buttons relabeled** — "Load Beginner Sample SFC" is now "Load Preset: Beginner" and "Load Midgame to Endgame Sample SFC" is now "Load Preset: Midgame to Endgame."
+
+Deutsch:
+- **Neu: Dungeon-Simulator 5×-Boost für Fire Knight, Drache und Ice Golem** — der Boost-Selektor bietet jetzt auch eine 5×-Drop-Rate-Option neben 2× und 3×. Spider's Den und Event-Dungeons sind nicht betroffen.
+- **Neu: Safeguard-Override-Antworten werden zwischen Sitzungen gespeichert** — Schiebereglerstellungen und Auswahloptionen in Safeguard-Override-Fragen bleiben nach einem Seiten-Reload erhalten und verhalten sich jetzt wie die bereits vorhandene Persistenz für Recipe-Overrides.
+- **Neu: Gear-Inspector-Gruppenüberschriften rasten sauber beim Scrollen ein** — angepinnte Abschnitts- und Untergruppen-Labels stapeln sich in der richtigen Reihenfolge beim Scrollen in verschachtelte Gruppen, schieben sich unter ihre übergeordnete Überschrift, wenn eine Untergruppe endet, und sperren nicht mehr die Scrollposition, wenn eine zusammengeklappte Gruppe angepinnt war.
+- **Behoben: Umbenennen eines Metasets aktualisiert jetzt alle Rezepte und Schutzregeln, die darauf verweisen** — Regeln behielten nach einem Umbenennen den alten Namen und griffen nicht mehr korrekt; sie folgen jetzt automatisch dem neuen Namen.
+- **Behoben: Ein Klick auf einen Chip im Gear Inspector wählt die Karte nicht mehr versehentlich aus** — Match-Chips, Andere-Match-Chips, der „+N"-Overflow-Chip und das Final-Sell-Label blockieren jetzt korrekt, dass der Klick die Mehrfachauswahl der Karte auslöst.
+- **Behoben: Der Safeguard-Builder fügt keinen Fallback-Set mehr ein, wenn ein Metaset den Slot abdeckt** — Regeln mit Metasets, aber ohne einzelne Sets, erhalten beim Klick auf einen Slot nicht mehr stillschweigend Life oder Swift Parry hinzugefügt.
+- **Behoben: Der Gear-Analytics-Outcome-Chart rendert jetzt korrekt in allen Designs** — ein Farbformat-Fehler ließ das Outcome-Donut-Diagramm abstürzen; es verwendet jetzt in allen Design-Konfigurationen die richtigen Farbwerte.
+- **Behoben: Sperrstatus und Zuletzt-verwendet-Zeitstempel von Gear-Teilen werden bei RSL-Helper-Verbindungswiederherstellung nicht mehr zurückgesetzt** — wenn RSL Helper einen neuen Snapshot schickt, verlieren gesperrte oder mit bekannten Zeitstempeln versehene Teile diese Informationen nicht mehr.
+- **Lategame-Preset: Mercurial-Accessoires mit starkem SPD-Substat erhalten dedizierten Schutz** — eine neue Schutzregel bewahrt seltene Mercurial-Accessoires mit hohem SPD-Roll vor vorzeitigem Verkauf; Mercurial-Schutzregeln sind jetzt als Metaset organisiert.
+- **Lategame-Preset: dedizierte Schutzregeln für High-Accuracy-limitierte-Debuffer-Ausrüstung** — neue Regeln schützen Teile, die von limitierten Debuffern mit hoher Accuracy und kontrollierter Speed getragen werden.
+- **Preset-Ladeknöpfe umbenannt** — „SFC-Beispieldatei laden (Anfänger)" heißt jetzt „Voreinstellung laden: Anfänger" und „SFC-Beispieldatei laden (Midgame bis Endgame)" heißt jetzt „Voreinstellung laden: Midgame bis Endgame".
+
 ## v1.0.15 — 2026-05-31
 English:
 - **Sample SFC: dedicated Mercurial accessory safeguards** — new rules protect the best Mercurial amulets (Debuffer HP/DEF with ACC; CDMG with ACC/RES; CDMG with full substat pool; HP/DEF Survivability), Mercurial rings by main stat, and Mercurial SPD-substat banners by faction and slot, so promising Mercurial accessories are no longer lost before they finish rolling.
