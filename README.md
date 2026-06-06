@@ -16,6 +16,9 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
   reuse them across recipes and safeguards.
 - **Gear Inspector** — connect to RSL Helper for live sync or load a `.db` file to preview
   which items each recipe matches and how many would be kept or sold.
+- **Gear Diff** — turn on a before/after view to see exactly which gear pieces flip between
+  *keep* and *sell* as you tune recipes or try the dynamic overrides. A chip shows the
+  running totals; a side-by-side list shows every piece that changed.
 - **Dungeon Simulator** — see keep-chance percentages for Fire Knight, Dragon, and Ice
   Golem across difficulty stages and upgrade levels to confirm the effect of your sellfile
   when farming or leveling gear.
@@ -263,6 +266,18 @@ Open `Tools` and switch to the **Gear Analytics** tab for an analytics overview 
 - Connect to RSL Helper for live gear sync (the Connect button in the preview header), or import a `.db` file by dropping it onto the app or using the “Load RSL Helper Sellfile” button.- Each item in the Gear Inspector shows slot, set, level, main stat, substats (with glyphs and rolls), the source (inventory vs inbox), and chips for Keep/Sell + the first matching recipe/rule. Disabled rules never match, so “No match” entries represent gear the Sellfile would leave alone.
 - The header counts show Keep / Sell / matched / unmatched totals. The four result-filter buttons — **Keep**, **Sell**, **Scope**, and **Unmatched** — work as independent toggles: activate any combination to narrow the list. **Scope** dims (but keeps visible) items that share the same set+slot as a piece your rules would sell, so you can compare a candidate against its competition in one view rather than hunting across two filter passes. When one or more **Sources** are also selected, those sources act as the reference set — only sell-tagged items from the selected sources become primaries, while companions are drawn from *all* sources, letting you see every copy of that gear piece regardless of where it sits. **Unmatched** shows gear no rule touches at all — useful for spotting gaps in your recipes. Combine these with the Recipe `First-Match`/`Any-Match` toggle to focus on edge cases before exporting.
 - Use the preview toggle to move between Rules and Gear Inspector without reopening the Tools dialog — great for comparing the generated rule rows against the gear that triggered them.
+
+### Gear Diff (Before / After)
+- The **Diff** button in the Gear Inspector header turns on a comparison that shows which gear pieces flip between **Keep** and **Sell** as you change things — handy when tuning recipes or trying the dynamic overrides in the Note dialog.
+- A small chip next to the button shows the running change against your reference point: how many more (or fewer) pieces are now **Sold**, **Kept**, and protected by **Safeguards**.
+- Left-click the **Diff** button to open a **side-by-side before/after** of the changed pieces (left = before, right = after) with synced scrolling. Click again to close.
+- Right-click the button for options:
+  - **Set reference** — freeze the current state as the “before” you compare against.
+  - **Auto-track reference** (on by default) — keeps the “before” at your latest recipe/safeguard edit, so the diff always reflects your most recent change.
+- Two things worth knowing:
+  - Toggling **dynamic overrides** in the Note dialog **adds up** — clicking several overrides shows their combined effect, not just the last one.
+  - Editing a recipe or safeguard in the builder moves the reference to that edit (while Auto-track is on). Turn Auto-track off (or use Set reference) to compare everything against one fixed point.
+- Your normal Gear Inspector filters still apply: a piece shows if it matches the filter either before or after the change.
 
 ### Export
 - Click “Export merged RSL Helper Sellfile” (or “Export RSL Helper Sellfile” when no base file is loaded).
