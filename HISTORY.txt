@@ -1,6 +1,17 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.18 — 2026-06-08
+English:
+- **Fixed: Gear data from RSL Helper is no longer lost when it arrives while the restore dialog is open** — the app now re-requests a fresh snapshot from RSL Helper as soon as the restore dialog closes (whether you restore or dismiss it), so you do not need to manually reconnect to pick up changes that arrived during the prompt.
+- **Fixed: Lategame preset "Mythical only" Chaos Ore option now actually restricts to Mythical pieces** — the option had the same effect as "≥ Legendary", keeping any 6★ piece that could reach 4× on a substat; it now correctly requires a 5× potential so only Mythical-rarity gear qualifies.
+- **Lategame preset: the three Chaos Ore questions are now per-rarity checkboxes** — the bundled radio choices (≥Epic / ≥Legendary / level-cap / off) are replaced by independent Epic / Legendary / Mythical toggles, plus a separate "keep only already-rolled (level 12–16)" checkbox and the existing "Gauntlets, Chestplate, and Boots are ignored" checkbox as overall per-question modifiers.
+
+Deutsch:
+- **Behoben: Gear-Daten von RSL Helper gehen nicht mehr verloren, wenn sie während des Wiederherstellungsdialogs ankommen** — die App fordert nach dem Schließen des Wiederherstellungsdialogs (egal ob wiederhergestellt oder verworfen) automatisch einen frischen Snapshot von RSL Helper an, sodass kein manuelles Neuverbinden erforderlich ist.
+- **Behoben: Die Option „Nur Mythical" beim Chaos-Erz im Lategame-Preset schränkt jetzt tatsächlich auf Mythical-Teile ein** — die Option hatte denselben Effekt wie „≥ Legendary" und behielt jedes 6★-Teil, das 4× auf einem Substat erreichen könnte; sie fordert jetzt korrekt ein 5×-Potenzial, sodass nur Mythical-Teile erfasst werden.
+- **Lategame-Preset: die drei Chaos-Erz-Fragen sind jetzt Checkboxen pro Seltenheit** — die gebündelten Radio-Optionen (≥Epic / ≥Legendary / Level-Begrenzung / aus) werden durch unabhängige Schalter für Epic / Legendary / Mythical ersetzt, dazu eine separate Checkbox „Nur bereits gerollte Teile behalten (Level 12–16)" und die bestehende Checkbox „Handschuhe, Brustplatte und Stiefel werden ignoriert" als übergeordnete Modifikatoren je Frage.
+
 ## v1.0.17 — 2026-06-06
 English:
 - **New: Gear Diff — before/after comparison showing exactly what changed after editing rules** — a "Diff" toggle in the Gear Inspector header opens a side-by-side split view: the left (before) pane shows each group's verdict counts at the reference point, the right (after) pane shows what the current rules produce. A signed delta chip (±sold / ±kept / ±safeguarded) stays visible next to the Diff button even when the split view is closed, so you always know whether a meaningful difference exists. Selecting a piece in one pane highlights the same piece in the other. The reference can be pinned manually ("Set reference") or updated automatically whenever recipe or safeguard rules change; loading a sell file from disk also triggers a diff against whatever was loaded before.
