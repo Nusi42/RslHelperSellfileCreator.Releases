@@ -1,6 +1,26 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.19 — 2026-06-14
+English:
+- **New: Dynamic override answer sets can now be saved, loaded, and deleted in the note dialog** — named sets capture all recipe and safeguard question selections and work in both view and edit mode; an info tooltip on each saved set lists every question and its selected answer. Existing SFC files saved with the previous format load correctly.
+- **New: Dynamic override controls in the note editor now show an info tooltip (edit mode only)** — hovering a control reveals its DSL identifier, which constraints it forces, and a reconstructed preview of the DSL it changes; clicking the control jumps to its definition in the editor with a brief highlight.
+- **Improved: Note editor scroll sync is now marker-anchored** — the editor and preview pane stay aligned even for tall option cards that previously caused the ratio-based sync to lose its position.
+- **Fixed: Champion icons were blank on all gear pieces after connecting to RSL Helper** — the link between a gear piece and its equipped champion was not being applied because a guard incorrectly treated unequipped gear (champion ID 0) the same as already-linked gear.
+- **Fixed: Fresh gear data from RSL Helper could be overwritten by a stale autosave restore** — gear that arrived while the Help/README screen was open before the restore prompt appeared was at risk of being replaced by the older draft; incoming endpoint gear is now always treated as authoritative.
+- **Fixed: The "unsaved changes" badge appeared incorrectly when RSL Helper sent routine gear-database updates that did not change any sell decision** — the badge now only activates when at least one piece's outcome has actually changed.
+- **Fixed: Editing safeguard substat-match or improvement-chance fields did not update the exported sell file** — the export could remain stale until an unrelated change triggered a full rebuild.
+- **Fixed: Saving weight changes in the safeguard builder (without other edits) was silently ignored** — weight-only edits now save correctly and are recorded in the undo history.
+
+Deutsch:
+- **Neu: Override-Sets für Dynamic Overrides können jetzt im Notiz-Dialog gespeichert, geladen und gelöscht werden** — benannte Sets erfassen alle Rezept- und Safeguard-Fragenauswahlen und funktionieren in Ansichts- und Bearbeitungsmodus; ein Info-Tooltip auf jedem gespeicherten Set listet jede Frage und die gewählte Antwort auf. Bestehende SFC-Dateien im alten Format werden weiterhin korrekt geladen.
+- **Neu: Override-Controls im Notiz-Editor zeigen jetzt ein Info-Tooltip (nur im Bearbeitungsmodus)** — beim Hovern erscheint der DSL-Bezeichner des Controls, welche Einschränkungen es erzwingt und eine rekonstruierte Vorschau des DSL-Blocks, den es verändert; ein Klick springt zur entsprechenden Zeile im Editor mit kurzem Highlight.
+- **Behoben: Champion-Icons waren auf allen Gear-Teilen leer nach dem Verbinden mit RSL Helper** — die Verknüpfung zwischen einem Gear-Teil und dem ausgerüsteten Champion wurde nicht angewandt, da eine Prüfung nicht ausgerüstetes Gear (Champion-ID 0) fälschlicherweise wie bereits verknüpftes Gear behandelte.
+- **Behoben: Frische Gear-Daten von RSL Helper konnten durch eine veraltete Autosave-Wiederherstellung überschrieben werden** — Gear, das während des Hilfe-/README-Bildschirms ankam, bevor der Wiederherstellungsdialog erschien, konnte durch den älteren Entwurf ersetzt werden; eingehende Endpoint-Daten gelten jetzt immer als autoritativ.
+- **Behoben: Das „ungespeicherte Änderungen"-Badge erschien fälschlicherweise, wenn RSL Helper routinemäßige Gear-Datenbank-Updates sendete, die keine Verkaufsentscheidung änderten** — das Badge wird jetzt nur aktiviert, wenn sich das Ergebnis mindestens eines Teils tatsächlich geändert hat.
+- **Behoben: Das Bearbeiten der Substat-Match- oder Verbesserungschance-Felder in Safeguard-Regeln aktualisierte die exportierte Verkaufsdatei nicht** — der Export konnte veraltet bleiben, bis eine unabhängige Änderung einen vollständigen Neuaufbau auslöste.
+- **Behoben: Das Speichern von Gewichtsänderungen im Safeguard-Builder (ohne andere Bearbeitungen) wurde stillschweigend ignoriert** — reine Gewichtsänderungen werden jetzt korrekt gespeichert und in der Undo-Historie erfasst.
+
 ## v1.0.18 — 2026-06-08
 English:
 - **Fixed: Gear data from RSL Helper is no longer lost when it arrives while the restore dialog is open** — the app now re-requests a fresh snapshot from RSL Helper as soon as the restore dialog closes (whether you restore or dismiss it), so you do not need to manually reconnect to pick up changes that arrived during the prompt.
