@@ -1,6 +1,33 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.20 — 2026-06-16
+English:
+- **New: Improvement-chance override is now a continuous slider with named stops and an on/off toggle** — the improvement-chance question in notes uses a slider (range 0–90) with labeled marks (Soft 10 / Balanced 25 / Moderate 33 / Strict 50) and a Yes/No toggle, replacing the previous radio buttons; thresholds were recalibrated from real account data.
+- **New: Gear Analytics now includes an Improvement Chance histogram** — a click-to-filter bar chart groups safeguarded gear by its predicted improvement chance in 10-point bands; clicking a bar cross-filters the rest of the Gear Analytics view to that range.
+- **New: Selecting an account tier in the lategame note now automatically sets the improvement-chance sliders** — each tier applies its own values: Midgame sets artifacts to 25% and accessories to 50%; Lategame sets artifacts to 33% and accessories to 50%; Endgame sets both to 50%; Endgame+ sets both to 60%.
+- **New: Saved override sets now have an overwrite button** — replaces the set's stored selections with the current choices without changing the set's name.
+- **Fixed: The dungeon simulator in the note panel no longer restarts when RSL Helper sends routine background data updates** — routine gear-data pushes no longer interrupt or reset an active or completed simulation.
+- **Fixed: Disabling all recipes or editing a recipe now immediately updates the sell file preview and Gear Inspector** — a caching problem (born of an earlier optimization to make rule evaluation as fast as possible) meant changes weren't reflected until something else triggered a rebuild.
+- **Fixed: The "hide gear update message" preference now persists across page reloads** — the choice to dismiss the RSL Helper gear-update notification previously reset every time the page was reloaded.
+- **Fixed: Slider values in saved override sets are now preserved correctly when saving and loading** — slider answers were previously lost on a save/load round-trip.
+- **Fixed: Note editor preview scroll sync now works correctly in side-by-side mode when the browser is zoomed** — the editor and preview pane stay aligned at all zoom levels, including when scrolled to the very beginning of the document.
+- **Midgame/Lategame/Endgame preset: slow debuffer safeguards can now opt out of the improvement-chance filter independently** — pieces needed for champions with carefully controlled Speed are tagged so the improvement-chance question can be disabled for that group without affecting other safeguards.
+- **Midgame/Lategame/Endgame preset: Generic SPD recipe updated** — now targets Weapons, Helmets, Shields, and Banners with SPD as a required substat (≥3 rolls) **plus** at least 2 additional substats from CDMG%, CR%, ACC, RES, HP%, ATK%, DEF%.
+
+Deutsch:
+- **Neu: Override für Verbesserungschance ist jetzt ein Schieberegler mit benannten Stufen und Ein/Aus-Schalter** — die Verbesserungschance-Frage in Notizen verwendet einen Schieberegler (Bereich 0–90) mit beschrifteten Markierungen (Soft 10 / Balanced 25 / Moderate 33 / Strict 50) und einem Ja/Nein-Schalter anstelle der bisherigen Auswahloptionen; die Schwellenwerte wurden anhand echter Kontodaten neu kalibriert.
+- **Neu: Gear Analytics zeigt jetzt ein Verbesserungschance-Histogramm** — ein klickbares Balkendiagramm gruppiert safeguarded Ausrüstung nach prognostizierter Verbesserungschance in 10-Punkte-Bereiche; ein Klick auf einen Balken filtert die übrigen Gear-Analytics-Ansichten auf diesen Bereich.
+- **Neu: Die Auswahl einer Kontostufe in der Lategame-Notiz setzt jetzt automatisch die Verbesserungschance-Schieberegler** — jede Stufe verwendet eigene Werte: Mittelspiel setzt Artefakte auf 25% und Accessoires auf 50%; Lategame setzt Artefakte auf 33% und Accessoires auf 50%; Endgame setzt beide auf 50%; Endgame+ setzt beide auf 60%.
+- **Neu: Gespeicherte Override-Sets haben jetzt eine Überschreiben-Schaltfläche** — ersetzt die gespeicherten Auswahlen durch die aktuellen Einstellungen, ohne den Namen des Sets zu ändern.
+- **Behoben: Dungeon-Simulator im Notiz-Panel startet nicht mehr neu, wenn RSL Helper Hintergrund-Updates schickt** — routinemäßige Gear-Datenpushes unterbrechen oder setzen eine laufende oder abgeschlossene Simulation nicht mehr zurück.
+- **Behoben: Das Deaktivieren aller Rezepte oder das Bearbeiten eines Rezepts aktualisiert jetzt sofort die Verkaufsdatei-Vorschau und den Gear Inspector** — ein Caching-Problem (das durch eine frühere Optimierung für schnellere Regelauswertung entstand) sorgte dafür, dass Änderungen erst sichtbar wurden, wenn etwas anderes einen Neuaufbau auslöste.
+- **Behoben: Die Einstellung „Update-Meldung ausblenden" in der Gear-Datenbank bleibt nach Seiten-Reload erhalten** — die Auswahl, die RSL-Helper-Gear-Update-Benachrichtigung auszublenden, wurde zuvor bei jedem Seiten-Reload zurückgesetzt.
+- **Behoben: Schieberegler-Werte in gespeicherten Override-Sets bleiben jetzt beim Speichern und Laden korrekt erhalten** — Schieberegler-Antworten gingen zuvor bei einem Speichern/Laden-Vorgang verloren.
+- **Behoben: Die Vorschau-Scroll-Synchronisation im Notiz-Editor funktioniert jetzt korrekt im nebeneinander-Modus bei gezoomtem Browser** — Editor und Vorschau bleiben bei allen Zoomstufen ausgerichtet, auch ganz oben im Dokument.
+- **Midgame/Lategame/Endgame-Preset: Slow-Debuffer-Safeguards können jetzt unabhängig vom Verbesserungschance-Filter ausgeschlossen werden** — Teile für Champions mit kontrollierter Geschwindigkeit sind getaggt, damit die Verbesserungschance-Frage für diese Gruppe deaktiviert werden kann, ohne andere Safeguards zu beeinflussen.
+- **Midgame/Lategame/Endgame-Preset: Allgemeines SPD Rezept aktualisiert** — zielt jetzt auf Waffen, Helme, Schilde und Banner mit SPD als Pflicht-Substat (≥3 Rolls) **sowie** mindestens 2 weiteren Substats aus CDMG%, CR%, ACC, RES, HP%, ATK%, DEF%.
+
 ## v1.0.19 — 2026-06-14
 English:
 - **New: Dynamic override answer sets can now be saved, loaded, and deleted in the note dialog** — named sets capture all recipe and safeguard question selections and work in both view and edit mode; an info tooltip on each saved set lists every question and its selected answer. Existing SFC files saved with the previous format load correctly.

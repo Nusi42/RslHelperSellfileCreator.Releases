@@ -229,6 +229,8 @@ Open `Tools` and switch to the **Gear Analytics** tab for an analytics overview 
 
 **Main Stats bar:** Shows how often each main stat appears across the filtered gear. Click a bar to drill down — the Substat Frequency chart updates to show only substats from gear with that main stat selected. Click the bar again to deselect.
 
+**Improvement Chance:** How likely your gear is to improve, grouped in 10% steps. The number on the right is how many items fall in each group. Gear with no safeguard, and maxed +16 gear, are left out. Click a group to show only that gear.
+
 **Substat Frequency radar:** Shows how often each substat appears across the filtered (and optionally main-stat-drilled) gear as a spider chart. Click an axis mark to select it as a co-occurrence pivot — the radar then narrows to gear containing all selected substats at once (up to 4 pivots). Active pivots appear as chips below the chart; click × to deselect one, or **Clear** to remove all.
 
 **Slot × Main Stat heatmap:** Item count per slot (columns) × main stat (rows). Click a column header or any cell to filter by that slot.
