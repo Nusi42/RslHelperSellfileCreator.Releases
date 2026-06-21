@@ -1,6 +1,67 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.25 — 2026-06-21
+English:
+- **Improved: Gear evaluation with safeguards active is now faster** — when safeguards are enabled, the app now skips re-checking gear that is already kept by your recipes, since those pieces cannot be affected by safeguard rules. Accounts with many safeguard rules and large gear collections will notice the biggest speedup. Results are unchanged.
+
+Deutsch:
+- **Verbessert: Gear-Auswertung mit aktiven Safeguards ist jetzt schneller** — bei aktiven Safeguards überspringt die App das erneute Prüfen von Gear, das bereits durch Rezepte behalten wird, da diese Teile nicht durch Safeguard-Regeln beeinflusst werden können. Konten mit vielen Safeguard-Regeln und großen Gear-Sammlungen werden die größte Verbesserung bemerken. Die Ergebnisse sind unverändert.
+
+## v1.0.24 — 2026-06-21
+English:
+- **New: Gear slot icons now show a subtle color tint** — armor slots (Weapon, Helmet, Shield, Gauntlets, Chestplate, Boots) appear in pale gold; accessory slots (Ring, Amulet, Banner) appear in pale blue. The tints adapt to the active theme and can be customized or reset in Manage Colors. They follow the "Color stats & slots" toggle in display settings.
+- **Fixed: Gear waiting in your RSL Helper inbox was not counted toward safeguard protection** — items delivered as in-game mail but not yet collected were quietly passed over, causing safeguard to generate extra placeholder keep rules until the gear appeared in a later sync.
+
+Deutsch:
+- **Neu: Gear-Slot-Icons zeigen jetzt eine subtile Farbtönung** — Rüstungs-Slots (Waffe, Helm, Schild, Handschuhe, Brustpanzer, Stiefel) erscheinen in hellem Gold; Accessoire-Slots (Ring, Amulett, Banner) in hellem Blau. Die Tönung passt sich dem aktiven Theme an und kann in „Farben verwalten" angepasst oder zurückgesetzt werden. Sie folgt dem Schalter „Stats & Slots einfärben" in den Anzeigeeinstellungen.
+- **Behoben: Gear im RSL-Helper-Posteingang wurde nicht für den Safeguard-Schutz berücksichtigt** — Gegenstände, die als In-Game-Post eingegangen, aber noch nicht abgeholt wurden, wurden stillschweigend übergangen; dadurch erzeugte der Safeguard zusätzliche Platzhalter-Keep-Regeln, bis das Gear bei einer späteren Synchronisierung ankam.
+
+## v1.0.23 — 2026-06-20
+English:
+- **New: Load SFC and Export/Push buttons now have a dropdown chevron (▾)** — clicking the chevron opens the preset and options menu; clicking the main button area directly opens the file picker or exports. On the first click each session, the Load SFC button opens the menu automatically to help you discover presets. The nudge to right-click is gone.
+- **New: The unsaved-changes dot on the Save and Export/Push buttons now shows a "not saved since [time]" tooltip** — hover the dot to see at a glance how long ago you last saved or pushed.
+- **New: Safeguard rank overlay cycle order changed to Off → Group → Safeguard → Both** — the Group rank step now comes before the overall Safeguard rank. The chip's color, number, and click target are now always consistent with each other and with the tooltip rows.
+- **New: Safeguard rules now have a "Weight by Rank" toggle** — when enabled, higher-rank pieces get a scoring edge on their main stat, calibrated per slot and main stat, so a 6★ can edge out a same-mainstat 5★ with only slightly better substats.
+- **Improved: Bundled preset files in the Load SFC menu are now named "Midgame / Lategame / Endgame Sample" and "Beginner Sample"** instead of the old names they previously showed.
+- **Fixed: Clicking outside the note or pressing Escape no longer accidentally closes it when it is shown without a close button.**
+
+Deutsch:
+- **Neu: Lade-SFC- und Export/Push-Schaltflächen haben jetzt einen Dropdown-Pfeil (▾)** — ein Klick auf den Pfeil öffnet das Preset- und Optionsmenü; ein Klick auf den Hauptbereich öffnet direkt den Datei-Auswahldialog oder exportiert. Beim ersten Klick einer Sitzung öffnet die Lade-SFC-Schaltfläche automatisch das Menü, um Presets leichter zu entdecken. Der Hinweis auf Rechtsklick entfällt.
+- **Neu: Der Punkt für ungespeicherte Änderungen an Speichern- und Export/Push-Schaltflächen zeigt jetzt ein Tooltip „Nicht gespeichert seit [Zeit]"** — beim Hovern siehst du auf einen Blick, wie lange es seit dem letzten Speichern oder Push her ist.
+- **Neu: Der Zyklus des Safeguard-Rang-Overlays folgt jetzt der Reihenfolge Aus → Gruppe → Safeguard → Beides** — der Gruppen-Rang-Modus kommt jetzt vor dem Gesamt-Safeguard-Rang. Farbe, Zahl und Klickziel des Chips stimmen jetzt immer miteinander und mit den Tooltip-Zeilen überein.
+- **Neu: Safeguard-Regeln haben jetzt einen Schalter „Nach Rang gewichten"** — ist er aktiviert, erhalten höherstufige Teile einen Scoring-Vorteil auf ihren Hauptstat, der je nach Slot und Hauptstat kalibriert ist, sodass ein 6★-Teil ein gleichnamiges 5★-Teil mit nur minimal besseren Substats verdrängen kann.
+- **Verbessert: Gebündelte Preset-Dateien im Lade-SFC-Menü heißen jetzt „Midgame / Lategame / Endgame Sample" und „Beginner Sample"** statt der bisherigen alten Dateinamen.
+- **Behoben: Ein Klick außerhalb der Notiz oder Drücken der Escape-Taste schließt sie nicht mehr versehentlich, wenn sie ohne Schließen-Schaltfläche angezeigt wird.**
+
+## v1.0.22 — 2026-06-20
+English:
+- **New: Builder and preview panels now appear side by side at most window sizes** — the layout no longer requires a wide screen to activate; zoom adjusts automatically to fit both the width and height of your browser window, so no space is wasted on the sides. At very small windows the layout stacks normally.
+- **New: Side-by-side zoom can be configured in the display settings flyout** — a toggle turns the automatic side-by-side mode on or off, and a slider sets the minimum zoom level below which the layout switches back to stacked instead of shrinking further.
+- **New: Safeguard candidate list can be focused on one count-group** — clicking a rank or improvement-chance chip in the Gear Inspector opens the safeguard flyout already narrowed to that piece's slot/set/faction group, so you can compare it directly against its competition. Ranks are recalculated relative to the focused group while focus is active.
+- **New: Safeguard candidate list now shows an improvement-chance column** — the predicted improvement chance for each candidate appears alongside its score.
+
+Deutsch:
+- **Neu: Builder und Vorschau erscheinen jetzt bei den meisten Fenstergrößen nebeneinander** — das Layout benötigt keinen breiten Bildschirm mehr; der Zoom passt sich automatisch an Breite und Höhe des Browserfensters an, sodass kein Platz verschwendet wird. Bei sehr kleinen Fenstern wird das Layout normal gestapelt.
+- **Neu: Nebeneinander-Zoom ist im Anzeigeeinstellungen-Flyout konfigurierbar** — ein Schalter aktiviert oder deaktiviert den automatischen Nebeneinander-Modus, und ein Schieberegler legt den Mindestzoom fest, unterhalb dessen das Layout statt weiter zu schrumpfen wieder gestapelt wird.
+- **Neu: Safeguard-Kandidatenliste kann auf eine Gruppe gefokust werden** — ein Klick auf einen Rang- oder Verbesserungschance-Chip im Gear Inspector öffnet das Safeguard-Flyout bereits auf die Slot-/Set-/Fraktion-Gruppe des Teils eingeschränkt, sodass ein direkter Vergleich mit seiner Konkurrenz möglich ist. Ränge werden im Fokus-Modus relativ zur Gruppe neu berechnet.
+- **Neu: Safeguard-Kandidatenliste zeigt jetzt eine Verbesserungschance-Spalte** — die vorhergesagte Verbesserungschance jedes Kandidaten erscheint neben seiner Bewertung.
+
+## v1.0.21 — 2026-06-19
+English:
+- **New: "RSLH" theme option** — a third theme alongside Dark and Light.
+- **New: Theme editor exposes additional color and font options** — you can now adjust the info color, primary, secondary, and disabled text colors, the UI and code font families, and the scrollbar thumb color directly from the theme popout.
+- **New: Safeguard Rank overlay expanded to a four-mode cycle** — replaces the on/off toggle with four steps: Off, Rank (overall position among all safeguarded pieces), Group Rank (position within the piece's slot/set/faction group), and Rank + Group (both at once). Green = kept, red = would be sold.
+- **New: Pieces ranked by unselected safeguard rules now show their rank in the overlay** — such chips appear faded with a dotted border and a tooltip identifying the source rule, so rank information is no longer hidden just because the rule is not in the active filter.
+- **Midgame/Lategame/Endgame preset: SPD substat weight increased in safeguard rules** — gear with a Speed roll is now scored more aggressively when ranking borderline pieces under safeguard rules.
+
+Deutsch:
+- **Neu: Theme-Option „RSLH"** — ein drittes Theme neben Dunkel und Hell.
+- **Neu: Theme-Editor bietet weitere Farb- und Schriftoptionen** — im Theme-Popout lassen sich jetzt Info-Farbe, primäre, sekundäre und deaktivierte Textfarbe, UI- und Code-Schriftfamilien sowie die Scrollbar-Daumenfarbe anpassen.
+- **Neu: Safeguard-Rang-Overlay auf vier Modi erweitert** — der Ein/Aus-Schalter wird durch vier Schritte ersetzt: Aus, Rang (Gesamtposition aller safeguardeten Teile), Gruppen-Rang (Position innerhalb der Slot-/Set-/Fraktion-Gruppe des Teils) und Rang + Gruppe (beides gleichzeitig). Grün = behalten, rot = würde verkauft.
+- **Neu: Teile, die durch nicht ausgewählte Safeguard-Regeln gerankt werden, zeigen jetzt ihren Rang im Overlay** — solche Chips erscheinen gedimmt mit gestricheltem Rand und einem Tooltip, der die Quellregel benennt; Ranginformationen gehen nicht mehr verloren, wenn die Regel nicht im aktiven Filter ist.
+- **Midgame/Lategame/Endgame-Preset: SPD-Substat-Gewichtung in Safeguard-Regeln erhöht** — Gear mit Speed-Roll wird bei knapper Bewertung unter Safeguard-Regeln jetzt stärker priorisiert.
+
 ## v1.0.20 — 2026-06-16
 English:
 - **New: Improvement-chance override is now a continuous slider with named stops and an on/off toggle** — the improvement-chance question in notes uses a slider (range 0–90) with labeled marks (Soft 10 / Balanced 25 / Moderate 33 / Strict 50) and a Yes/No toggle, replacing the previous radio buttons; thresholds were recalibrated from real account data.
