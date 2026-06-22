@@ -1,6 +1,30 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.27 — 2026-06-22
+English:
+- **New: Rarity tier colors are now customizable** — each of the six rarity tiers has an editable color in the new "Color settings" flyout (previously "Manage Colors"). Rarity borders, gear-card frames, and chart fills use your chosen colors.
+- **New: Rarity labels ("Mythical", "Epic", etc.) now appear colored throughout the app** — gear lists, filter chips, summaries, and tooltips all pick up the rarity color by default.
+- **New: Stat and substat names are now colored in more places** — names appear tinted in dropdowns, filter panels, table cells, and rule summaries, not just in chips and the sell file preview.
+- **New: Color scope can now be set independently for each color group** — Stats, Slots, and Rarity each have their own step selector in Color Settings: Off, Controls, Text, or Everything.
+- **Lategame/Endgame preset: Dedicated Bomber safeguard rules added** — the preset now includes separate safeguard rules to protect gear used by Bomber-type champions.
+
+Deutsch:
+- **Neu: Farben der Seltenheitsstufen sind jetzt anpassbar** — jede der sechs Seltenheitsstufen hat eine eigene Farbe im neuen Bereich „Farbeinstellungen" (vorher „Farben verwalten"). Seltenheits-Rahmen, Gear-Karten-Ränder und Diagrammfüllungen verwenden deine gewählten Farben.
+- **Neu: Seltenheits-Labels („Mythisch", „Episch" usw.) erscheinen jetzt farbig in der gesamten App** — Gear-Listen, Filterchips, Zusammenfassungen und Tooltips übernehmen die Seltenheitsfarbe standardmäßig.
+- **Neu: Stat- und Substat-Namen werden jetzt an mehr Stellen eingefärbt** — Namen erscheinen getönt in Dropdowns, Filterpanels, Tabellenzellen und Regelzusammenfassungen, nicht nur in Chips und der Verkaufsdatei-Vorschau.
+- **Neu: Farbbereich kann jetzt unabhängig für jede Farbgruppe eingestellt werden** — Stats, Slots und Seltenheit haben jeweils einen eigenen Stufenwähler in den Farbeinstellungen: Aus, Steuerungen, Text oder Alles.
+- **Lategame/Endgame-Preset: Dedizierte Bomber-Safeguard-Regeln hinzugefügt** — das Preset enthält jetzt separate Safeguard-Regeln zum Schutz von Gear, das von Bomber-Champions verwendet wird.
+
+## v1.0.26 — 2026-06-22
+English:
+- **Fixed: Switching to the full app from the simple view was forgotten every time the app restarted inside RSL Helper's built-in browser** — you now only need to switch once; the choice is remembered reliably across relaunches.
+- **Fixed: Saved note settings (such as improvement-chance overrides) were silently lost when restoring a session inside RSL Helper's built-in browser** — they are now reapplied correctly after your previous SFC finishes loading.
+
+Deutsch:
+- **Behoben: Die Wahl, vom einfachen Modus zur vollständigen App zu wechseln, wurde bei jedem Neustart im eingebetteten Browser von RSL Helper vergessen** — der Wechsel muss jetzt nur einmal vorgenommen werden; die Einstellung wird zuverlässig über Neustarts hinweg behalten.
+- **Behoben: Gespeicherte Notizeinstellungen (z. B. Verbesserungschance-Overrides) gingen beim Wiederherstellen einer Sitzung im eingebetteten Browser von RSL Helper still verloren** — sie werden jetzt korrekt angewendet, nachdem deine vorherige SFC vollständig geladen wurde.
+
 ## v1.0.25 — 2026-06-21
 English:
 - **Improved: Gear evaluation with safeguards active is now faster** — when safeguards are enabled, the app now skips re-checking gear that is already kept by your recipes, since those pieces cannot be affected by safeguard rules. Accounts with many safeguard rules and large gear collections will notice the biggest speedup. Results are unchanged.
