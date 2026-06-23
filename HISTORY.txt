@@ -1,6 +1,13 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.28 — 2026-06-23
+English:
+- **Fixed: The simple view could show a blank screen on first launch inside RSL Helper's browser** — launching via RSL Helper with no previous session saved sometimes left the screen entirely black. A side-effect of earlier improvements that added browser storage handling caused two separate startup paths to fail silently in storage-restricted environments. Both are resolved; the simple view now opens reliably even without a prior save.
+
+Deutsch:
+- **Behoben: Die einfache Ansicht konnte beim ersten Start im RSL-Helper-Browser einen schwarzen Bildschirm zeigen** — wurde die App über RSL Helper ohne eine vorherige gespeicherte Sitzung gestartet, blieb der Bildschirm manchmal komplett schwarz. Ein Nebeneffekt früherer Verbesserungen an der Browser-Speicherbehandlung ließ zwei separate Startpfade in speicherbeschränkten Umgebungen lautlos fehlschlagen. Beide sind behoben; die einfaceh Ansicht öffnet sich jetzt zuverlässig, auch ohne vorherigen Speicherstand.
+
 ## v1.0.27 — 2026-06-22
 English:
 - **New: Rarity tier colors are now customizable** — each of the six rarity tiers has an editable color in the new "Color settings" flyout (previously "Manage Colors"). Rarity borders, gear-card frames, and chart fills use your chosen colors.
