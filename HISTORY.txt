@@ -1,6 +1,22 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.30 — 2026-06-27
+English:
+- **Fixed: The "first match" chip in Gear Inspector could display an entirely wrong rule name for pieces already kept by a recipe** — for example, a Speed Weapon kept by a recipe would show a Banner safeguard ("Protect: Best SPD Banner") as its match chip instead of the correct rule. A side-effect of the evaluation shortcut that skips re-checking recipe-confirmed pieces when safeguards are active, which left a rule index pointing at the wrong position once safeguard rules were inserted ahead of the recipe list. The keep/sell verdict and the exported sell file were always correct; only the chip label, color, and jump target were wrong.
+
+Deutsch:
+- **Behoben: Der „First Match"-Chip im Gear Inspector konnte für Teile, die bereits durch ein Rezept behalten werden, eine völlig falsche Regelbezeichnung anzeigen** — zum Beispiel zeigte eine Geschwindigkeitswaffe, die durch ein Rezept behalten wird, als Match-Chip einen Banner-Safeguard („Protect: Best SPD Banner") anstelle der korrekten Regel. Ein Nebeneffekt der Auswertungsoptimierung, die das erneute Prüfen von rezeptbestätigten Teilen bei aktiven Safeguards überspringt: Ein Regelindex verwies auf die falsche Position, sobald Safeguard-Regeln vor der Rezeptliste eingefügt wurden. Das Behalten/Verkaufen-Urteil und die exportierte Verkaufsdatei waren immer korrekt; nur Bezeichnung, Farbe und Sprungziel des Chips waren falsch.
+
+## v1.0.29 — 2026-06-25
+English:
+- **New: The Sellfile Preview now shows a labeled divider above each group of rules** — a slim header row appears before each recipe block, each safeguard block, the Final Sell block, and the imported-base block. Each divider shows the group's icon, name, and how many rules are in that group. Dividers cannot be selected or interacted with.
+- **Fixed: The "first match" chip in Gear Inspector showed a recipe name for pieces matched by a safeguard rule** — the chip's label and index pointed to a recipe while its color, tooltip, and "open safeguard" link all pointed to a safeguard, making it appear inconsistent. A side-effect of how safeguard rules carry their originating recipe's identity internally, the chip now always shows the safeguard name, ordinal, and color when the match came from a safeguard.
+
+Deutsch:
+- **Neu: Die Verkaufsdatei-Vorschau zeigt jetzt eine beschriftete Trennzeile über jeder Regelgruppe** — vor jedem Rezept-Block, jedem Safeguard-Block, dem „Final Sell"-Block und dem importierten Basis-Block erscheint eine schmale Kopfzeile. Jede Trennzeile zeigt das Symbol der Gruppe, ihren Namen und wie viele Regeln sie enthält. Trennzeilen können nicht ausgewählt oder angeklickt werden.
+- **Behoben: Der „First Match"-Chip im Gear Inspector zeigte einen Rezeptnamen für Teile, die durch eine Safeguard-Regel gematcht wurden** — Bezeichnung und Index des Chips zeigten auf ein Rezept, während Farbe, Tooltip und der „Safeguard öffnen"-Link auf einen Safeguard verwiesen, was den Chip widersprüchlich wirken ließ. Als Nebeneffekt davon, dass Safeguard-Regeln intern die Identität ihres Ursprungsrezepts tragen, zeigt der Chip jetzt immer den Safeguard-Namen, die Ordinalzahl und die Farbe, wenn der Match von einem Safeguard stammt.
+
 ## v1.0.28 — 2026-06-23
 English:
 - **Fixed: The simple view could show a blank screen on first launch inside RSL Helper's browser** — launching via RSL Helper with no previous session saved sometimes left the screen entirely black. A side-effect of earlier improvements that added browser storage handling caused two separate startup paths to fail silently in storage-restricted environments. Both are resolved; the simple view now opens reliably even without a prior save.
