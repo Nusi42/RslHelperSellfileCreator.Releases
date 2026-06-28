@@ -1,6 +1,6 @@
 ﻿# Sellfile Creator for RSL Helper
 
-Sellfile Creator eases building sell files for RSL Helper — define gear filters by set, slot, main stat, substats, and more, preview matching results live, and export ready-to-use sell files in seconds.
+Sellfile Creator eases building Sellfiles for RSL Helper — define gear filters by set, slot, main stat, substats, and more, preview matching results live, and export ready-to-use Sellfiles in seconds.
 
 > This is an independent, fan‑made tool. Not affiliated with Plarium, Raid: Shadow Legends, or RSL Helper. Trademarks belong to their owners.
 
@@ -8,9 +8,9 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
 
 - **Recipe builder** — create named keep/sell recipes with filters for slot, set, rank,
   rarity, main stat, substats (with roll minimums and targets), faction, and level
-  milestones. Build a reusable library and export it as an RSL Helper sell file (`.hsf`)
+  milestones. Build a reusable library and export it as an RSL Helper Sellfile (`.hsf`)
   in one click.
-- **Sellfile preview** — preview the generated RSL Helper sell file in the Preview tab
+- **Sellfile preview** — preview the generated RSL Helper Sellfile in the Preview tab
   before exporting.
 - **Metasets** — group gear sets (e.g. Speed + Perception) into named collections and
   reuse them across recipes and safeguards.
@@ -20,10 +20,10 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
   *keep* and *sell* as you tune recipes or try the dynamic overrides. A chip shows the
   running totals; a side-by-side list shows every piece that changed.
 - **Dungeon Simulator** — see keep-chance percentages for Fire Knight, Dragon, and Ice
-  Golem across difficulty stages and upgrade levels to confirm the effect of your sellfile
+  Golem across difficulty stages and upgrade levels to confirm the effect of your Sellfile
   when farming or leveling gear.
 - **Safeguards** — define slot/set/stat combinations you never want to lose; the scanner
-  automatically injects keep rules into the sellfile whenever your setup would deplete a
+  automatically injects keep rules into the Sellfile whenever your setup would deplete a
   protected combination below its quota.
 - **Gear Analytics** — analytics dashboard with KPI cards, crossfilter charts (slot, rank,
   rarity, source, level), a sets treemap, main stat bars, and a substat radar. Click any
@@ -65,7 +65,7 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
     - The chip only turns on when Rarity is Auto and Milestone Thresholds are set to Late. Otherwise it shows a diagonal slash.
     - Example: Banner with SPD and ATK% where ATK% needs 2 rolls. Set Rarity = Auto, Milestone Thresholds = Late, Auto ≥ Epic. The builder keeps Epic rows for every milestone and adds ≥ Legendary branches at +8 and +12 so rarer gear stays eligible without relaxing the Epic timing.
   - Before +16, the builder uses whichever substat count the rarity can actually have at that milestone. At +16 it always enforces your requested count.
-- Faction: Restrict accessory rules to a specific faction when you are targeting a single team. Rings, Amulets, and Banners obey this filter; armor pieces ignore it, so `Any` keeps armor safe.
+- Faction: Restrict accessory rules to a specific faction when you are targeting a single team. Rings, Amulets, and Banners obey this filter; artifact pieces ignore it, so `Any` keeps artifacts safe.
 - Slots: Focus the rule on certain gear pieces (Weapons, Boots, etc.) so off-slot drops do not match. Leave it empty to cover every slot.
 - Sets & Metasets: Filter the rule to explicit gear sets or named Metasets so only those collections pass. Leaving it empty keeps every set eligible.
 - Mainstat row: Require particular main stats.
@@ -126,9 +126,9 @@ Sellfile Creator eases building sell files for RSL Helper — define gear filter
 - Safeguard rules don’t ‘consume’ items—each rule evaluates the same candidate pool. If a piece matches multiple rules, it counts for all of them.
 - Each keep rule lets you pick the slot, sets or metasets, ranks, rarities, main stats, and (for accessories) factions you care about. Leaving a picker empty means “any”.
 - `Mode` decides how the rule is emitted: `Off` disables it, `Protect existing` injects keep rows for sold matches until the quota is met, and `Anticipate gaps` also emits placeholder keep rules for missing combinations so new drops stay protected until the DB refreshes.
-- Substats are optional: pick one or more to only count items that actually have those substats. The match chip (`Any Substat` / `All Substats` / `Per Substat`) decides whether at least one, all, or each selected substat gets its own quota. Leave it empty to allow any substat.
-- Selected substats are ranked by their **current** substat value; weight controls appear for `Any Substat` and `All Substats`, while `Per Substat` keeps equal weighting (ties at the cutoff stay protected).
-- `Weight by Rank` (the chip next to `Per main stat`) gives higher-rank gear a scoring edge on its **main stat only** — a 6★ main stat counts in full, a 5★ about 85% — so a 6★ wins over a near-equal 5★ whose substats are only slightly better. It only sharpens ranking within the same main stat (it is not a blanket bonus for every higher-rank piece) and it uses the rank's max-level main stat, so leveling a piece never changes its score. Needs at least one substat selected; new rules have it on by default. Each piece is measured against the best of its own slot and main stat.
+- Substats are optional: pick one or more to only count items that actually have those substats. The match chips set how many of the selected substats a piece must have — `≥1`–`≥4` (chips above the number you picked are greyed out) — or `Per Substat`, which applies the quota to each selected substat on its own. Leave the substats empty to allow any substat.
+- Selected substats are ranked by their **current** substat value; weight controls appear in every min-count mode (`≥1`–`≥4`), while `Per Substat` keeps equal weighting (ties at the cutoff stay protected).
+- `Weight by Rank` (the chip next to `Per main stat`) folds rank into the score itself instead of leaving it as an exact tie-break. The bonus is scaled by the **main stat**, and the exact size depends on the slot and main stat — a 5★ main stat scores roughly 81–89% of the same slot's 6★, a 4★ less again. The gap between adjacent ranks is small: enough to let a 6★ win a *near*-tie against a same-main-stat 5★ with only slightly better substats, but not enough to beat a real substat advantage. It uses the rank's +16 main stat, so leveling a piece never changes its score, and substat scores are untouched. Needs at least one substat selected; new rules have it on by default.
 - `≥ Required Count` is the promise you want the app to keep. Scope chips directly under each picker (everything except `Rank` and `Rarity`) decide how that quota is split: `Per slot`, `Per set`, `Per faction`, and `Per main stat` can be combined freely. Turning every chip off automatically falls back to the shared `Per safeguard` pool.
 - The info tooltip behind `Required Count` shows the active scope split (`X per slot × per set × ...`) and a simple deficit line (`({missing} missing)`).
 - The scanner only adds keep rows for matching items that would otherwise be sold, and only when the quota is not met. In `Anticipate gaps`, placeholder keep rules cover missing combinations.
@@ -230,7 +230,7 @@ Open `Tools` and switch to the **Gear Analytics** tab for an analytics overview 
 
 **Crossfilter donuts:** Six charts — **Slots**, **Rank**, **Rarity**, **Result**, **Source**, **Level** — update each other as you click.
 - Click a slice to add it as a filter for that dimension; every other chart instantly narrows to show only the matching gear. Each chart excludes its own dimension so it always shows its full range.
-- Double-click a slice on the **Slots** donut to select an entire group at once: any armor piece (Weapon, Helmet, Shield, Gauntlets, Chestplate, Boots) selects all six armor slots; any accessory (Ring, Amulet, Banner) selects all three.
+- Double-click a slice on the **Slots** donut to select an entire group at once: any artifact piece (Weapon, Helmet, Shield, Gauntlets, Chestplate, Boots) selects all six artifact slots; any accessory (Ring, Amulet, Banner) selects all three.
 - **Slots** and **Source** donuts show category icons. The **Level** donut labels each arc with its level text.
 
 
@@ -330,7 +330,7 @@ Examples below assume 6★ Substat Target Values (per roll unit): SPD=5, CR%=5, 
 ## Acknowledgements
 
 Many thanks to **[STBL] Nasgor** for his invaluable contributions,  
-to **[SP] Panda** for his sellfiles,  
+to **[SP] Panda** for his Sellfiles,  
 to **KruYseN** for his gear cleanse videos,  
 and of course thanks to **Farbstoff** for RSL Helper!
 
