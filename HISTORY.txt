@@ -1,6 +1,39 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.31 — 2026-06-28
+English:
+- **New: Lategame preset — Chaos Ore section** — a master question now covers all 14 Chaos Ore recipes with a single toggle; per-rarity conditions let you keep Ore of specific rarities.
+- **New: Lategame preset note has collapsible "Optional" sections** — less essential topics can be collapsed to reduce the reading load on first view.
+- **New: Preset name fields and save dialogs now suggest a name and include a dice button** — dialogs open ready to save with a pre-filled name; clicking the dice picks a random one.
+- **New: Preset rows and flyouts warn when a saved answer is no longer available for the current note** — a badge appears on the preset row and affected flyout lines; questions removed from the note are gathered into a "Not available for this note" section so nothing is lost silently.
+- **Improved: Autosave now restores with the current bundled preset rather than an older saved copy** — your overrides and per-session tuning are preserved; stale preset data no longer overwrites updated bundled content on launch.
+- **Improved: Safeguard candidate list redesigned** — rank-protected and chance-protected pieces are now separated by a labeled amber divider; chance-protected items get a hollow icon; gear matching the active rule is flagged with a small amber indicator; all substats are shown per row (rule-selected first, then the rest at reduced opacity) rather than only the rule-selected ones.
+- **Improved: Gear Inspector sort now correctly ranks 6★ artifacts above 5★ pieces with equal substats on glyphable stats** — the ordering now matches the keep/sell verdict.
+- **Improved: Tooltip text simplified across several controls** — improvement-chance, safeguard rank, normalized sort, and related elements each have a shorter, clearer tooltip.
+- **Improved: Lategame and beginner preset notes are now fully translated into German.**
+- **Fixed: Preset labels in flyouts and rows now appear in your active UI language** — they were always shown in English regardless of the selected language.
+- **Fixed: Several German UI labels that were previously untranslated now display correctly** — including "Gear Inspector Main Stat," "Analytics Chart Main Stat," and related strings.
+- **Fixed: Missing translations filled in across Spanish, French, Italian, Portuguese, Russian, Turkish, and Ukrainian** — around 16–20 entries per locale; terminology is now consistent within each language.
+- **Fixed: Clicking in the note preview pane no longer jumps your cursor to the end of the editor;** scroll sync between the editor and preview is improved for long notes.
+- Slot names, help text, and analytics now use "artifact" in place of "armor."
+
+Deutsch:
+- **Neu: Lategame-Preset – Chaos-Erz-Bereich** — eine neue Hauptfrage deckt alle 14 Chaos-Erz-Rezepte mit einem einzigen Schalter ab; Seltenheitsbedingungen erlauben es, Erz bestimmter Seltenheitsstufen zu behalten.
+- **Neu: Die Lategame-Preset-Notiz hat jetzt einklappbare „Optional"-Bereiche** — weniger wichtige Themen können weggeklappt werden, um den Einstieg übersichtlicher zu halten.
+- **Neu: Preset-Namensfelder und Speicherdialoge schlagen jetzt einen Namen vor und enthalten einen Würfel-Button** — Dialoge öffnen sich mit einem vorausgefüllten Namen; ein Klick auf den Würfel wählt einen zufälligen Namen.
+- **Neu: Preset-Zeilen und -Flyouts zeigen eine Warnung, wenn eine gespeicherte Antwort für die aktuelle Notiz nicht mehr verfügbar ist** — ein Abzeichen erscheint an der Preset-Zeile und den betroffenen Flyout-Zeilen; aus der Notiz entfernte Fragen werden in einem Bereich „Für diese Notiz nicht verfügbar" zusammengefasst.
+- **Verbessert: Autospeicherung wird jetzt mit dem aktuellen gebündelten Preset wiederhergestellt statt mit einer älteren gespeicherten Kopie** — Overrides und Sitzungseinstellungen bleiben erhalten; veraltete Preset-Daten überschreiben beim Start keine aktuellen gebündelten Inhalte mehr.
+- **Verbessert: Safeguard-Kandidatenliste neu gestaltet** — rang-geschützte und chance-geschützte Teile werden jetzt durch eine bernsteinfarbene Trennzeile mit Beschriftung getrennt; chance-geschützte Teile erhalten ein Kreiskontur-Icon; Gear, das zur aktiven Regel passt, wird mit einem kleinen bernsteinfarbenen Indikator markiert; alle Substats werden pro Zeile angezeigt (regelausgewählte zuerst, dann die übrigen in reduzierter Deckkraft).
+- **Verbessert: Die Sortierung im Gear Inspector stuft 6★-Artefakte jetzt korrekt über 5★-Teile mit gleichen Substats bei glyphengeeigneten Stats ein** — die Reihenfolge entspricht nun dem Behalten/Verkaufen-Urteil.
+- **Verbessert: Tooltip-Texte bei mehreren Steuerelementen vereinfacht** — Verbesserungschance, Safeguard-Rang, normalisierte Sortierung und verwandte Elemente haben jeweils kürzere, klarere Tooltips.
+- **Verbessert: Lategame- und Anfänger-Preset-Notizen sind jetzt vollständig auf Deutsch übersetzt.**
+- **Behoben: Preset-Labels in Flyouts und Zeilen werden jetzt in der aktiven Sprache der Benutzeroberfläche angezeigt** — sie wurden bisher immer auf Englisch dargestellt, unabhängig von der gewählten Sprache.
+- **Behoben: Mehrere deutsche UI-Labels, die zuvor nicht übersetzt waren, werden jetzt korrekt angezeigt** — darunter „Gear Inspector Main Stat", „Analytics Chart Main Stat" und verwandte Texte.
+- **Behoben: Fehlende Übersetzungen für Spanisch, Französisch, Italienisch, Portugiesisch, Russisch, Türkisch und Ukrainisch ergänzt** — je rund 16–20 fehlende Einträge pro Sprache; Terminologie ist jetzt innerhalb jeder Sprache einheitlich.
+- **Behoben: Ein Klick in den Notiz-Vorschaubereich springt den Cursor nicht mehr ans Ende des Editors;** die Scroll-Synchronisation zwischen Editor und Vorschau ist für längere Notizen verbessert.
+- Slot-Namen, Hilfetext und Analyse verwenden jetzt „Artefakt" anstelle von „Armor"; „Gear" wird in der deutschen Oberfläche konsistent als „Ausrüstung" bezeichnet.
+
 ## v1.0.30 — 2026-06-27
 English:
 - **Fixed: The "first match" chip in Gear Inspector could display an entirely wrong rule name for pieces already kept by a recipe** — for example, a Speed Weapon kept by a recipe would show a Banner safeguard ("Protect: Best SPD Banner") as its match chip instead of the correct rule. A side-effect of the evaluation shortcut that skips re-checking recipe-confirmed pieces when safeguards are active, which left a rule index pointing at the wrong position once safeguard rules were inserted ahead of the recipe list. The keep/sell verdict and the exported sell file were always correct; only the chip label, color, and jump target were wrong.
