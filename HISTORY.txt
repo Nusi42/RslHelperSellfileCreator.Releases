@@ -1,6 +1,15 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.32 — 2026-07-01
+English:
+- **Improved: Gear Inspector safeguard rank chip now shows all candidate rules in its tooltip** — the tooltip previously capped the list at four rules; it now shows every safeguard rule the piece qualifies for, with a scrollable list for longer cases.
+- **New: Right-clicking a safeguard rank chip opens a rule picker** — when a piece qualifies for more than one safeguard rule, right-clicking its rank chip shows a menu with all candidate rules and their ranks; clicking any entry jumps directly to that rule.
+
+Deutsch:
+- **Verbessert: Der Schutzregel-Rang-Chip im Gear Inspector zeigt jetzt alle Kandidatenregeln im Tooltip** — der Tooltip war bisher auf vier Einträge begrenzt; er zeigt jetzt alle Schutzregeln, für die das Teil in Frage kommt, mit einer scrollbaren Liste bei vielen Einträgen.
+- **Neu: Ein Rechtsklick auf den Schutzregel-Rang-Chip öffnet eine Regelauswahl** — wenn ein Teil für mehr als eine Schutzregel in Frage kommt, öffnet ein Rechtsklick auf den Rang-Chip ein Menü mit allen Kandidatenregeln und deren Rängen; ein Klick auf einen Eintrag springt direkt zu dieser Regel.
+
 ## v1.0.31 — 2026-06-28
 English:
 - **New: Lategame preset — Chaos Ore section** — a master question now covers all 14 Chaos Ore recipes with a single toggle; per-rarity conditions let you keep Ore of specific rarities.
