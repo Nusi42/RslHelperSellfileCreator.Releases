@@ -1,6 +1,13 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.33 — 2026-07-01
+English:
+- **Fixed: Picking a safeguard rule from the rank chip's right-click menu no longer leaves the chip gray or showing the wrong rank** — after selecting a rule, the chip now lights up and displays the rank for the rule you chose, rather than staying dimmed on a different rule with a better numerical rank.
+
+Deutsch:
+- **Behoben: Das Auswählen einer Schutzregel über das Rechtsklick-Menü des Rang-Chips lässt den Chip nicht mehr grau erscheinen oder einen falschen Rang anzeigen** — nach der Auswahl leuchtet der Chip jetzt auf und zeigt den Rang der gewählten Regel an, anstatt auf einer anderen Regel mit einem numerisch besseren Rang gedimmt zu bleiben.
+
 ## v1.0.32 — 2026-07-01
 English:
 - **Improved: Gear Inspector safeguard rank chip now shows all candidate rules in its tooltip** — the tooltip previously capped the list at four rules; it now shows every safeguard rule the piece qualifies for, with a scrollable list for longer cases.
