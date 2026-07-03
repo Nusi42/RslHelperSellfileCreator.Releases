@@ -1,6 +1,19 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.34 — 2026-07-03
+English:
+- **Fixed: Duplicating a custom piece in Gear Inspector now gives each copy its own independent substats** — a side-effect of how duplicates were created meant all copies shared the same piece identity as their source, causing the weight flyout to show identical substat rows and tooltips regardless of which copy you hovered. Each duplicate is now fully independent.
+- **Fixed: Picking an already-used substat in the custom gear editor now swaps the two rows instead of being blocked** — the dropdown previously hid already-used stats; it now keeps them visible and selecting one rearranges the two positions so both substats stay in place with their values intact.
+- **Fixed: Renaming a safeguard now immediately updates the label shown on the Gear Inspector rank chip** — the chip was holding onto the old name until the inspector was next opened.
+- **Fixed: Clearing a safeguard's name to empty now takes effect** — the change was silently ignored before, leaving the previous name in place.
+
+Deutsch:
+- **Behoben: Das Duplizieren eines eigenen Teils im Gear Inspector gibt jetzt jeder Kopie eigene, unabhängige Substats** — als Nebeneffekt der bisherigen Duplizierfunktion teilten alle Kopien dieselbe Teile-Identität wie ihr Ursprungsteil, sodass das Gewichts-Flyout unabhängig davon, welche Kopie man hoverte, immer dieselben Substat-Zeilen und Tooltips anzeigte. Jedes Duplikat ist jetzt vollständig unabhängig.
+- **Behoben: Das Auswählen eines bereits verwendeten Substats im Editor für eigene Ausrüstung tauscht jetzt die beiden Zeilen, anstatt blockiert zu werden** — das Dropdown verbarg bisher bereits verwendete Stats; es zeigt sie jetzt und das Auswählen eines solchen tauscht die beiden Positionen, sodass beide Substats mit ihren Werten erhalten bleiben.
+- **Behoben: Das Umbenennen eines Safeguards aktualisiert jetzt sofort die Bezeichnung am Rang-Chip im Gear Inspector** — der Chip zeigte bisher den alten Namen, bis der Inspector erneut geöffnet wurde.
+- **Behoben: Das Leeren eines Safeguard-Namens wirkt jetzt sofort** — die Änderung wurde bisher still ignoriert und ließ den vorherigen Namen stehen.
+
 ## v1.0.33 — 2026-07-01
 English:
 - **Fixed: Picking a safeguard rule from the rank chip's right-click menu no longer leaves the chip gray or showing the wrong rank** — after selecting a rule, the chip now lights up and displays the rank for the rule you chose, rather than staying dimmed on a different rule with a better numerical rank.
