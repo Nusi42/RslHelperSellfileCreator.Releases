@@ -1,6 +1,29 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.35 — 2026-07-05
+English:
+- **New: Multi-account support** — (NOT FINISHED YET) the app can now manage multiple game accounts, each with its own documents, builder settings, gear data, accent color, and auto-push preference. An account switcher in the header (and in simple mode) lets you create, rename, delete, and switch accounts. Existing users' data is automatically moved into a "Default" account on first launch.
+- **New: Safeguard "Improve" mode** — a safeguard rule can now keep watching beyond its target piece count, continuing to protect new drops only as long as they still have a realistic chance of beating what you already own. The check runs at each upgrade step, so monitoring stops the moment further improvement becomes unlikely.
+- **Improved: Rule evaluation now runs around 25% faster** on typical builds, with the largest rulesets seeing up to a 2× speedup.
+- **Improved: Per-account auto-push** — each account independently controls whether its sell file uploads to RSL Helper automatically. Background accounts rebuild their sell file quietly whenever new gear data arrives. Failed background pushes no longer send pop-up toasts; instead a red "Push failed" line appears next to the account in the switcher until the next successful push.
+- **Improved: Two browser tabs can now safely run the app with different accounts** — account changes made in one tab no longer conflict with or overwrite a second open tab.
+- **Improved: Lategame preset — safeguard count cards now offer a four-step activation mode** — choose from None, Just what I own, Plus missing slots, or Plus likely upgrades when configuring how many pieces a safeguard should cover.
+- **Fixed: The restore dialog now shows the Metasets row** when a restore snapshot references metasets that are not present in the current setup.
+- **Fixed: Context menu hints you have already dismissed stay dismissed after an app update** — they were resetting to "unseen" on every new release.
+- **Fixed: Tutorial recipe preview now shows the correct name for unnamed recipes** — they display their numbered badge rather than "Imported Base Rules."
+
+Deutsch:
+- **Neu: Mehrere Spielkonten** — (NOCH niCHT FERTIG) die App verwaltet jetzt mehrere Spielkonten, jedes mit eigenen Dokumenten, Builder-Einstellungen, Ausrüstungsdaten, Akzentfarbe und Auto-Push-Einstellung. Ein Konto-Wechsler in der Kopfzeile (und im Simple-Modus) ermöglicht das Erstellen, Umbenennen, Löschen und Wechseln von Konten. Bestehende Nutzerdaten werden beim ersten Start automatisch in ein „Standard"-Konto übertragen.
+- **Neu: Safeguard-Modus „Improve"** — eine Safeguard-Regel kann jetzt auch nach Erreichen der Zielanzahl weiterhin neue Drops überwachen, solange diese noch eine realistische Chance haben, die vorhandene Ausrüstung zu übertreffen. Die Prüfung läuft auf jeder Aufwertungsstufe; die Überwachung endet, sobald eine weitere Verbesserung unwahrscheinlich ist.
+- **Verbessert: Regelauswertung rund 25 % schneller** bei typischen Builds; sehr umfangreiche Regelwerke werden bis zu doppelt so schnell verarbeitet.
+- **Verbessert: Auto-Push je Konto** — jedes Konto steuert unabhängig, ob seine Verkaufsdatei automatisch in RSL Helper hochgeladen wird. Inaktive Konten bauen ihre Verkaufsdatei still neu auf, sobald neue Ausrüstungsdaten eintreffen. Fehlgeschlagene Hintergrund-Pushes erzeugen keine Pop-up-Meldungen mehr; stattdessen erscheint eine rote „Push fehlgeschlagen"-Zeile neben dem Konto im Wechsler, bis der nächste erfolgreiche Push stattfindet.
+- **Verbessert: Zwei Browser-Tabs können die App jetzt sicher mit verschiedenen Konten nutzen** — Kontoänderungen in einem Tab überschreiben oder verlieren keine Änderungen aus einem zweiten geöffneten Tab.
+- **Verbessert: Lategame-Preset – Safeguard-Zählkarten haben jetzt einen vierstufigen Aktivierungsmodus** — wählbar zwischen Keine, Nur was ich besitze, Plus fehlende Slots und Plus wahrscheinliche Upgrades.
+- **Behoben: Der Wiederherstellungsdialog zeigt jetzt die Metasets-Zeile** wenn ein Wiederherstellungsstand Metasets referenziert, die im aktuellen Dokument nicht vorhanden sind.
+- **Behoben: Kontextmenü-Hinweise bleiben nach einem App-Update weggeklickt** — bisher wurden sie bei jedem neuen Release auf „ungesehen" zurückgesetzt.
+- **Behoben: Tutorial-Rezept-Vorschau zeigt jetzt den korrekten Namen für unbenannte Rezepte** — sie zeigen ihr nummeriertes Abzeichen statt „Imported Base Rules".
+
 ## v1.0.34 — 2026-07-03
 English:
 - **Fixed: Duplicating a custom piece in Gear Inspector now gives each copy its own independent substats** — a side-effect of how duplicates were created meant all copies shared the same piece identity as their source, causing the weight flyout to show identical substat rows and tooltips regardless of which copy you hovered. Each duplicate is now fully independent.
