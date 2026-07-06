@@ -1,6 +1,23 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.36 — 2026-07-07
+English:
+- **New: Clicking a row in the sell file preview now jumps to that rule in the builder** — recipe rows select the recipe and switch to Recipe Builder; safeguard rows select the safeguard and switch to Safeguard Builder; both scroll the rule into view.
+- **Improved: Account switcher rows now have a dedicated auto-push toggle button** — clicking the icon on any account row turns automatic sell-file uploading on or off without opening a dialog. The account's accent color is now shown as a full person icon rather than a small colored square.
+- **Improved: Hovering a sell file preview row now highlights the corresponding safeguard chip in the builder** — recipe chips were already highlighted on hover; safeguard chips now follow the same behavior.
+- **Fixed: Override markers in the builder no longer float over section headers when a section is collapsed** — the "!" badge is now anchored to its control inside the section and disappears when that section is folded.
+- **New: Safeguard "Weight by Rank" now has a tunable main-stat strength** — a factor control in the substat-weights flyout (open it with the tune button beside the chip, which now uses the same split-button layout as the Improvement-chance chip) lets you scale how heavily the main stat counts toward the rank score. The weight cap across all substat and main-stat controls has been raised to 9.9, and holding the +/– buttons down now accelerates through the range.
+- **Updated: "Lategame" preset re-tuned for the new main-stat rank weight factor** — every "Weight by Rank" safeguard in the preset now sets an explicit `mainStatRankWeightFactor` of 4.5, so its rank scoring keeps the same relative main-stat influence it always had now that the factor is tunable rather than fixed. A handful of substat weights were also rebalanced alongside this.
+
+Deutsch:
+- **Neu: Ein Klick auf eine Zeile in der Verkaufsdatei-Vorschau springt direkt zur zugehörigen Regel im Builder** — Rezept-Zeilen wählen das Rezept aus und wechseln in den Rezept-Builder; Safeguard-Zeilen wählen den Safeguard aus und wechseln in den Safeguard-Builder; beide scrollen die Regel in den sichtbaren Bereich.
+- **Verbessert: Konto-Wechsler-Zeilen haben jetzt einen eigenen Auto-Push-Schalter** — ein Klick auf das Symbol in einer Kontozeile schaltet den automatischen Upload der Verkaufsdatei ein oder aus, ohne einen Dialog zu öffnen. Die Akzentfarbe des Kontos wird jetzt als vollständiges Personen-Symbol dargestellt statt als kleines farbiges Quadrat.
+- **Verbessert: Das Hovern über eine Zeile in der Verkaufsdatei-Vorschau hebt jetzt auch den zugehörigen Safeguard-Chip im Builder hervor** — Rezept-Chips wurden beim Hovern bereits hervorgehoben; Safeguard-Chips folgen jetzt demselben Verhalten.
+- **Behoben: Override-Markierungen im Builder schweben nicht mehr über Abschnitts-Kopfzeilen, wenn ein Abschnitt eingeklappt ist** — das „!"-Abzeichen ist jetzt an sein Steuerelement innerhalb des Abschnitts gebunden und verschwindet, wenn der Abschnitt geschlossen wird.
+- **Neu: Safeguard „Nach Rang gewichten" hat jetzt eine einstellbare Hauptstat-Stärke** — ein Faktor-Regler im Substat-Gewichte-Flyout (Tune-Taste neben dem Chip öffnen, der jetzt das gleiche Split-Button-Layout wie der Verbesserungschancen-Chip verwendet) lässt dich skalieren, wie stark der Hauptstat zum Rang-Score beiträgt. Die Gewichts-Obergrenze für alle Substat- und Hauptstat-Regler wurde auf 9,9 angehoben, und das Gedrückthalten der +/–-Knöpfe beschleunigt das Durchlaufen des Bereichs.
+- **Aktualisiert: Preset „Lategame" an den neuen Hauptstat-Rang-Gewichtsfaktor angepasst** — jeder „Nach Rang gewichten"-Safeguard im Preset setzt jetzt einen expliziten `mainStatRankWeightFactor` von 4,5, damit die Rang-Bewertung denselben relativen Hauptstat-Einfluss behält wie zuvor, jetzt wo der Faktor einstellbar statt fix ist. Zusätzlich wurden einige Substat-Gewichte überarbeitet.
+
 ## v1.0.35 — 2026-07-05
 English:
 - **New: Multi-account support** — (NOT FINISHED YET) the app can now manage multiple game accounts, each with its own documents, builder settings, gear data, accent color, and auto-push preference. An account switcher in the header (and in simple mode) lets you create, rename, delete, and switch accounts. Existing users' data is automatically moved into a "Default" account on first launch.
