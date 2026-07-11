@@ -1,6 +1,27 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.37 — 2026-07-11
+English:
+- **Improved: Lategame preset safeguard rules expanded and reorganized** — grown to 133 rules (was 116), now arranged into labeled families — Speed, Debuffer, Damage, Crit Shield, Survivability, Utility, Accessories, Mercurial, and Faction Wars — with visual section dividers in the safeguard builder. Accessory and Mercurial sections are further divided by slot (Rings / Amulets / Banners). Rule names are standardized to 43 clear labels across all 133 entries (was 80 varied names).
+- **Improved: Consistent rank and rarity handling across safeguards** — safeguard and recipe rules now apply rank and rarity uniformly, so Rare-rarity pieces are protected on the same footing as higher rarities instead of being excluded.
+- **Fixed: When "Keep 5-star safeguards" is turned off, artifact rules now correctly clamp to 6-star** — only accessories (rings, amulets, banners) remain at 5-star; all artifact families (damage, debuffer, crit shield, survivability, speed set, and others) now behave as expected.
+- **New: Midgame preset — damage CR% gauntlet recipe variants** — three new recipe options for damage CR% gauntlets, with roll-count defaults tuned for easier farming targets.
+- **Fixed: Custom gear was silently lost on reload in simple/express mode** — manually entered gear pieces were disappearing when reopening the app. A new per-account "Restore custom gear on this device" toggle in the account manager lets you control this per device.
+- **Fixed: Substat weight flyout was grouping results incorrectly** — gear is now bucketed correctly by slot, gear set, faction, and substat instead of being collapsed together.
+- **Fixed: Apply button stayed disabled after changing rank or rarity in safeguard multi-edit** — you can now change these fields and immediately apply without needing an extra adjustment first.
+- **Improved: Safeguard builder rule list — chip selection behavior** — left-clicking a chip now selects it as the only active rule (clearing others); shift-click range selection now anchors correctly and works when selecting upward in the list.
+
+Deutsch:
+- **Verbessert: Lategame-Preset-Safeguard-Regeln erweitert und neu organisiert** — auf 133 Regeln gewachsen (vorher 116), jetzt in beschriftete Familien unterteilt — Speed, Debuffer, Damage, Crit Shield, Survivability, Utility, Accessories, Mercurial und Faction Wars — mit visuellen Abschnittstrennern im Safeguard-Builder. Accessory- und Mercurial-Abschnitte sind weiter nach Slot unterteilt (Rings / Amulets / Banners). Regelnamen wurden auf 43 klare Bezeichnungen standardisiert (vorher 80 unterschiedliche Varianten).
+- **Verbessert: Einheitliche Rang- und Seltenheitsbehandlung über Safeguards hinweg** — Safeguard- und Rezept-Regeln wenden Rang und Seltenheit jetzt einheitlich an, sodass Rare-Teile gleichrangig geschützt werden statt ausgenommen zu sein.
+- **Behoben: Wenn „5-Sterne-Safeguards behalten" deaktiviert ist, begrenzen Artefakt-Regeln jetzt korrekt auf 6-Sterne** — nur Accessories (Rings, Amulets, Banners) bleiben bei 5-Stern; alle Artefakt-Familien (Damage, Debuffer, Crit Shield, Survivability, Speed Set und andere) verhalten sich jetzt wie erwartet.
+- **Neu: Midgame-Preset — Damage-CR%-Gauntlet-Rezept-Varianten** — drei neue Rezeptoptionen für Damage-CR%-Gauntlets mit angepassten Würfelanzahl-Standards für leichtere Farming-Ziele.
+- **Behoben: Eigene Ausrüstung verschwand beim Neuladen im Simple/Express-Modus** — manuell eingegebene Ausrüstungsteile gingen verloren, wenn die App erneut geöffnet wurde. Ein neuer Schalter „Eigene Ausrüstung auf diesem Gerät wiederherstellen" im Konto-Manager gibt dir geräteweise Kontrolle darüber.
+- **Behoben: Das Substat-Gewichte-Flyout gruppierte Ergebnisse falsch** — Ausrüstung wird jetzt korrekt nach Slot, Ausrüstungsset, Fraktion und Substat getrennt, anstatt zusammengefasst zu werden.
+- **Behoben: Der Anwenden-Knopf blieb nach dem Ändern von Rang oder Seltenheit im Safeguard-Multi-Edit deaktiviert** — du kannst diese Felder jetzt ändern und sofort anwenden, ohne eine zusätzliche Anpassung vornehmen zu müssen.
+- **Verbessert: Chip-Auswahl in der Safeguard-Builder-Regelliste** — ein Linksklick auf einen Chip wählt ihn jetzt als einzige aktive Regel aus (hebt die Auswahl anderer auf); die Shift-Klick-Bereichsauswahl wird jetzt korrekt verankert und funktioniert auch beim Klicken nach oben in der Liste.
+
 ## v1.0.36 — 2026-07-07
 English:
 - **New: Clicking a row in the sell file preview now jumps to that rule in the builder** — recipe rows select the recipe and switch to Recipe Builder; safeguard rows select the safeguard and switch to Safeguard Builder; both scroll the rule into view.
