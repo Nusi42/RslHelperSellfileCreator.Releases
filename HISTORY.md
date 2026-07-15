@@ -1,6 +1,15 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.38 — 2026-07-16
+English:
+- **Improved: Safeguard scoring uses unscored substats to settle ties between otherwise-equal pieces** — when two artifacts weigh out the same on your priority stats, the remaining lines now tip the balance, giving more consistent rankings across all match modes.
+- **Fixed: The app could become unresponsive or crash during long farm sessions or after frequently updating safeguard settings** — a gradual memory build-up that crept in alongside recent performance improvements is now kept in check.
+
+Deutsch:
+- **Verbessert: Safeguard-Bewertung nutzt unbewertete Substats zur Gleichstandsentscheidung** — wenn zwei Artefakte bei deinen priorisierten Stats gleich punkten, geben die übrigen Zeilen jetzt den Ausschlag, was zu konsistenteren Rangfolgen in allen Treffermodi führt.
+- **Behoben: Die App konnte bei langen Farm-Sitzungen oder nach häufigen Änderungen an Safeguard-Einstellungen hängen bleiben oder abstürzen** — ein schrittweiser Speicheranstieg, der sich im Zuge jüngster Leistungsverbesserungen eingeschlichen hatte, wird jetzt in Schach gehalten.
+
 ## v1.0.37 — 2026-07-11
 English:
 - **Improved: Lategame preset safeguard rules expanded and reorganized** — grown to 133 rules (was 116), now arranged into labeled families — Speed, Debuffer, Damage, Crit Shield, Survivability, Utility, Accessories, Mercurial, and Faction Wars — with visual section dividers in the safeguard builder. Accessory and Mercurial sections are further divided by slot (Rings / Amulets / Banners). Rule names are standardized to 43 clear labels across all 133 entries (was 80 varied names).
