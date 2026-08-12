@@ -1,6 +1,19 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.41 — 2026-08-12
+English:
+- **Fixed: Applying a saved filter preset could restore a different filter than the one you configured** — if the Rules panel and Gear Inspector filters weren't set to stay in sync, a preset could silently apply the other panel's leftover filter instead of the one you actually saved. Presets now always apply the filter of the panel you're using.
+- **New: Your answers to a Note's recipe and safeguard setup questions now save with the sellfile itself** — previously they only lived in this browser, so opening the same file elsewhere, or after clearing browser data, reset those choices back to their defaults. "Copy All Recipes" now carries your answers along with the recipes and safeguards.
+- **Improved: Substat lists in the recipe builder, safeguard builder, and filter panel are now split into two collapsible groups** — classic stats and anomalous stats — with the anomalous group collapsed by default to keep the list manageable.
+- **Fixed: The Rolls flyout couldn't show all 19 substats for a piece** — the trailing anomalous rows were being cut off; the list now scrolls so every stat is visible.
+
+Deutsch:
+- **Behoben: Das Anwenden eines gespeicherten Filter-Presets konnte einen anderen Filter wiederherstellen als den gespeicherten** — waren die Filter von Regel-Panel und Gear Inspector nicht auf Synchronisierung eingestellt, konnte ein Preset stillschweigend den übriggebliebenen Filter des jeweils anderen Panels anwenden statt des tatsächlich gespeicherten. Presets wenden jetzt immer den Filter des gerade verwendeten Panels an.
+- **Neu: Deine Antworten auf die Einrichtungsfragen eines Notes (Rezept- und Safeguard-Konfiguration) werden jetzt zusammen mit der Verkaufsdatei gespeichert** — bisher lebten sie nur in diesem Browser, sodass das Öffnen derselben Datei woanders oder nach dem Leeren der Browserdaten diese Auswahl auf die Standardwerte zurücksetzte. „Alle Rezepte kopieren" nimmt deine Antworten jetzt zusammen mit den Rezepten und Safeguards mit.
+- **Verbessert: Substat-Listen im Rezept-Builder, Safeguard-Builder und Filter-Panel sind jetzt in zwei einklappbare Gruppen unterteilt** — klassische Stats und Anomalous-Stats — wobei die Anomalous-Gruppe standardmäßig eingeklappt ist, damit die Liste übersichtlich bleibt.
+- **Behoben: Das Rolls-Flyout zeigte nicht alle 19 Substats eines Teils an** — die hinteren Anomalous-Zeilen wurden abgeschnitten; die Liste ist jetzt scrollbar, sodass alle Stats sichtbar sind.
+
 ## v1.0.40 — 2026-08-12
 English:
 - **Fixed: Recipes targeting the new anomalous accessory stats (PvE/PvP/Boss/Dungeon damage dealt/taken) never actually matched any gear** — a units mismatch inside Sellfile Creator's own rule matching, introduced together with anomalous accessory support, silently discarded every match. This only affected the matching logic inside the app itself — sell files you had already exported were correct and don't need to be redone.
