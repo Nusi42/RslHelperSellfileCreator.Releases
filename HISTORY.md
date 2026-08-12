@@ -1,6 +1,19 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.39 — 2026-08-12
+English:
+- **New: Anomalous accessories are now fully supported** — rings, amulets, and banners that roll mode-specific damage stats (PvE, PvP, Boss, or Dungeon damage dealt/taken) can now be selected in recipes and safeguards, and rules built from them are correctly included in your exported sell file.
+- **New: Precise decimal targets for anomalous stats** — since these stats roll in fine increments, their target values can now be set with 0.25% precision instead of being rounded to whole numbers.
+- **New: A default "Anomalous" recipe was added to the built-in preset**, so accessories with these stats aren't accidentally sold while more detailed rules for them are still being worked out.
+- **New: Gear carrying an anomalous stat is now visually marked** — its icon in Gear Inspector gets a dashed, double-ringed border so you can spot it at a glance.
+
+Deutsch:
+- **Neu: Anomalous-Accessoires werden jetzt vollständig unterstützt** — Rings, Amulets und Banners mit modusabhängigen Schadenswerten (PvE-, PvP-, Boss- oder Dungeon-Schaden erlitten/verursacht) können jetzt in Rezepten und Safeguards ausgewählt werden, und die daraus gebauten Regeln landen korrekt in der exportierten Verkaufsdatei.
+- **Neu: Präzise Dezimal-Zielwerte für Anomalous-Stats** — da diese Stats in feinen Schritten würfeln, lassen sich ihre Zielwerte jetzt mit 0,25%-Genauigkeit statt nur in ganzen Zahlen festlegen.
+- **Neu: Ein Standard-Rezept „Anomalous" wurde zum Preset hinzugefügt**, damit Accessoires mit diesen Stats nicht versehentlich verkauft werden, solange detailliertere Regeln dafür noch in Arbeit sind.
+- **Neu: Ausrüstung mit einem Anomalous-Stat wird jetzt visuell markiert** — ihr Symbol im Gear Inspector erhält einen gestrichelten Doppelring-Rahmen, damit du sie auf einen Blick erkennst.
+
 ## v1.0.38 — 2026-07-16
 English:
 - **Improved: Safeguard scoring uses unscored substats to settle ties between otherwise-equal pieces** — when two artifacts weigh out the same on your priority stats, the remaining lines now tip the balance, giving more consistent rankings across all match modes.
