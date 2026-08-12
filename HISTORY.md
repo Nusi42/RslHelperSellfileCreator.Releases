@@ -1,6 +1,13 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.40 — 2026-08-12
+English:
+- **Fixed: Recipes targeting the new anomalous accessory stats (PvE/PvP/Boss/Dungeon damage dealt/taken) never actually matched any gear** — a units mismatch inside Sellfile Creator's own rule matching, introduced together with anomalous accessory support, silently discarded every match. This only affected the matching logic inside the app itself — sell files you had already exported were correct and don't need to be redone.
+
+Deutsch:
+- **Behoben: Rezepte für die neuen Anomalous-Accessoire-Stats (PvE-/PvP-/Boss-/Dungeon-Schaden erlitten/verursacht) fanden nie passende Ausrüstung** — ein Einheiten-Mismatch im internen Regelabgleich von Sellfile Creator, der zusammen mit der Anomalous-Unterstützung eingeführt wurde, ließ jeden Treffer stillschweigend durchfallen. Betroffen war nur der Abgleich innerhalb der App selbst — bereits exportierte Verkaufsdateien waren korrekt und müssen nicht neu erzeugt werden.
+
 ## v1.0.39 — 2026-08-12
 English:
 - **New: Anomalous accessories are now fully supported** — rings, amulets, and banners that roll mode-specific damage stats (PvE, PvP, Boss, or Dungeon damage dealt/taken) can now be selected in recipes and safeguards, and rules built from them are correctly included in your exported sell file.
