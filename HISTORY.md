@@ -1,6 +1,37 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.42 — 2026-08-22
+English:
+- **New: Safeguard groups — several safeguards sharing one Required Count** — until now every safeguard counted on its own, so two rules that were really describing the same promise kept twice as much gear as you wanted: one wants 3 good rings, another wants 2, and you end up with 5.
+- **New: Tags now have stable colours** — every tag gets its own colour derived from its text, the same on every recipe and safeguard chip, in the builder and in the tags popover, and legible in all three themes. Nothing to configure — same tag, same colour, everywhere.
+- **Improved: Lategame preset's Utility safeguards now use grouping** — the Survivability, Damage, and Debuffer variants of the “Protect: Utility” rule now share one Required Count each instead of each keeping its own pieces separately, so you no longer end up protecting more utility gear than you meant to.
+- **New: Recipe options for skipping safeguards or targeting reworked gear are now simple toggle buttons** — these used to be hidden as special tags typed into the free-form tag box; they're now dedicated flags shown as small icons on the recipe in the list and in its Keep/Sell badge. Recipes saved before this change keep working automatically.
+- **Improved: Chaos Ore setup for each star rank uses a grid of gear-set checkboxes** — the Lategame preset's per-rank Chaos Ore questions now show one checkbox per gear set instead of a radio button plus separate fine-tune boxes, making it clearer which sets each rank targets. Default 5-star selections were also adjusted per account tier.
+- **New: Simple mode can now limit which gear sets the “keep everything useful” and Chaos Ore “any set” rules cover**, instead of those rules always applying to every set.
+- **Improved: The tag picker in the recipe and safeguard builders now suggests tags already used elsewhere** in your recipes and safeguards, so you don't have to remember or retype an existing tag's exact spelling.
+- **Redesign: New gold-accented visual style across every theme** — panels, dividers, and dialog titles now carry a warm gold accent with subtle corner details. A new “Border style” option in Theme Settings switches back to the plain frame if you prefer it. Simple mode's note window can now open Theme Settings directly.
+- **Fixed: Gear could get stuck showing under the wrong champion after moving it in-game** — the app only refreshed equipped gear when a champion itself changed, so moving gear directly between champions could leave it displayed on the one it had already left.
+- **Improved: Gear Analytics now shows how many of your accessories are anomalous**, alongside the existing artifact and accessory totals.
+- **Fixed: Anomalous gear was being scored as worthless in Gear Inspector and recipe ranking** — finishing up anomalous-stat support left these pieces with a rating of zero; they're now ranked normally like any other gear.
+- **Fixed: Some safeguard rules that judge one substat at a time could rank pieces incorrectly** — a piece missing the actual substat being judged could still slip into the results, and changing an unrelated substat's weight could reshuffle which pieces qualified. Rankings now correctly require the piece to have the substat in question. Visual bug only.
+- **Fixed: Turning certain setup options on or off while your note was open could close it unexpectedly** — flipping an account-mode override could switch to a recipe set with no matching note, silently closing the window; it now stays open as expected.
+
+Deutsch:
+- **Neu: Schutzregel-Gruppen — mehrere Schutzregeln teilen sich eine benötigte Anzahl** — bisher zählte jede Schutzregel für sich, sodass zwei Regeln, die eigentlich dasselbe Versprechen meinten, doppelt so viel Ausrüstung behielten wie gewollt: eine will 3 gute Ringe, eine andere 2, und am Ende behältst du 5.
+- **Neu: Tags haben jetzt feste Farben** — jeder Tag bekommt aus seinem Text eine eigene Farbe, die auf jedem Rezept- und Schutzregel-Chip, im Editor und im Tag-Fenster gleich aussieht und in allen drei Designs lesbar bleibt. Nichts einzustellen — gleicher Tag, gleiche Farbe, überall.
+- **Verbessert: Die Utility-Schutzregeln des Lategame-Presets nutzen jetzt Gruppierung** — die Varianten Survivability, Damage und Debuffer der Regel „Protect: Utility” teilen sich jetzt jeweils eine Benötigte Anzahl, statt jede für sich Teile zu behalten, sodass du nicht mehr mehr Utility-Ausrüstung schützt als beabsichtigt.
+- **Neu: Die Rezept-Optionen zum Ausklammern aus Schutzregeln oder zum gezielten Ansprechen von überarbeiteter Ausrüstung sind jetzt einfache Schalter** — bisher steckten sie als spezielle Tags im freien Tag-Feld; jetzt sind es eigene Kennzeichnungen, die als kleine Symbole am Rezept in der Liste und in seinem Behalten/Verkaufen-Abzeichen erscheinen. Vorher gespeicherte Rezepte funktionieren automatisch weiter.
+- **Verbessert: Die Chaos-Erz-Einrichtung je Sternerang nutzt jetzt ein Raster aus Set-Kontrollkästchen** — die Chaos-Erz-Fragen je Rang im Lategame-Preset zeigen jetzt ein Kästchen pro Ausrüstungsset statt eines Radio-Buttons mit separaten Feinabstimmungs-Kästchen, wodurch klarer wird, welche Sets jeder Rang anspricht. Die 5-Sterne-Standardauswahl wurde außerdem je Konto-Stufe angepasst.
+- **Neu: Der Simple-Modus kann jetzt einschränken, welche Ausrüstungssets die Regeln „alles Nützliche behalten” und Chaos-Erz-„jedes Set” abdecken**, statt dass diese Regeln immer für jedes Set gelten.
+- **Verbessert: Die Tag-Auswahl in Rezept- und Schutzregel-Builder schlägt jetzt bereits verwendete Tags vor** aus deinen Rezepten und Schutzregeln, sodass du dir die genaue Schreibweise eines vorhandenen Tags nicht merken oder erneut eintippen musst.
+- **Redesign: Neuer goldakzentierter Look für alle Designs** — Panels, Trennlinien und Dialogtitel tragen jetzt einen warmen Goldakzent mit dezenten Eckdetails. Eine neue Option „Rahmenstil” in den Design-Einstellungen schaltet auf Wunsch zurück auf den schlichten Rahmen. Das Note-Fenster im Simple-Modus kann die Design-Einstellungen jetzt direkt öffnen.
+- **Behoben: Ausrüstung konnte nach dem Verschieben im Spiel weiter beim falschen Champion angezeigt werden** — die App aktualisierte die ausgerüstete Ausrüstung bisher nur, wenn sich ein Champion selbst änderte, sodass direkt zwischen Champions verschobene Ausrüstung noch beim vorherigen Champion angezeigt werden konnte.
+- **Verbessert: Gear Analytics zeigt jetzt, wie viele deiner Accessoires anomalous sind**, zusätzlich zu den bisherigen Artefakt- und Accessoire-Gesamtzahlen.
+- **Behoben: Anomalous-Ausrüstung wurde im Gear Inspector und bei der Rezept-Rangfolge als wertlos bewertet** — beim Abschluss der Anomalous-Stat-Unterstützung erhielten diese Teile eine Bewertung von null; sie werden jetzt wie jede andere Ausrüstung normal eingestuft.
+- **Behoben: Manche Schutzregeln, die Substats einzeln nacheinander bewerten, konnten Teile falsch einstufen** — ein Teil ohne den tatsächlich bewerteten Substat konnte trotzdem in die Ergebnisse rutschen, und das Ändern der Gewichtung eines unbeteiligten Substats konnte die Einstufung durcheinanderbringen. Die Rangfolge verlangt jetzt korrekt, dass das Teil den betreffenden Substat auch besitzt. Nur visueller Fehler.
+- **Behoben: Das Ein- oder Ausschalten bestimmter Einrichtungsoptionen bei geöffnetem Note konnte dieses unerwartet schließen** — das Umschalten eines Konto-Modus-Overrides konnte auf ein Rezept-Set ohne passendes Note wechseln und das Fenster stillschweigend schließen; es bleibt jetzt wie erwartet geöffnet.
+
 ## v1.0.41 — 2026-08-12
 English:
 - **Fixed: Applying a saved filter preset could restore a different filter than the one you configured** — if the Rules panel and Gear Inspector filters weren't set to stay in sync, a preset could silently apply the other panel's leftover filter instead of the one you actually saved. Presets now always apply the filter of the panel you're using.
@@ -233,7 +264,7 @@ Deutsch:
 English:
 - **New: Load SFC and Export/Push buttons now have a dropdown chevron (▾)** — clicking the chevron opens the preset and options menu; clicking the main button area directly opens the file picker or exports. On the first click each session, the Load SFC button opens the menu automatically to help you discover presets. The nudge to right-click is gone.
 - **New: The unsaved-changes dot on the Save and Export/Push buttons now shows a "not saved since [time]" tooltip** — hover the dot to see at a glance how long ago you last saved or pushed.
-- **New: Safeguard rank overlay cycle order changed to Off → Group → Safeguard → Both** — the Group rank step now comes before the overall Safeguard rank. The chip's color, number, and click target are now always consistent with each other and with the tooltip rows.
+- **New: Safeguard rank overlay cycle order changed to Off → Group → Safeguard → Both** — the Bucket rank step now comes before the overall Safeguard rank. The chip's color, number, and click target are now always consistent with each other and with the tooltip rows.
 - **New: Safeguard rules now have a "Weight by Rank" toggle** — when enabled, higher-rank pieces get a scoring edge on their main stat, calibrated per slot and main stat, so a 6★ can edge out a same-mainstat 5★ with only slightly better substats.
 - **Improved: Bundled preset files in the Load SFC menu are now named "Midgame / Lategame / Endgame Sample" and "Beginner Sample"** instead of the old names they previously showed.
 - **Fixed: Clicking outside the note or pressing Escape no longer accidentally closes it when it is shown without a close button.**
@@ -250,7 +281,7 @@ Deutsch:
 English:
 - **New: Builder and preview panels now appear side by side at most window sizes** — the layout no longer requires a wide screen to activate; zoom adjusts automatically to fit both the width and height of your browser window, so no space is wasted on the sides. At very small windows the layout stacks normally.
 - **New: Side-by-side zoom can be configured in the display settings flyout** — a toggle turns the automatic side-by-side mode on or off, and a slider sets the minimum zoom level below which the layout switches back to stacked instead of shrinking further.
-- **New: Safeguard candidate list can be focused on one count-group** — clicking a rank or improvement-chance chip in the Gear Inspector opens the safeguard flyout already narrowed to that piece's slot/set/faction group, so you can compare it directly against its competition. Ranks are recalculated relative to the focused group while focus is active.
+- **New: Safeguard candidate list can be focused on one bucket** — clicking a rank or improvement-chance chip in the Gear Inspector opens the safeguard flyout already narrowed to that piece's slot/set/faction group, so you can compare it directly against its competition. Ranks are recalculated relative to the focused bucket while focus is active.
 - **New: Safeguard candidate list now shows an improvement-chance column** — the predicted improvement chance for each candidate appears alongside its score.
 
 Deutsch:
@@ -263,7 +294,7 @@ Deutsch:
 English:
 - **New: "RSLH" theme option** — a third theme alongside Dark and Light.
 - **New: Theme editor exposes additional color and font options** — you can now adjust the info color, primary, secondary, and disabled text colors, the UI and code font families, and the scrollbar thumb color directly from the theme popout.
-- **New: Safeguard Rank overlay expanded to a four-mode cycle** — replaces the on/off toggle with four steps: Off, Rank (overall position among all safeguarded pieces), Group Rank (position within the piece's slot/set/faction group), and Rank + Group (both at once). Green = kept, red = would be sold.
+- **New: Safeguard Rank overlay expanded to a four-mode cycle** — replaces the on/off toggle with four steps: Off, Rank (overall position among all safeguarded pieces), Bucket Rank (position within the piece's slot/set/faction group), and Rank + Group (both at once). Green = kept, red = would be sold.
 - **New: Pieces ranked by unselected safeguard rules now show their rank in the overlay** — such chips appear faded with a dotted border and a tooltip identifying the source rule, so rank information is no longer hidden just because the rule is not in the active filter.
 - **Midgame/Lategame/Endgame preset: SPD substat weight increased in safeguard rules** — gear with a Speed roll is now scored more aggressively when ranking borderline pieces under safeguard rules.
 
