@@ -328,13 +328,12 @@ Open `Tools` and switch to the **Gear Analytics** tab for an analytics overview 
 
 Sellfile Creator can keep separate documents (recipes, safeguards, note, gear) for several game accounts. The account switcher sits in the top bar (and in the simple view's dialog): click it to switch accounts or create new ones, and use the gear icon next to an account to open the account manager. There you can rename an account, pick its accent color, enter the RSL Helper account id it belongs to, turn auto-push on or off per account, mark one account as the default for data that arrives without an account id, toggle whether received gear data is saved on this device at all, and delete an account together with all of its data. Hold Shift while picking an account in the switcher to merge the current document into it.
 
-**How the transition works:**
+**How accounts are matched:**
 
 - After updating, all your existing data simply lives in one account called "Default" — nothing changes for you.
-- Account support is being rolled out in steps together with RSL Helper, so parts of it are not fully active yet.
-- For now, RSL Helper doesn't yet tell Sellfile Creator which game account it is sending. That data goes to your active account — or to the account you flagged as "default for data without account id" in the manager.
-- As soon as RSL Helper passes the account id when launching Sellfile Creator, your existing "Default" account is linked to that id automatically, so your data simply follows. A second game account then gets its own fresh Sellfile Creator account.
-- Once RSL Helper also tags its data packets with the account id, everything routes automatically: data for another account never mixes into the one you are working on, and if that other account has auto-push enabled, its sellfile is rebuilt and sent back in the background.
+- RSL Helper tells Sellfile Creator which game account it is opening, so your existing "Default" account is linked to that id automatically and your data simply follows. A second game account gets its own fresh Sellfile Creator account.
+- RSL Helper also tags its data packets with the account id, so everything routes automatically: data for another account never mixes into the one you are working on, and if that other account has auto-push enabled, its sellfile is rebuilt and sent back in the background.
+- Data that arrives without an account id goes to your active account — or to the account you flagged as "default for data without account id" in the manager.
 
 ## Examples
 

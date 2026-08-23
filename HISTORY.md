@@ -1,6 +1,17 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.43 — 2026-08-23
+English:
+- **New: The recipe and safeguard builder column can now be split into two resizable sections** — drag the new handle between the rule form and its chip list to give either one more room. The split is remembered separately for recipes and safeguards, and double-clicking the handle resets it to the default size.
+- **Fixed: RSL Helper running on a custom port could keep getting contacted on the old or default port after you launched it** — an earlier improvement that remembers your connection between sessions didn't pick up the port from the launch link; the app now reads it correctly, and a link without a port no longer overwrites the port you already had saved.
+- **Fixed: The app could gradually use more and more memory during long play sessions, especially after using safeguard groups, eventually slowing things down or crashing** — a side effect of that feature kept reprocessing a growing snapshot of your gear on every update instead of reusing what it already had. Memory use now stays flat during extended sessions.
+
+Deutsch:
+- **Neu: Die Rezept- und Schutzregel-Builder-Spalte lässt sich jetzt in zwei größenveränderliche Bereiche aufteilen** — der neue Griff zwischen Regelformular und Chip-Liste lässt sich ziehen, um einem der beiden mehr Platz zu geben. Die Aufteilung wird getrennt für Rezepte und Schutzregeln gemerkt, ein Doppelklick auf den Griff setzt sie auf die Standardgröße zurück.
+- **Behoben: RSL Helper auf einem abweichenden Port konnte nach dem Start weiterhin über den alten oder den Standard-Port angesprochen werden** — eine frühere Verbesserung, die sich die Verbindung zwischen den Sitzungen merkt, übernahm den Port aus dem Start-Link bisher nicht; die App liest ihn jetzt korrekt aus, und ein Link ohne Port überschreibt den bereits gespeicherten Port nicht mehr.
+- **Behoben: Die App konnte bei langen Spielsitzungen nach und nach mehr Speicher verbrauchen, besonders nach der Nutzung von Schutzregel-Gruppen, was sie irgendwann verlangsamte oder abstürzen ließ** — ein Nebeneffekt dieser Funktion verarbeitete bei jeder Aktualisierung eine wachsende Momentaufnahme deiner Ausrüstung erneut, statt die bereits vorhandene weiterzuverwenden. Der Speicherverbrauch bleibt jetzt auch bei langen Sitzungen konstant.
+
 ## v1.0.42 — 2026-08-22
 English:
 - **New: Safeguard groups — several safeguards sharing one Required Count** — until now every safeguard counted on its own, so two rules that were really describing the same promise kept twice as much gear as you wanted: one wants 3 good rings, another wants 2, and you end up with 5.
