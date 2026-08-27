@@ -1,6 +1,13 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.44 — 2026-08-27
+English:
+- **Fixed: The Lategame preset's "Actually, just sell all weak Chaos Ore pieces?" option could also sell your Anomalous accessories** — the option matched on a shared behind-the-scenes flag instead of on the Chaos Ore rules themselves, and the Anomalous rule happened to carry that same flag. It now only ever touches the Chaos Ore rules it was built for.
+
+Deutsch:
+- **Behoben: Die Option „Ja, alle verkaufen” im Chaos-Erz-Bereich des Lategame-Presets konnte auch deine Anomalous-Accessoires verkaufen** — die Option griff auf eine intern geteilte Kennzeichnung zu statt auf die Chaos-Erz-Regeln selbst, und die Anomalous-Regel trug zufällig dieselbe Kennzeichnung. Sie betrifft jetzt ausschließlich die Chaos-Erz-Regeln, für die sie gedacht ist.
+
 ## v1.0.43 — 2026-08-23
 English:
 - **New: The recipe and safeguard builder column can now be split into two resizable sections** — drag the new handle between the rule form and its chip list to give either one more room. The split is remembered separately for recipes and safeguards, and double-clicking the handle resets it to the default size.
