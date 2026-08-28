@@ -1,6 +1,21 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.45 — 2026-08-28
+English:
+- **New: The unsaved-changes dot next to Save now gradually shifts color the longer your work stays unsaved** — neutral, then a warning color, then red at the 5, 20, and 60 minute marks — and its tooltip tells you exactly how long it's been. This timer now survives closing and reopening the app.
+- **New: The Dynamic Overrides menu can now export all your saved override sets to a file and import them back in** — handy for backing them up or moving them to a new computer. Dropping such a file onto the app imports it too.
+- **Fixed: The Custom button in Simple mode could show as active with no actual custom rules behind it** — for example right after a fresh launch, or while a preset was still loading.
+- **Fixed: Theme and language choices in Simple mode could reset to the defaults every time you launched the app instead of sticking.**
+- **Fixed: Restoring an autosaved file could show an incorrect "unsaved changes" warning even when nothing had actually changed.**
+
+Deutsch:
+- **Neu: Der Punkt für nicht gespeicherte Änderungen neben Speichern ändert jetzt schrittweise seine Farbe, je länger deine Arbeit ungespeichert bleibt** — neutral, dann eine Warnfarbe, dann Rot nach 5, 20 und 60 Minuten — und das Tooltip zeigt dir genau, wie lange es her ist. Dieser Timer übersteht jetzt auch das Schließen und erneute Öffnen der App.
+- **Neu: Das Dynamic-Overrides-Menü kann jetzt alle gespeicherten Override-Sets in eine Datei exportieren und wieder importieren** — praktisch für ein Backup oder den Umzug auf einen neuen Rechner. Eine solche Datei kann auch einfach auf die App gezogen werden, um sie zu importieren.
+- **Behoben: Der Custom-Button im Simple-Modus konnte als aktiv angezeigt werden, obwohl keine eigenen Regeln dahinterstanden** — etwa direkt nach einem frischen Start oder während ein Preset noch geladen wurde.
+- **Behoben: Design- und Sprachauswahl im Simple-Modus konnten bei jedem Start der App auf die Standardwerte zurückspringen, statt erhalten zu bleiben.**
+- **Behoben: Das Wiederherstellen einer Autosave-Datei konnte fälschlich vor „nicht gespeicherten Änderungen" warnen, obwohl sich nichts geändert hatte.**
+
 ## v1.0.44 — 2026-08-27
 English:
 - **Fixed: The Lategame preset's "Actually, just sell all weak Chaos Ore pieces?" option could also sell your Anomalous accessories** — the option matched on a shared behind-the-scenes flag instead of on the Chaos Ore rules themselves, and the Anomalous rule happened to carry that same flag. It now only ever touches the Chaos Ore rules it was built for.
