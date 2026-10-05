@@ -1,6 +1,31 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.48 — 2026-10-05
+English:
+- **Fixed: Gear at +3, +7, +11 and +15 was judged as if it had already reached the next level step** — a +15 piece counted as +16, so a rule meant only for +16 gear could keep it. Gear now counts at the step it has actually reached (+15 counts as +12). This affects the keep/sell preview, Gear Inspector and safeguards; the level shown on each piece is unchanged.
+- **Fixed: Gear you unequipped in the game could stay listed on its previous champion** after the next gear sync.
+- **Fixed: An edit made while a push was still running could sit unsent until you pushed manually** (the same happened after a failed push). Auto-push now follows up on its own.
+- **Fixed: Gear and champion updates from a connected tool stalled while the creator was in a background tab or hidden**, and only showed up once you switched back to it. They now keep arriving.
+- **Changed: Tools that receive your recipe file instead of the finished sellfile now get it with your override answers already applied**, so they judge your gear by the rules you actually set up instead of the defaults.
+- **Fixed: For those tools, auto-push now also reacts to edits in notes and recipe names**, and no longer re-sends an unchanged recipe file just because new gear arrived.
+- **Fixed: For those tools, the dot beside the push button now shows whether the pushed recipe file is out of date** — it used to follow the finished sellfile, which is not what gets sent.
+- **Changed: The two Gear Inspector selection modes are now two labeled buttons side by side**, so the active mode is always clear.
+- **New: Portraits for the latest champions.**
+- **New (for tool developers): A Windows library that answers "keep or sell?" for a pile of gear straight from a recipe file**, giving the same verdicts as the app's own preview, and can also build the finished sellfile. Documentation and C/C++ samples are included.
+
+Deutsch:
+- **Behoben: Ausrüstung auf +3, +7, +11 und +15 wurde so bewertet, als hätte sie die nächste Stufe schon erreicht** — ein +15-Teil zählte als +16, sodass eine Regel nur für +16-Ausrüstung es behalten konnte. Ausrüstung zählt jetzt auf der tatsächlich erreichten Stufe (+15 zählt als +12). Das betrifft die Behalten/Verkaufen-Vorschau, den Gear Inspector und die Schutzregeln; die angezeigte Stufe jedes Teils bleibt gleich.
+- **Behoben: Ausrüstung, die du im Spiel abgelegt hattest, konnte nach dem nächsten Ausrüstungsabgleich weiter beim bisherigen Champion stehen.**
+- **Behoben: Eine Änderung während eines laufenden Pushs konnte ungesendet liegen bleiben, bis du manuell gepusht hast** (ebenso nach einem fehlgeschlagenen Push). Auto-Push zieht jetzt selbstständig nach.
+- **Behoben: Ausrüstungs- und Champion-Updates von einem verbundenen Tool blieben hängen, solange der Creator in einem Hintergrund-Tab oder versteckt war**, und erschienen erst nach dem Zurückwechseln. Sie kommen jetzt laufend an.
+- **Geändert: Tools, die statt des fertigen Sellfiles deine Rezeptdatei erhalten, bekommen sie jetzt mit bereits angewendeten Override-Antworten**, sodass sie deine Ausrüstung nach den tatsächlich eingestellten Regeln bewerten statt nach den Standardwerten.
+- **Behoben: Für diese Tools reagiert Auto-Push jetzt auch auf Änderungen an Notizen und Rezeptnamen** und sendet eine unveränderte Rezeptdatei nicht mehr erneut, nur weil neue Ausrüstung angekommen ist.
+- **Behoben: Für diese Tools zeigt der Punkt neben dem Push-Button jetzt, ob die gepushte Rezeptdatei veraltet ist** — bisher folgte er dem fertigen Sellfile, das gar nicht gesendet wird.
+- **Geändert: Die beiden Auswahlmodi des Gear Inspectors sind jetzt zwei beschriftete Buttons nebeneinander**, damit der aktive Modus immer klar ist.
+- **Neu: Porträts für die neuesten Champions.**
+- **Neu (für Tool-Entwickler): Eine Windows-Bibliothek, die für einen Stapel Ausrüstung direkt aus einer Rezeptdatei „behalten oder verkaufen?" beantwortet**, mit denselben Urteilen wie die Vorschau der App, und auch das fertige Sellfile erzeugen kann. Dokumentation und C/C++-Beispiele liegen bei.
+
 ## v1.0.47 — 2026-08-30
 English:
 - **Fixed: A safeguard rule set to protect only gear with no gear-set (like loose, unset accessories) could quietly start protecting gear from every set instead, after the file was saved and reopened** — the app's internal translation from your saved setting back into a rule lost track of the "no set" option and treated it as "any set" instead.
