@@ -1,5 +1,9 @@
 ﻿# Sellfile Creator for RSL Helper
 
+> **This repository has moved.** New releases are published at https://github.com/Nusi42/SellfileCreator/releases — this one is no longer updated.
+>
+> **Dieses Repository ist umgezogen.** Neue Versionen erscheinen unter https://github.com/Nusi42/SellfileCreator/releases — hier gibt es keine Updates mehr.
+
 Sellfile Creator eases building Sellfiles for RSL Helper — define gear filters by set, slot, main stat, substats, and more, preview matching results live, and export ready-to-use Sellfiles in seconds.
 
 > This is an independent, fan‑made tool. Not affiliated with Plarium, Raid: Shadow Legends, or RSL Helper. Trademarks belong to their owners.
@@ -370,6 +374,12 @@ Many thanks to **[STBL] Nasgor** for his invaluable contributions,
 to **[SP] Panda** for his Sellfiles,  
 to **KruYseN** for his gear cleanse videos,  
 and of course thanks to **Farbstoff** for RSL Helper!
+
+## License
+
+Sellfile Creator is free software under the GNU Affero General Public License, version 3 or later (AGPL-3.0-or-later). You may use it, share it and change it. If you pass on a changed version, or let other people use it over a network, you must share its source code under the same license.
+Source code and the full license text: https://github.com/Nusi42/SellfileCreator
+Other license terms are available from the author.
 
 ## Author
 Made by [STBL] Nusi㊷  

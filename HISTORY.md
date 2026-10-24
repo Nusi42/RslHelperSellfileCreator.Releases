@@ -1,6 +1,15 @@
 ﻿Sellfile Creator Release History
 DISCLAIMER: These release notes are AI generated and might contain incorrect statements.
 
+## v1.0.49 — 2026-10-24
+English:
+- **New: The in-app guide has a License section.** Sellfile Creator is free software under the AGPL-3.0-or-later, with a link to the source code, available in every language.
+- **New: The download now includes the license text** as a LICENSE.txt file, and the integration sample for the decision library is MIT-licensed.
+
+Deutsch:
+- **Neu: Die Anleitung in der App hat jetzt einen Abschnitt „Lizenz“.** Sellfile Creator ist freie Software unter der AGPL-3.0-or-later, mit Link zum Quellcode, in allen Sprachen verfügbar.
+- **Neu: Der Download enthält jetzt den Lizenztext** als Datei LICENSE.txt, und das Integrationsbeispiel für die Entscheidungsbibliothek steht unter der MIT-Lizenz.
+
 ## v1.0.48 — 2026-10-05
 English:
 - **Fixed: Gear at +3, +7, +11 and +15 was judged as if it had already reached the next level step** — a +15 piece counted as +16, so a rule meant only for +16 gear could keep it. Gear now counts at the step it has actually reached (+15 counts as +12). This affects the keep/sell preview, Gear Inspector and safeguards; the level shown on each piece is unchanged.
